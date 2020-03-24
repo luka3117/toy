@@ -1,0 +1,291 @@
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2015.7.18)  22 FEB 2017 20:19
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**bare_conf
+(./bare_conf.tex
+pLaTeX2e <2006/11/10> (based on LaTeX2e <2014/05/01> patch level 0)
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen118
+\@IEEEtrantmpdimenB=\dimen119
+\@IEEEtrantmpdimenC=\dimen120
+\@IEEEtrantmpcountA=\count81
+\@IEEEtrantmpcountB=\count82
+\@IEEEtrantmpcountC=\count83
+\@IEEEtrantmptoksA=\toks15
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using DVI output.
+\@IEEEnormalsizeunitybaselineskip=\dimen121
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen122
+\CLASSINFOnormalsizeunitybaselineskip=\dimen123
+\IEEEnormaljot=\dimen124
+(I search kanjifont definition file: . . )
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <5> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <5> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 1090.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 1090.
+
+
+LaTeX Font Warning: Font shape `JT1/mc/bx/it' undefined
+(Font)              using `JT1/mc/bx/n' instead on input line 1090.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/bx/it' undefined
+(Font)              using `JY1/mc/bx/n' instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <7> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <7> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <7> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <7> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <8> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <8> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <11> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <11> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <11> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <11> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <17> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <17> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <20> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <20> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <24> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <24> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <24> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <24> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen125
+\IEEEquantizedlengthdiff=\dimen126
+\IEEEquantizedtextheightdiff=\dimen127
+\IEEEilabelindentA=\dimen128
+\IEEEilabelindentB=\dimen129
+\IEEEilabelindent=\dimen130
+\IEEEelabelindent=\dimen131
+\IEEEdlabelindent=\dimen132
+\IEEElabelindent=\dimen133
+\IEEEiednormlabelsep=\dimen134
+\IEEEiedmathlabelsep=\dimen135
+\IEEEiedtopsep=\skip41
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\c@IEEEsubequation=\count88
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count89
+\c@table=\count90
+\@IEEEeqnnumcols=\count91
+\@IEEEeqncolcnt=\count92
+\@IEEEsubeqnnumrollback=\count93
+\@IEEEquantizeheightA=\dimen136
+\@IEEEquantizeheightB=\dimen137
+\@IEEEquantizeheightC=\dimen138
+\@IEEEquantizeprevdepth=\dimen139
+\@IEEEquantizemultiple=\count94
+\@IEEEquantizeboxA=\box41
+\@IEEEtmpitemindent=\dimen140
+\IEEEPARstartletwidth=\dimen141
+\c@IEEEbiography=\count95
+\@IEEEtranrubishbin=\box42
+)
+No file bare_conf.aux.
+\openout1 = `bare_conf.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Font shape `JT1/mc/bx/it' in size <5> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 315.
+LaTeX Font Info:    Font shape `JY1/mc/bx/it' in size <5> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 315.
+-- Lines per column: 56 (exact).
+
+LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 403.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 403.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 406.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 406.
+
+LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
+(Font)              using `JT1/gt/m/n' instead on input line 565.
+
+
+LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
+(Font)              using `JY1/gt/m/n' instead on input line 565.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 565.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 565.
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[1
+
+
+
+] (./bare_conf.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1158 strings out of 493807
+ 20481 string characters out of 6151951
+ 80027 words of memory out of 5000000
+ 4686 multiletter control sequences out of 15000+600000
+ 37638 words of font info for 105 fonts, out of 8000000 for 9000
+ 932 hyphenation exceptions out of 8191
+ 27i,7n,19p,200b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on bare_conf.dvi (1 page, 2328 bytes).

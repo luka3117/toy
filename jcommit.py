@@ -10,7 +10,7 @@ import os
 
 # os.system("ls")
 
-input_message=input("aaaa=??")
+input_message=input("コミット内容入力")
 
 os.system("git add . ")
 os.system("git commit -m"+input_message)

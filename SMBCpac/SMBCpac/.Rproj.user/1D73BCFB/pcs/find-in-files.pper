@@ -1,0 +1,10 @@
+{
+    "dialog-state" : {
+        "caseSensitive" : false,
+        "filePatterns" : [
+        ],
+        "path" : "~/toy/SMBCpac/SMBCpac",
+        "query" : "\\item{\\code{y}}{a factor with levels",
+        "regex" : false
+    }
+}

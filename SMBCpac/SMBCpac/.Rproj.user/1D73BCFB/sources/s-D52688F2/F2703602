@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586357376614.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3093437535",
+    "id" : "F2703602",
+    "lastKnownWriteTime" : 1586355797,
+    "last_content_update" : 1586355797,
+    "path" : "~/toy/SMBCpac/SMBCpac/man/hello.Rd",
+    "project_path" : "man/hello.Rd",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

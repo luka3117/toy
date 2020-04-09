@@ -1,0 +1,7 @@
+
+install.packages("SMBCpac")
+
+SMBCpac
+library(SMBCpac)
+
+help(smbc.test)

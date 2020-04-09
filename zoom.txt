@@ -1,0 +1,116 @@
+Zoom
+　各位
+
+　　先日依頼差し上げたzoomアカウントの作成依頼ですが、授業を担当されるされない
+に関わらずＤＳセンター所属教員には全て作成いただきたく存じます。
+　　お手数ですが無償アカウントを作成のうえ、その旨連絡くださるようお願い申し上げ
+ます。
+なお、明日の教員連絡会議も清水先生から案内がありましたとおりZoomを用いるこ
+ととなっておりますので、どうぞよろしくお含みおきください。
+　　
+
+
+　滋賀大学　岡島　Tel/Fax：0749-27-1045/1132
+　dsjimurenkei@biwako.shiga-u.ac.jp
+
+From: dsjimurenkei
+Sent: Monday, March 30, 2020 10:46 AM
+To: MLデータサイエンス（学部および教育研究センター） <ds-center-all@biwako.shiga-u.ac.jp>
+Cc: yasuda <yasuda@biwako.shiga-u.ac.jp>; ogawa <togawa@biwako.shiga-u.ac.jp>; 椎名洋 <sheena@shinshu-u.ac.jp>
+Subject: ＜お詫び＞重複操作不要＞RE: ＜zoomアカウント作成のうえ、その旨連絡願います＞RE: 【ＤＳ連携：岡島】RE: 大学院講義のオンライン配信について
+
+
+　各位
+
+　　先にお送りしました以下の内容ですが、大学院の講義を担当いただく先生におか
+　　れましては、重複操作は不要です。
+　　案内に不備がありましたことお詫び申し上げます。
+
+
+　滋賀大学　岡島　Tel/Fax：0749-27-1045/1132
+　dsjimurenkei@biwako.shiga-u.ac.jp
+
+From: dsjimurenkei
+Sent: Monday, March 30, 2020 10:42 AM
+To: MLデータサイエンス（学部および教育研究センター） <ds-center-all@biwako.shiga-u.ac.jp>
+Cc: yasuda <yasuda@biwako.shiga-u.ac.jp>; ogawa <togawa@biwako.shiga-u.ac.jp>; 椎名洋 <sheena@shinshu-u.ac.jp>
+Subject: ＜zoomアカウント作成のうえ、その旨連絡願います＞RE: 【ＤＳ連携：岡島】RE: 大学院講義のオンライン配信について
+
+
+　各位
+
+　　標記のことに関わりまして、既に大学院の講義を担当される先生方におかれまし
+　　ては、４月以降の授業実施のためzoomアカウントを作成いただき、その旨連絡
+　　いただいるところですが、学部の授業への導入も進めることとなりました。
+
+つきましては、当方にて有償アカウントへの移行操作に必要となりますので、
+https://zoom.us/signin　において、ご自身のメールアドレス*@biwako.shiga-u.ac.jp
+を用いてアカウントを作成のうえ、その旨ご連絡くださるようお願いいたします。
+　　
+
+
+　滋賀大学　岡島　Tel/Fax：0749-27-1045/1132
+　dsjimurenkei@biwako.shiga-u.ac.jp
+
+From: dsjimurenkei
+Sent: Friday, March 13, 2020 1:22 PM
+To: ds-kyojukai@biwako.shiga-u.ac.jp
+Cc: Akimichi Takemura <akimichi.takemura@gmail.com>; shohei-shimizu <shohei-shimizu@biwako.shiga-u.ac.jp>; yasuda <yasuda@biwako.shiga-u.ac.jp>; ogawa <togawa@biwako.shiga-u.ac.jp>; '中川 雅央 ' <mnaka@biwako.shiga-u.ac.jp>
+Subject: 【ＤＳ連携：岡島】RE: 大学院講義のオンライン配信について
+
+
+　各位
+
+　　標記のことですが、大学院の講義を担当される先生方は、以下ＵＲＬにてサイン
+アップいただき、無償アカウントを作成ください。その後、有償アカウントへ
+移行操作を依頼するのに用いますので、サインアップ用メールアドレスをお知
+らせ願います。（原則として　*@biwako.shiga-u.ac.jp　で作成ください。）
+　　https://zoom.us/signin
+
+有償利用の期間は2020年4月1日から2021年3月31日となりますが、それま
+での間にトライアル期間を設けていただくこととなっております。
+また、操作に不安のある方につきましては、オンラインでの機能説明会の開催を
+予定しております（来週以降で30分ほど、改めて案内します）。
+
+以上、どうぞよろしくお取り計らいください。
+
+
+　滋賀大学　岡島　Tel/Fax：0749-27-1045/1132
+　dsjimurenkei@biwako.shiga-u.ac.jp
+
+From: shohei-shimizu <shohei-shimizu@biwako.shiga-u.ac.jp>
+Sent: Friday, March 13, 2020 12:22 PM
+To: Akimichi Takemura <akimichi.takemura@gmail.com>
+Cc: MLデータサイエンス学部教授会 <ds-kyojukai@biwako.shiga-u.ac.jp>; dsjimurenkei <dsjimurenkei@biwako.shiga-u.ac.jp>; ogawa <togawa@biwako.shiga-u.ac.jp>; 中川雅央＠滋賀大学 <mnaka@biwako.shiga-u.ac.jp>
+Subject: Re: 大学院講義のオンライン配信について
+
+みなさま
+
+3/20の研究科委員会は、zoomのテストをしたいと思いますので、みなさんノートパソコンなどを持参していただければと思います。
+(実際には、皆いつもの部屋にいるが、zoomでつないでいるという形です)
+よろしくお願いいたします。
+
+---
+Shohei SHIMIZUさんがあなたを予約されたZoomミーティングに招待しています。
+
+トピック: 練習2
+時間: 2020年3月20日 10:00 AM 大阪、札幌、東京
+
+Zoomミーティングに参加する
+https://us04web.zoom.us/j/451077574
+
+ミーティングID: 451 077 574
+
+---
+
+清水
+
+2020年3月13日(金) 11:11 Akimichi Takemura <akimichi.takemura@gmail.com>:
+DS教授会の皆様
+Cc: 中川様、小川様、岡島様
+
+竹村です。標題の件、添付の資料にありますように、DS大学院ではオンライン配信を併用することで、学年暦通り開講することが全学の会議で認められました。今後至急技術的な課題を確認して行きます。よろしくお願いいたします。
+--
+このメールは Google グループのグループ「滋賀大学DS助教」に登録しているユーザーに送られています。
+このグループから退会し、グループからのメールの配信を停止するには shiga-dsap+unsubscribe@googlegroups.com にメールを送信してください。
+このディスカッションをウェブ上で閲覧するには https://groups.google.com/d/msgid/shiga-dsap/OSBPR01MB1493A0235F05032C44FF7EEDEBC90%40OSBPR01MB1493.jpnprd01.prod.outlook.com にアクセスしてください。

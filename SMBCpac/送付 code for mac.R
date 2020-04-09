@@ -10,10 +10,10 @@ library(pROC)
 
 # windosの場合は以下を実装 -----------------------------------------------------------------
 
-colnames(smbc) %<>% iconv("utf8", "cp932")
-colnames(smbc.test) %<>% iconv("utf8", "cp932")
-colnames(smbc.train) %<>% iconv("utf8", "cp932")
-row.names(smbc.rf.train$importance) %<>% iconv("utf8", "cp932")
+# colnames(smbc) %<>% iconv("utf8", "cp932")
+# colnames(smbc.test) %<>% iconv("utf8", "cp932")
+# colnames(smbc.train) %<>% iconv("utf8", "cp932")
+# row.names(smbc.rf.train$importance) %<>% iconv("utf8", "cp932")
 
 
 

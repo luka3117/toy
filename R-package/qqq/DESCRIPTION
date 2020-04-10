@@ -1,0 +1,7 @@
+Package: qqq
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.2
+Author: Who wrote it
+Encoding: UTF-8
+LazyData: true

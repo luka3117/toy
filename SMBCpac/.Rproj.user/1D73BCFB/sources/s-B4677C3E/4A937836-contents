@@ -1,6 +1,0 @@
-system('open .')
-
-system("open .")
-
-
-shell("open .")

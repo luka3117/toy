@@ -1,0 +1,5 @@
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/jc/480p15/partial_movie_files/ShigaUniv/00000.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/jc/480p15/partial_movie_files/ShigaUniv/00001.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/jc/480p15/partial_movie_files/ShigaUniv/00002.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/jc/480p15/partial_movie_files/ShigaUniv/00003.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/jc/480p15/partial_movie_files/ShigaUniv/00004.mp4'

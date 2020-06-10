@@ -1,0 +1,60 @@
+---
+title: "CARSデータについて"
+subtitle: "～rmarkdown"
+author: "滋賀大・DSセンター 佐藤健一"
+date: "最終更新: `r format(Sys.time(), '%Y/%m/%d')`"
+output: powerpoint_presentation
+---
+## CARSデータ
+
+- 1920年代の車で記録されたブレーキをかけて止まるまでの距離
+- 異なる速度で50個のデータが観測
+
+## CARSの要約
+
+```{r,echo=F}
+knitr::kable(summary(cars),row.names=F)
+```
+
+## 散布図
+
+```{r,echo=F, fig.asp=0.75, dpi=300}
+#par(mar=c(5,4,4,2)) #下,左,上,右
+par(mar=c(4,4,1,1))
+plot(cars)
+```
+
+## 回帰直線
+
+:::::: {.columns}
+::: {.column}
+- 線形回帰モデル\
+$y=X\beta+\epsilon$
+- 最小二乗法\
+$\hat{\beta}=(X'X)^{-1}X'y$
+:::
+::: {.column}
+```{r, echo=F, fig.asp=1, dpi=300}
+par(mar=c(4,4,1,1))
+plot(cars)
+res <- lm(dist~speed,cars)
+abline(res,col="red")
+```
+:::
+::::::
+
+## 回帰係数の推定値
+
+:::::: {.columns}
+::: {.column}
+- 傾きは5%有意
+- speedが1増えると、
+distanceは約`r round(res$coefficients[2])`増える
+:::
+::: {.column}
+```{r, echo=F}
+# 前のページのresを引き継いでいることに注意
+knitr::kable(round(summary(res)$coefficients,2))
+```
+:::
+::::::

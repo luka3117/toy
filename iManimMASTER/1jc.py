@@ -3,6 +3,16 @@
 
 from big_ol_pile_of_manim_imports import *
 
+class aa(Scene):
+    def con(self):
+        self.text=TexMobject("aa")
+    # aa.con()
+        self.play(Write(t))
+
+
+
+
+
 
 class ShigaUniv(Scene):
     def construct(self):

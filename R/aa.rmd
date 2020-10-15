@@ -1,0 +1,24 @@
+---
+title: "test"
+author: "Testperson"
+output:
+  html_document
+---
+
+:::{style="display:flex"}
+
+::{}
+# sdjfldsj
+```{r}
+suppressMessages(library(tidyverse))
+iris %>% tbl_df()
+```
+::
+
+::{}
+# skdjlfjdslf
+```{r}
+cars %>% DT::datatable()
+```
+::
+:::

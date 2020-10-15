@@ -1,0 +1,211 @@
+--- 
+title: "MANIM MANUAL"
+author: 
+ - name: 李鍾賛^1^
+ - 滋賀大学データサイエンス教育研究センター 助教
+# address:
+#   - code: 1
+#     address: Assistant Professor, Ph.D. in mathematical statistics
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+# output:
+#   # bookdown::gitbook: default
+#   bookdown::pdf_book: default
+---
+
+
+# Useful Youtube channel
+
+##  The Manim Cast
+
+- The Manim Cast #1  [The Manim Cast1](https://youtu.be/Jfgtl-AW5Oc)
+- Installing 3B1B's Animation Engine 𝐌𝐚𝐧𝐢𝐦 on Mac and Windows [feat. @vcubingx ]
+
+- [Th
+em Cast Playlist
+- [Manim Cast Playlist](https://www.youtube.com/watch?v=Jfgtl-AW5Oc&list=PLN2B6ZNu6xmeRb0GPGW7dN05u2OXD_6h6)
+
+## The Manim Elteoremadebeethoven
+
+- [tutorial file](https://drive.google.com/file/d/10LYJVJsvkcl5a7q_S-ZlSxI7hEBepw3P/view)
+  - 注意：remove _ in the file name 
+      - 1_text_format.py $\rightarrow$ aaa.py
+      - $x+y$
+- [Elteoremadebeethoven github](https://github.com/Elteoremadebeethoven/AnimationsWithManim)
+
+
+#  Install Windows(from Manim Cast #1)
+  
+- Relevant links and commands sorted like in the video (Windows): 
+
+
+## Python: https://www.python.org/downloads/
+
+Command for CMD to test Python: python3
+
+- Add to Path: 
+  ```
+  C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37\Scripts\
+  ```
+  ```
+  C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37\
+  ```
+  
+
+## Miktex: https://miktex.org/
+
+## FFmpeg: <https://www.gyan.dev/ffmpeg/builds/>
+
+- https://ffmpeg.zeranoe.com/builds/ <- not working
+
+- FFmpeg Path: `C:\FFmpeg\bin`
+
+- window build version 
+  - https://www.gyan.dev/ffmpeg/builds/
+
+- install Tutorial: https://www.wikihow.com/Install-FFmpe...
+
+
+
+
+## Sox: https://sourceforge.net/projects/sox/
+
+## Pycairo: 
+
+[Pycairo](https://www.youtube.com/redirect?redir_token=QUFFLUhqbUJZLTMzZlM3YnBHNzVvdTJqWG00ZHlsZUo5UXxBQ3Jtc0trOE5zZUFxek5pcFhTeVJvWW5iUjFDb1RPQnhHeENzb3FXckhvLVI4VGc0NFYwOGZaS1RaME10aUMyMTIzaDhDdksyQWY5NmIyTlJlcDBzZkxZbk03Z0s1Z0N3VG9nazgwbHN1bTdFVi1LVnEzSDlxRQ%3D%3D&v=Jfgtl-AW5Oc&q=https%3A%2F%2Fwww.lfd.uci.edu%2F%7Egohlke%2Fpythonlibs%2F&event=video_description
+)
+
+
+Command for CMD to install pycairo:
+- Pycairo: a set of bindings for the cairo graphics library.
+These builds are not compatible with PyGTK and wxPython.
+
+- cp38はpython 3.8 verという意味
+- cp37はpython 3.7 verという意味
+```
+python -m pip install pycairo-YOUR_VERSION
+
+python -m pip install pycairo‑1.20.0‑cp38‑cp38‑win_amd64.whl
+
+python -m pip install 
+pycairo‑1.20.0‑cp37‑cp37m‑win32.whl
+```
+
+
+## Requirements
+
+[Requirements](https://www.youtube.com/redirect?redir_token=QUFFLUhqbEVlUU1Vb2FBbnZCUHJoblQzSy1jM3pYeUNZQXxBQ3Jtc0trYVkydVpEVXNMYkMzWkxsQ01JZXBzc09BSHNyN09YN0tsd21aYVB1a2xJdnh0dXA1UmVMVzF0VjZxUmpXd1FSamRxSHRRX2dqdlRVWHBxR2NLeHNxMWdvVE5INlBOOGpIbVBKUUgzNnYtU2FFVm9SNA%3D%3D&v=Jfgtl-AW5Oc&q=https%3A%2F%2Fgithub.com%2F3b1b%2Fmanim%2Fblob%2Fmaster%2Frequirements.txt&event=video_description)
+
+
+Command for CMD to install requirements:
+
+  ```
+  python -m pip install -r requirements.txt
+  ```
+  
+## Install Manim: 
+  
+  ```
+  python -m pip install manimlib
+  ```
+
+## Test Python File:
+
+```
+from manimlib.imports import *
+
+class TestScene(Scene):
+  def construct(self):
+    t = TextMobject("Hello manim!")
+    t.scale(2)
+
+    self.play(Write(t))
+    self.wait()
+```
+
+
+# MAC install(from Manim Cast #1)
+
+Relevant links and commands sorted like in the video (Mac): 
+
+
+1. Homebrew: https://brew.sh/
+2. MacTex: https://tug.org/mactex/mactex-downloa...
+3. Install the shit: brew install ffmpeg sox cairo py2cairo pkg-config
+    Manim: https://github.com/3b1b/manim
+4. git clone: https://github.com/3b1b/manim
+5. cd manim
+6. python3 -m pip install -r requirements.txt
+7. python3 -m pip install pyreadline
+8. python3 -m pip install .
+
+
+# Useful example code and tutorial
+
+## vivek
+
+  - [vivek3141’s gists](https://gist.github.com/vivek3141)
+  - `mean_square_error.py` files
+  - https://gist.github.com/vivek3141/a37458bc95c5ecf3f0e8cd11f99a0c78
+
+## Rohit Malhotra
+
+  - https://www.youtube.com/channel/UCXJsKlsJYtx7xM_cs6oU-MA
+  - https://github.com/malhotra5/Manim-Tutorial github documents
+
+
+## China site
+
+
+##  Elteoremadebeethoven
+
+- [Elteoremadebeethoven channel](https://www.youtube.com/channel/UCxiWCEdx7aY88bSEUgLOC6A)
+
+# tutorial list
+
+
+
+## talking physics
+
+
+  - [talking physics](https://talkingphysics.wordpress.com/2019/01/08/getting-started-animating-with-manim-and-python-3-7/)
+
+
+# making logo
+
+- [PyB tv](https://youtu.be/ZgDTPRXPaM8)
+
+- **to do : write the code in here**
+
+
+# Set Up 日本語
+
+## use uplatex
+- ```uplatex aa.tex```
+
+## run  `dvisvgm`  command
+
+
+## dfkjdsljfj
+
+
+
+a _sample_ 
+
+ **Markdown**
+ 
+ Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

@@ -28,6 +28,8 @@ name <- function(x) {
   x %>% select(1)
 }
 
+# remove.packages("ex")
+# ex::hello()
 
 
 

@@ -1,0 +1,691 @@
+%\documentclass[handout,xcolor=pdftex,dvipsnames,table]{beamer}
+%\documentclass[xcolor=pdftex,dvipsnames,table]{beamer}
+%\documentclass{beamer}
+\documentclass[dvipdfmx, serif,handout]{beamer}
+\input{../head2}
+%\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1}
+
+%========================================================================
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+%\begin{frame}{Outline}
+%  \tableofcontents
+% You might wish to add the option [pausesections]
+%\end{frame}
+%========================================================================
+\section{Chapter 2}
+%========================================================================
+\subsection{Probability Structure}
+%========================================================================
+\begin{frame}{\textsc{simple dataset}}
+	% latex table generated in R 3.2.0 by xtable 1.8-2 package
+	% Sat Apr 15 18:54:42 2017
+	\footnotesize
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{rllrrrll}
+			\hline
+			id & Name    & Gender & Age & HT    & WT     & Grade & Preference \\
+			\hline
+			1  & Alfred  & M      & 14  & 69.00 & 112.50 & C     & Pepsi      \\
+			2  & Alice   & F      & 13  & 56.50 & 84.00  & B     & Pepsi      \\
+			3  & Barbara & F      & 13  & 65.30 & 98.00  & B     & Coke       \\
+			4  & Carol   & F      & 14  & 62.80 & 102.50 & B     & Pepsi      \\
+			5  & Henry   & M      & 14  & 63.50 & 102.50 & A     & Coke       \\
+			6  & James   & M      & 12  & 57.30 & 83.00  & A     & Coke       \\
+			7  & Jane    & F      & 12  & 59.80 & 84.50  & B     & Coke       \\
+			8  & Janet   & F      & 15  & 62.50 & 112.50 & B     & Coffee     \\
+			9  & Jeffrey & M      & 13  & 62.50 & 84.00  & B     & Pepsi      \\
+			10 & John    & M      & 12  & 59.00 & 99.50  & C     & Pepsi      \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{frequency table from dataset}}
+
+	\begin{minipage}{0.4\hsize}
+		\footnotesize
+		% latex table generated in R 3.2.0 by xtable 1.8-2 package
+		% Sat Apr 15 19:01:01 2017
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{rr}
+				\hline
+				Gender & freq \\
+				\hline
+				F      & 5    \\
+				M      & 5    \\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{minipage}
+	\begin{minipage}{0.4\hsize}
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{rr}
+				\hline
+				Preference & freq \\
+				\hline
+				Coffee     & 1    \\
+				Coke       & 4    \\
+				Pepsi      & 5    \\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{minipage}
+
+	% latex table generated in R 3.2.0 by xtable 1.8-2 package
+	% Sat Apr 15 19:05:33 2017
+	% latex table generated in R 3.2.0 by xtable 1.8-2 package
+	% Sat Apr 15 19:06:00 2017
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{rrrrr}
+			\hline
+			       &   & \multicolumn{3}{c}{Preference}                \\
+			       &   & Coffee                         & Coke & Pepsi \\
+			\hline
+			Gender & F & 1                              & 2    & 2     \\
+			       & M & 0                              & 2    & 3     \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+
+
+\end{frame}
+
+%========================================================================
+\begin{frame}{\textsc{$I \times J$ Contingency Table}}
+	\begin{itemize}
+		\item Let X and Y denote categorical variables
+		\item Contingency table: cells contain counts of outcomes for a sample.
+		      \begin{itemize}
+			      \item  Another name is cross-classification table.
+		      \end{itemize}
+	\end{itemize}
+
+	\centering
+	\begin{tabular}{cc|ccccc|c}
+		\hline
+		    &          & \multicolumn{5}{c|}{$Y$} &                                                              \\
+		    &          & {$1$}                    & {$\cdots$} & {$j$}      & {$\cdots$} & {$J$}      &          \\\hline
+		$X$ & $1$      & $n_{11}$                 & $\cdots$   & $n_{1j}$   & $\cdots$   & $n_{1J}$   & $n_{1+}$ \\
+		    & $\vdots$ & $\vdots$                 &            & $\vdots$   &            & $\vdots$   & $\vdots$ \\
+		    & {$i$}    & {$n_{i1}$}               & {$\cdots$} & {$n_{ij}$} & {$\cdots$} & {$n_{iJ}$} & $n_{i+}$ \\
+		    & $\vdots$ & $\vdots$                 &            & $\vdots$   &            & $\vdots$   & $\vdots$ \\
+		    & I        & $n_{I1}$                 & $\cdots$   & $n_{Ij}$   & $\cdots$   & $n_{IJ}$   & $n_{I+}$ \\\hline
+		    &          & $n_{+1}$                 & $\cdots$   & $n_{+j}$   & $\cdots$   & $n_{+J}$   & $n$      \\
+	\end{tabular}
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Contingency Table}}
+
+	\bi
+	\item Hypothesis: aspirin intake reduces mortality from cardiovascular disease(心臓血管病).
+	\item  contingency table of the relationship between aspirin use(X) and heart attacks(Y)
+	\item Study design
+	\begin{itemize}
+		\item 5-year randomized blind test study
+		\item Subjects in the study did not know whether they were taking aspirin or a placebo.
+		      %Of the 11,034 physicians taking a placebo, 18 suffered fatal heart attacks over the course of the study, whereas of the 11,037 taking aspirin, 5 had fatal heart attacks.
+		\item Subjects took either one aspirin tablet or a placebo, every other day.
+	\end{itemize}
+	{\scriptsize
+	\begin{table}
+		\renewcommand{\arraystretch}{1.0}
+		\begin{tabular}{lccc}                                                          \\ \hline
+			        & \multicolumn{3}{c}{Heart attacks}                     \\ \cline{2-4}
+			        & Fatal                             & Nonfatal & No     \\
+			        & Attack                            & Attack   & Attack \\ \hline
+			Placebo & 18                                & 171      & 10,845 \\
+			Aspirin & 5                                 & 99       & 10,933 \\ \hline
+		\end{tabular}
+		\caption{\scriptsize Cross-Classification of Aspirin Use and Myocardial Infarction(心筋梗塞), TABLE 2.1 on page 37.}
+	\end{table}
+	}
+	\ei
+
+\end{frame}
+
+%========================================================================
+%\begin{frame}{\textsc{$I \times J$ Contingency Table}}
+%\begin{itemize}
+%\item Let X and Y denote categorical response variables.
+% \begin{itemize}
+%\item X with I categories, Y with J categories
+% \end{itemize}
+%\item If we classify subjects on both variables, IJ possible combinations exist. 
+%\item  The responses (X,Y) of a subject chosen randomly from some population have a probability distribution. 
+%%\item A rectangular table having I rows for categories of X and J columns for categories of Y displays this distribution. 
+%\item The cells 
+%%of the table 
+%represent the IJ possible outcomes.
+%\item  When the cells contain frequency counts of outcomes for a sample, the table is called a contingency table
+%\begin{itemize}
+%\item  Another name is cross-classification table. 
+%\end{itemize}
+%\item  A contingency table with I rows and J columns is called an $I \times J$ table
+%\item If $X$ has $I$ categories and $Y$ has $J$ categories, a contingency table has $I$ rows for $X$ and $J$ columns for $Y$ (i.e., $I \times J$ table).
+%
+%\end{itemize}
+%
+%\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Contingency Tables and Their Distributions}}
+
+	\bi
+	\item The probability distribution $\{\pi_{ij}\}$ is the {\it joint distribution} of $X$ and $Y$, where
+	\begin{eqnarray*}
+		\pi_{ij} &=& \mbox{the prob. that $(X,Y)$ occurs in the cell}\\
+		&& \mbox{in row $i$ and column $j$.}
+	\end{eqnarray*}
+	\item The probability distribution $\{\pi_{i+}\}$ is the {\it marginal distribution} of $X$, where
+	$$\pi_{i+} = \sum_j \pi_{ij}$$
+	\item The probability distribution $\{\pi_{+j}\}$ is the {\it marginal distribution} of $Y$, where
+	$$\pi_{+j} = \sum_i \pi_{ij}$$
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{$I \times J$ Contingency Table}}
+	\begin{itemize}
+		\item Let X and Y denote categorical variables
+		\item $\{\pi_{ij}\}$ is the {\it joint distribution} of $X$ and $Y$
+		      \begin{itemize}
+			      \item  Accordingly,  $\{\pi_{i+}\}$ and $\{\pi_{+j}\}$ are the marginal distribution of X and Y, respectively.
+		      \end{itemize}
+	\end{itemize}
+
+	\centering
+	\begin{tabular}{cc|ccccc|c}
+		\hline
+		    &          & \multicolumn{5}{c|}{$Y$} &                                                                    \\
+		    &          & {$1$}                    & {$\cdots$} & {$j$}        & {$\cdots$} & {$J$}        &            \\\hline
+		$X$ & $1$      & $\pi_{11}$               & $\cdots$   & $\pi_{1j}$   & $\cdots$   & $\pi_{1J}$   & $\pi_{1+}$ \\
+		    & $\vdots$ & $\vdots$                 &            & $\vdots$     &            & $\vdots$     & $\vdots$   \\
+		    & {$i$}    & {$\pi_{i1}$}             & {$\cdots$} & {$\pi_{ij}$} & {$\cdots$} & {$\pi_{iJ}$} & $\pi_{i+}$ \\
+		    & $\vdots$ & $\vdots$                 &            & $\vdots$     &            & $\vdots$     & $\vdots$   \\
+		    & I        & $\pi_{I1}$               & $\cdots$   & $\pi_{Ij}$   & $\cdots$   & $\pi_{IJ}$   & $\pi_{I+}$ \\\hline
+		    &          & $\pi_{+1}$               & $\cdots$   & $\pi_{+j}$   & $\cdots$   & $\pi_{+J}$   & 1          \\
+	\end{tabular}
+\end{frame}
+
+%========================================================================
+\begin{frame}{\textsc{Conditional Distributions}}
+
+	\bi
+	\item The probabilities $\{\pi_{1 \mid i}, \ldots, \pi_{J \mid i}\}$ form the {\it conditional distribution} of $Y$ at category $i$ of $X$, where
+	\begin{eqnarray*}
+		\pi_{j \mid i} &=& \mbox{the prob. of classification in column $j$ of $Y$} \\
+		&& \mbox{given that a subject is classified in row $i$ of $X$.}
+	\end{eqnarray*}
+	\centering
+	\begin{tabular}{cc|ccccc|c}
+		\hline
+		    &          & \multicolumn{5}{c|}{$Y$} &                                                                    \\
+		    &          & {$1$}                    & {$\cdots$} & {$j$}         & {$\cdots$} & {$J$}         &          \\\hline
+		$X$ & $1$      & $\pi_{1|1}$              & $\cdots$   & $\pi_{j|1}$   & $\cdots$   & $\pi_{J|1}$   & 1        \\
+		    & $\vdots$ & $\vdots$                 &            & $\vdots$      &            & $\vdots$      & $\vdots$ \\
+		    & {$i$}    & {$\pi_{1|i}$}            & {$\cdots$} & {$\pi_{j|i}$} & {$\cdots$} & {$\pi_{J|i}$} & 1        \\
+		    & $\vdots$ & $\vdots$                 &            & $\vdots$      &            & $\vdots$      & $\vdots$ \\
+		    & I        & $\pi_{1|I}$              & $\cdots$   & $\pi_{j|I}$   & $\cdots$   & $\pi_{J|I}$   & 1        \\\hline
+		    &          & $\pi_{1+}$               & $\cdots$   & $\pi_{j+}$    & $\cdots$   & $\pi_{J+}$    & 1        \\
+	\end{tabular}
+
+	\ei
+
+\end{frame}
+%%========================================================================
+\begin{frame}{\textsc{Sensitivity and Specificity}}
+
+	\bi
+	\item {\bf{\em Sensitivity}}: the conditional probability that the diagnostic test is positive given that the subject has the disease.
+	\item {\bf{\em Specificity}}: the conditional probability that the test is negative given that the subject does not have the disease.
+		{\scriptsize
+			\begin{table}
+				\renewcommand{\arraystretch}{1.0}
+				\begin{tabular}{lccc}                                                            \\ \hline
+					Breast & \multicolumn{2}{c}{Diagnosis of Test}                    \\ \cline{2-3}
+					Cancer & Positive                              & Negative & Total \\ \hline
+					Yes    & 0.82                                  & 0.18     & 1.0   \\
+					No     & 0.01                                  & 0.99     & 1.0   \\ \hline
+				\end{tabular}
+				\caption{\scriptsize Estimated Conditional Distributions for Breast Cancer Diagnosis. TABLE 2.2 on page38.}
+			\end{table}
+		}
+		{\scriptsize
+			\begin{table}
+				\renewcommand{\arraystretch}{1.0}
+				\begin{tabular}{lccc}                                                                 \\ \hline
+					Breast & \multicolumn{2}{c}{Diagnosis of Test}                         \\ \cline{2-3}
+					Cancer & Positive                              & Negative      & Total \\ \hline
+					Yes    & $\pi_{+|Yes}$                         & $\pi_{-|Yes}$ & 1.0   \\
+					No     & $\pi_{+|No}$                          & $\pi_{-|No}$  & 1.0   \\ \hline
+				\end{tabular}
+				\caption{\scriptsize Prob. of cell structure}
+			\end{table}
+		}
+
+
+	\ei
+
+\end{frame}
+%%========================================================================
+\begin{frame}{\textsc{Independence of Categorical Variables}}
+
+	\bi
+	\item Two categorical variables $X$ and $Y$ are independent if
+	\begin{eqnarray*}
+		\pi_{ij} &=& \pi_{i+}\pi_{+j}\;\;\; \mbox{for}\;\;\; i=1,\ldots, I\;\;\;\mbox{and}\;\;\; j=1,\ldots,J. \\
+		\Leftrightarrow \pi_{j \mid i} &=& \pi_{ij}/\pi_{i+}=\pi_{+j}\;\;\; \mbox{for}\;\;\; i=1,\ldots, I.
+	\end{eqnarray*}
+	\item Independence is often referred to as {\bf{\em homogeneity}} of the conditional distributions.
+	\item Sample distributions use similar notation, with $p$ or $\hat{\pi}$ in place of $\pi$.
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Poisson Sampling}}
+
+	\bi
+	\item Poisson sampling treats cell counts $\{Y_{ij}\}$ as independent Poisson random variables with parameter $\{\mu_{ij}\}$.
+	$$\{Y_{ij}\} \stackrel{indep.}{\sim} Poisson(\mu_{ij})$$
+	\item The joint p.m.f. for $\{n_{ij}\}$ is
+	$$\prod_i \prod_jP(Y_{ij}=n_{ij}) = \prod_i \prod_j \frac{\exp(-\mu_{ij})\mu_{ij}^{n_{ij}}}{n_{ij}!}$$
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Multinomial Sampling}}
+
+	\bi
+	\item The total sample size $n$ is fixed but the row and column totals, $n_{i+}$ and $n_{+j}$, are not fixed:
+	{\small
+	$$P(Y_{ij}=n_{ij}) = \frac{n!}{\prod_i \prod_j n_{ij}!} \prod_i \prod_j \pi_{ij}^{n_{ij}}.$$
+	}
+	\item When row totals $\{n_{i+}\}$ are fixed:
+	{\small
+	$$P(Y_{ij}=n_{ij}) = \frac{n_{i+}!}{\prod_j n_{ij}!} \prod_j \pi_{j \mid i}^{n_{ij}}.$$
+	}
+	This sampling scheme is {\it independent} (or {\it product}) {\it multinomial sampling}.
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Hypergeometric Sampling}}
+
+	\bi
+	\item When both row and column margins are fixed in $2\times 2$ table, the {\it hypergeometric sampling} applies:
+	{\small
+	$$P(n_{11}=t)=\frac{\left( \begin{array}{c} n_{1+} \\ t \end{array} \right)
+			\left( \begin{array}{c} n_{2+} \\ n_{+1}-t \end{array} \right)}{\left( \begin{array}{c} n \\ n_{+1} \end{array} \right)}$$
+	}
+	\ei
+
+	This will be discussed in Section 3.5.1.
+
+	%{\footnotesize
+	%\begin{table}
+	%\begin{tabular}{lcc} \hline
+	%%Seat-Belt Use & Frailty & Nonfrailty \\ \hline
+	%$n_{11}$&$n_{12}$& \\
+	%$n_{21}$&$n_{22}$& \\ \hline
+	%$n_{+1}$&$n_{+2}$& n\\ \hline
+	%\end{tabular}
+	%\end{table}
+	%}
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Seat Belt Example}}
+
+	{\footnotesize
+		\begin{table}
+			\begin{tabular}{lcc} \hline
+				              & \multicolumn{2}{c}{Result of Crash}              \\ \cline{2-3}
+				Seat-Belt Use & Frailty                             & Nonfrailty \\ \hline
+				Yes                                                              \\
+				No                                                               \\ \hline
+			\end{tabular}
+			\caption{\footnotesize Seat-Belt Use and Results of Automobile Crashes. TABLE 2.4 on page 41.}
+		\end{table}
+	}
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Types of Study}}
+
+	\bi
+	\item Retrospective study (case-control study)
+	\item Prospective study
+	\begin{enumerate}
+		\item clinical trials
+		\item cohort study
+	\end{enumerate}
+	\item Cross-sectional study
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Types of Study}}
+
+	{\footnotesize
+		\begin{table}
+			\begin{tabular}{lrr} \hline
+				                    & \multicolumn{2}{c}{Lung Cancer}           \\ \cline{2-3}
+				Smoker              & Cases                           & Control \\ \hline
+				Yes                 & 688                             & 650     \\
+				No                  & 21                              & 59      \\ \hline
+				\hspace{.2cm} Total & 709                             & 709     \\ \hline
+			\end{tabular}
+			\caption{\footnotesize Cross-Classification of Smoking by Lung Cancer. TABLE 2.5 on page 42.}
+		\end{table}
+	}
+
+\end{frame}
+%========================================================================
+\subsection{Comparing Proportions}
+%========================================================================
+\begin{frame}{\textsc{Comparing Two Proportions}}
+
+	\vspace{-.3cm}
+	\begin{center}
+		{\footnotesize
+			\renewcommand{\arraystretch}{.8}
+			\begin{tabular}{cccc|}                                                                                               \\
+				                           &                        & \multicolumn{2}{c}{$Y$}                         \\
+				                           &                        & S                       & \multicolumn{1}{c}{F} \\ \cline{3-4}
+				                           & \multicolumn{1}{c|}{1} & $\pi_1$                 & $1-\pi_1$             \\
+				\raisebox{1.5ex}[0pt]{$X$} & \multicolumn{1}{c|}{2} & $\pi_2$                 & $1-\pi_2$             \\ \cline{3-4}
+			\end{tabular}
+		}
+	\end{center}
+	\benu
+	\item Difference:
+	\bi
+	\item $D=\pi_1-\pi_2$
+	\item $D=0$ $\Rightarrow$ $Y$ is independent of the row classification.
+	\ei
+	\item Relative risk:
+	\bi
+	\item $RR = \pi_1/\pi_2$
+	\item $RR=1$ $\Rightarrow$ independence
+	\ei
+	\eenu
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Comparing Two Proportions}}
+
+	\benu
+	\item[3.] Odds Ratio:
+	\bi
+	\item $\theta = \frac{\Omega_1}{\Omega_2}=\frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)}$
+	\item For joint distributions with cell probabilities $\{\pi_{ij}\}$,
+	$$\theta=\frac{\pi_{11}/\pi_{12}}{\pi_{21}/\pi_{22}}=\frac{\pi_{11}\pi_{22}}{\pi_{12}\pi_{21}}$$
+	\item $\theta=1$ $\Rightarrow$ independence
+	\item The sample odds ratio is
+	$$\hat{\theta} = \frac{n_{11}n_{22}}{n_{12}n_{21}}$$
+	\item $\theta=RR \left(\frac{1-\pi_2}{1-\pi_1} \right)$
+	\ei
+	\eenu
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Aspirin and Heart Attacks Revisited}}
+
+	\begin{itemize}
+		\item Combining "fatal" and "non-fatal" category as "yes-Attack".
+	\end{itemize}
+	{\scriptsize
+	\begin{table}
+		\renewcommand{\arraystretch}{1.0}
+		\begin{tabular}{lcc}                                               \\ \hline
+			        & \multicolumn{2}{c}{Heart attack}          \\ \cline{2-3}
+			        & Yes                              & No     \\
+			        & Attack                           & Attack \\ \hline
+			Placebo & 189                              & 10,845 \\
+			Aspirin & 104                              & 10,933 \\ \hline
+		\end{tabular}
+		\caption{\scriptsize Cross-Classification of Aspirin Use and Myocardial Infarction(心筋梗塞), TABLE 2.1 on page 37.}
+	\end{table}
+	}
+
+	\bi
+	\item The sample difference of proportions 0.0077
+	\item The relative risk is 1.82
+	\item The sample odds ratio is 1.83
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Odds Ratio}}
+
+	{\scriptsize
+		\begin{table}
+			\renewcommand{\arraystretch}{1.0}
+			\begin{tabular}{lcc}                                               \\ \hline
+				       & \multicolumn{2}{c}{Lung Cancer}            \\ \cline{2-3}
+				Smoker & Cases                           & Controls \\ \hline
+				Yes    & 688                             & 650      \\
+				No     & 21                              & 59       \\ \hline
+			\end{tabular}
+			\caption{\scriptsize Cross-Classification of Smoking by Lung Cancer. TABLE 2.5 on page 42.}
+		\end{table}
+	}
+
+	\bi
+	\item The odds ratio is equally valid for prospective, retrospective, or cross-sectional sampling designs.
+	\ei
+
+\end{frame}
+%========================================================================
+\subsection{Stratified Tables}
+%%========================================================================
+\begin{frame}{\textsc{Partial Association in Stratified $2\times 2$ Tables}}
+
+	\bi
+	\item In studying the effect of $X$ and $Y$, one should control any covariate that can influence that relationship.
+	\item In this section we discuss the analysis of the association between categorical variables $X$ and $Y$ while controlling for a possibly confounding variable $Z$.
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Marginal Table}}
+
+	\bi
+	\item Consider Death Penalty Example:
+	\vspace{.5cm}
+	{\scriptsize
+		\begin{table} %\small
+			\begin{tabular}{cccc} \hline
+				Defendant's      & \multicolumn{2}{c}{Death Penalty} (Y) & Percent              \\ \cline{2-3}
+				{Race} (X)       & {\bf{\em Yes}}                        & {\bf{\em No}} & Yes  \\ \hline
+				{\bf{\em White}} & 53                                    & 430           & 11.0 \\
+				{\bf{\em Black}} & 15                                    & 176           & 7.9  \\ \hline
+			\end{tabular}
+			\caption{\scriptsize Death Penalty Verdict by Defendant's Race. TABLE 2.6 on page 48.}
+		\end{table}
+	}
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Partial Table}}
+
+	\bi
+	\item But if you adjust for another classification, such as {\em victim's race},
+	\vspace{.5cm}
+	{\scriptsize
+		%\renewcommand{\arraystretch}{1.2}
+		\begin{table}
+			{\tabcolsep=0.03in
+				\begin{tabular}{ccccccccc} \hline
+					\multicolumn{4}{c}{{Victim's race}}                                                                                                                                                        \\
+					\multicolumn{4}{c}{\bf{\em White}} &                                   & \multicolumn{4}{c}{\bf{\em Black}}                                                                                \\ \cline{1-4} \cline{6-9}
+					Defendant's                        & \multicolumn{2}{c}{Death Penalty} & Percent                            &      & Defendant's &
+					\multicolumn{2}{c}{Death Penalty}  & Percent                                                                                                                                               \\ \cline{2-3} \cline{7-8}
+					{Race}                             & {\bf{\em Yes}}                    & {\bf{\em No}}                      & Yes  &             & {Race}           & {\bf{\em Yes}} & {\bf{\em No}} & Yes \\ \cline{1-4} \cline{6-9}
+					{\bf{\em White}}                   & 53                                & 414                                & 11.3 &             & {\bf{\em White}} & 0              & 16            & 0.0 \\
+					{\bf{\em Black}}                   & 11                                & 37                                 & 22.9 &             & {\bf{\em Black}} & 4              & 139           & 2.8 \\ \hline
+				\end{tabular}
+				\caption{\scriptsize Death Penalty Verdict by Defendant's Race and Victim's Race. TABLE 2.6 on page 48.}
+			}
+		\end{table}
+	}
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Conditional and Marginal Odds Ratio}}
+
+	\bi
+	\item $XY$ conditional odds ratio:
+	$$\theta_{XY(k)} = \frac{\mu_{11k}\mu_{22k}}{\mu_{12k}\mu_{21k}}$$
+	\item $XY$ marginal odds ratio:
+	$$\theta_{XY} = \frac{\mu_{11+}\mu_{22+}}{\mu_{12+}\mu_{21+}}$$
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Marginal versus Conditional Independence}}
+
+	\bi
+	\item If $X$ and $Y$ are independent in partial table $k$,
+	\begin{eqnarray}
+		P(Y=j \mid X=i, Z=k) = P(Y=j \mid Z=k), \;\; \mbox{for all}\;\; i,j.
+		\label{eq1}
+	\end{eqnarray}
+	\item $X$ and $Y$ are conditionally independent when (\ref{eq1}) holds for all $k$.
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Marginal versus Conditional Independence}}
+
+	{\scriptsize
+		\begin{table} %\small
+			\begin{tabular}{lcrr} \hline
+				                   &              & \multicolumn{2}{c}{Response}(Y)           \\ \cline{3-4}
+				Clinic(Z)          & Treatment(X) & Success                         & Failure \\ \hline
+				1                  & A            & 18                              & 12      \\
+				                   & B            & 12                              & 8       \\
+				2                  & A            & 2                               & 8       \\
+				                   & B            & 8                               & 32      \\ \cline{3-4}
+				\hspace{.2cm}Total & A            & 20                              & 20      \\
+				                   & B            & 20                              & 40      \\ \hline
+			\end{tabular}
+			\caption{\scriptsize Expected Frequencies Showing That Conditional Independence Does Not Imply Marginal Indepepndence. TABLE 2.7 on page 53}
+		\end{table}
+	}
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Homogeneous Association}}
+
+	\bi
+	\item A $2 \times 2 \times K$ table has {\bf{\em homogeneous $XY$ association}} when
+	$$\theta_{XY(1)} = \theta_{XY(2)} = \cdots =\theta_{XY(K)}.$$
+	\ei
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Ordinal Trends: Concordant and Discordant Pairs}}
+	% latex table generated in R 3.2.0 by xtable 1.8-2 package
+	% Sat Apr 15 19:30:29 2017
+
+	\begin{itemize}
+		\item When X and Y are ordinal, a monotone trend association is common.
+		\item As variable X $\uparrow$ $\Rightarrow$ variable Y tend to $\uparrow$ or $\downarrow$.
+		\item For instance, perhaps job satisfaction(Y) tends to increase as income(X) does.
+	\end{itemize}
+
+	{\scriptsize
+	\begin{table} %\small
+		\begin{tabular}{rrrrr}
+			\hline
+			            & \multicolumn{4}{c}{Job satisfaction(Y)}                \\
+			Income(X)   & VD                                      & LD & MS & VS \\
+			\hline
+			$<$15000    & 1                                       & 3  & 10 & 6  \\
+			15000-25000 & 2                                       & 3  & 10 & 7  \\
+			25000-40000 & 1                                       & 6  & 14 & 12 \\
+			$>$40000    & 0                                       & 1  & 9  & 11 \\
+			\hline
+		\end{tabular}
+		\caption{\scriptsize Cross-Classification of Job Satisfaction by Income. TABLE 2.8 on page 57.}
+	\end{table}
+	}
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Ordinal Trends: Concordant and Discordant Pairs}}
+
+	\begin{itemize}
+		\item Association  measures are based on pair of subjects as concordant or discordant.
+		\item A pair of concordant(C): the subject ranked higher on X also ranks higher on Y.
+
+		\item A pair of discordant(D): the subject ranking higher on X ranks lower on Y.
+
+
+	\end{itemize}
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Ordinal Trends: Concordant and Discordant Pairs}}
+	\begin{itemize}
+		\item Consider joint cell probability distribution $\pi_{ij}$
+	\end{itemize}
+
+	\begin{itemize}
+		\item the probabilities of concordance
+		      $\Pi_{c} = 2 \sum_{i} \sum_{j} \pi_{ij}(\sum_{h>i} \sum_{k>j} \pi_{hk})$
+		\item the probabilities of disconcordance
+		      $\Pi_{d} = 2 \sum_{i} \sum_{j} \pi_{ij}(\sum_{h>i} \sum_{k<j} \pi_{hk})$
+		\item association measures for ordinal variables
+		      $$\Pi_c - \Pi_d$$
+	\end{itemize}
+
+
+	{\scriptsize
+	\begin{table} %\small
+		\begin{tabular}{rrrrr}
+			\hline
+			            & \multicolumn{4}{c}{Job satisfaction(Y)}                                        \\
+			Income(X)   & VD                                      & LD         & MS         & VS         \\
+			\hline
+			$<$15000    & $\pi_{11}$                              & $\pi_{12}$ & $\pi_{13}$ & $\pi_{14}$ \\
+			15000-25000 & $\pi_{21}$                              & $\pi_{22}$ & $\pi_{23}$ & $\pi_{24}$ \\
+			25000-40000 & $\pi_{31}$                              & $\pi_{32}$ & $\pi_{33}$ & $\pi_{34}$ \\
+			$>$40000    & $\pi_{41}$                              & $\pi_{42}$ & $\pi_{43}$ & $\pi_{44}$ \\
+			\hline
+		\end{tabular}
+		\caption{\scriptsize Cross-Classification of Job Satisfaction by Income}
+	\end{table}
+	}
+
+
+\end{frame}
+%========================================================================
+\begin{frame}{\textsc{Ordinal Measure of Association: Gamma}}
+	\begin{itemize}
+		\item Given that a pair is untied on both variables,
+		      \begin{itemize}
+			      \item cond. prob. of  concordance : $\frac{\Pi_c}{\Pi_c + \Pi_d}$
+			      \item cond. prob. of disconcordance : $\frac{\Pi_d}{\Pi_c + \Pi_d}$
+		      \end{itemize}
+		\item $\gamma$ is  difference between these probabilities
+		      $$\gamma=\frac{\Pi_c-\Pi_d}{\Pi_c + \Pi_d}$$
+		      $$-1<\gamma<1$$
+	\end{itemize}
+
+\end{frame}
+%========================================================================
+\end{document}

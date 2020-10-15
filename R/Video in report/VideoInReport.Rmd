@@ -1,0 +1,84 @@
+---
+title: "aaa"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Video in report
+========================================================
+
+This is just an example of how to include youtube videos on an html report.
+
+Basically you use **knitr** through [Rstudio](http://www.rstudio.com/). Then you add the video using _iframe_ html tag directly:
+
+
+```{r, eval=FALSE}
+knitr::include_app("http://www.youtube.com/embed/9bZkp7q19f0?rel=0")
+# knitr::include_url("https://rdrr.io/cran/knitr/man/include_url.html")
+knitr::include_app("https://www.desmos.com/calculator/ufspokf8t3?tour=derivatives")
+```
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+
+And this is the result:
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/9bZkp7q19f0?rel=0" frameborder="0" allowfullscreen></iframe>
+
+```{r, eval=FALSE}
+knitr::include_app("https://www.desmos.com/calculator/vz60qxqeqr?embed?rel=0")
+```
+
+<iframe src="https://www.desmos.com/calculator/vz60qxqeqr?embed?rel=0" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+
+
+```{r, eval=FALSE}
+# knitr::include_app("http://www.youtube.com/embed/9bZkp7q19f0?rel=0")
+knitr::include_app("https://www.desmos.com/calculator/ufspokf8t3?tour=derivatives")
+```
+<iframe src="https://www.desmos.com/calculator/ufspokf8t3?tour=derivatives" frameborder=0></iframe>
+
+Well, _knitr_ is really made to include R code
+
+```{r fig.width=7, fig.height=6}
+summary(cars)
+plot(cars, col = "blue")
+```
+
+and some math.
+
+\[ f_Z(z) = \frac{1}{\sqrt{2 \pi}} \exp \left( - \frac{z^2}{2} \right) \]
+
+More [here](http://yihui.name/knitr/)!
+
+
+<iframe width="560" height="315" src="https://derek-corcoran.shinyapps.io/WhereShouldYouLive/" frameborder="0" allowfullscreen></iframe>
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+[L. Collado-Torres](http://bit.ly/LColladoTorres) Curriculum vitae
+
+<iframe src="http://docs.google.com/viewer?url=http://lcolladotor.github.io/cv/en_CV_lcollado.pdf&amp;embedded=true" width="900" height="780" style="border: none;"></iframe>
+
+
+
+
+```{r}
+knitr::include_app("https://www.desmos.com/calculator/1ulknpg2q7?embed")
+```
+<iframe src="https://www.desmos.com/calculator/1ulknpg2q7?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>

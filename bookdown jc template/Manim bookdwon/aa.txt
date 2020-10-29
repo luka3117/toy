@@ -1,0 +1,1117 @@
+
+Scraped from 
+
+https://www.youtube.com/watch?v=-vQFr-m7q3A
+
+
+
+
+JP
+ナビゲーションをスキップ
+
+
+
+
+
+
+アバターの画像
+ 
+
+
+structure of man and the overall
+object-oriented
+
+
+2:13 / 27:01
+
+•
+Object Oriented Structure of Manim
+
+The Manim Cast #2 - The Overall Structure of Manim and your first Basic Animations [feat. @vcubingx]
+9,822 回視聴•2020/05/31
+
+324
+
+3
+
+共有
+
+保存
+
+
+Flammable Maths
+チャンネル登録者数 13.4万人
+メンバーになる
+登録済み
+
+Support the channel by signing up on Brilliant for FREE using the link https://brilliant.org/FlammableMaths ! =D
+Subscribe to @vcubingx! https://www.youtube.com/channel/UCv0n...
+Manim Cast Playlist: https://www.youtube.com/watch?v=Jfgtl...
+
+Timestamps: 
+0:00 Intro
+1:07 Prerequisites for Manim
+2:07 Object Oriented Structure of Manim
+3:51 Structure of a Manim script
+5:20 TextMobject
+7:38 Multiple Scenes in one file
+8:27 What is manimlib.imports?
+9:02 TexMobject
+11:30 SVGMobject
+12:55 ImageMobject
+14:05 Tips for exploring new Objects
+15:53 Animations
+16:05 Write
+16:22 FadeIn
+16:37 FadeOut
+17:10 Transform
+18:51 Learning new animations
+19:15 Uncreate
+19:22 self.add and self.remove
+20:39 Changing run_time of animations
+21:39 rate_func for animations
+
+Today me and @vcubingx will talk more about 3Blue1Brown's math animation engine Manim! We will do a tutorial on the most basic animations and the overall structure of the python scripts being written for manim. Enjoy! =D
+
+Code used: 
+from manimlib.imports import *
+
+class TestScene(Scene):
+  def construct(self):
+    text = TextMobject("I literally h8 u.")
+    text.scale(2)
+
+    self.play(Write(text))
+    self.wait()
+
+class TestScene2(Scene):
+  def construct(self):
+    text = TextMobject("I literally $$3 u.")
+    text.scale(2)
+
+    self.play(Write(text))
+    self.wait()
+
+class TestScene3(Scene):
+  def construct(self):
+    bruh = SVGMobject("./thonk.svg")
+    bruh.scale(2)
+
+    self.play(Write(bruh))
+    self.wait()
+
+Useful links:
+https://github.com/manim-kindergarten...
+
+Help me create more free content! =)
+https://www.patreon.com/mathable
+
+Merch :v - teespring.com/stores/papaflammy
+                  https://www.amazon.com/shop/flammable...
+                  https://shop.spreadshirt.de/papaflammy
+
+Become a Member of the Flammily! :0 https://www.youtube.com/channel/UCtAI...
+
+2nd Channel: https://www.youtube.com/channel/UCnyZ...
+
+--------------------------------------------------------------------------------
+Wanna send me some stuff? lel:
+
+Postfach 11 15
+06731 Bitterfeld-Wolfen
+Saxony-Anhalt
+Germany
+--------------------------------------------------------------------------------
+
+My Website: https://papaflammy.engineer/
+
+Instagram: https://www.instagram.com/flammablema...
+
+Flammy's subreddit: https://www.reddit.com/r/FlammyBois
+
+Twitter: https://twitter.com/FlammableMaths
+
+Facebook: https://www.facebook.com/flammablemaths/
+
+Got some time to spare? Make sure to add captions to my videos! =) http://www.youtube.com/timedtext_cs_p...
+
+Want to know more about me? Watch my QnA! =D https://youtu.be/IjCWSDBI9Zc
+一部を表示
+Flammable Maths のグッズを購入
+
+
+Teespringの価格と手数料を表示
+
+Teespringの価格と手数料を表示
+
+Teespringの価格と手数料を表示
+
+Teespringの価格と手数料を表示
+
+Teespringの価格と手数料を表示
+
+Teespringの価格と手数料を表示
+107 件のコメント
+並べ替え
+ 李鍾賛
+公開コメントを入力...
+Flammable Maths Two
+Flammable Maths さんによって固定されています
+Flammable Maths Two
+4 か月前
+Make sure to definitely subscribe to Vivek's channel https://www.youtube.com/channel/UCv0nF8zWevEsSVcmz6mlw6A ! :) He's doing a great job at what he does, so make sure to support him if you like the series :3
+If you wish, you can also subscribe to my new channel, where I post new maths content many times per week! =D https://www.youtube.com/watch?v=SuGzv5pyTGk
+一部を表示
+
+16
+
+返信
+
+Flammable Maths さんなどの返信 3 件を表示
+ Rat Puppet
+Rat Puppet
+4 か月前
+3Papa1Flammy
+
+89
+
+Flammable Maths
+返信
+
+Flammable Maths さんなどの返信 2 件を表示
+ NukeML
+NukeML
+4 か月前
+White background for code wtf
+
+31
+
+Flammable Maths
+返信
+
+Flammable Maths さんなどの返信 2 件を表示
+ ThatOneGuy
+ThatOneGuy
+4 か月前（編集済み）
+Some explanation:
+1. "TextMobject" stand for "Text Math Object" it is used for rendering text and equation in latex, actually fyi :
+ - You can use latex for equation too without "TexMobject" by using "$" before and after the latex equation (i think if u used that symbol it's called mathjax instead of latex, it's basicallly higher quality version of latex because it used vector rendering rather than bitmap one)
+ - 11:25 integral and summation symbol (and pretty much other math symbol in latex) would be prettier if you put \\displaystyle before other latex code (bigger and better)
+
+2. It's "\\" instead of "\" because there's this thing called "Escape character" in pretty much many programming language which uses "\ + somesymbol" in order to make some symbol.
+So for example you want to create limit simbol (\lim), "\lim" is treated as one symbol and you need to add extra "\" before "\lim" so it became "\\lim" in order for the limit symbol to be rendered by manim
+
+3. What self.add() specifically do is adding object to the screen directly, why is this matter ? i have tried creating a transforming text and turns out doing self.add() to the next object that the previous object morphed into becomes pretty bad so dont do self.add() into the next object that you want to morph an object into.
+example:
+text1 = TextMobject("Text1")
+text2 = TextMobject("Text2")
+
+self.add(text1) #this is still fine, but no animation
+self.wait(1)
+self.add(text2) #dont do this or your text2 will appear before the animation finished
+self.play(Transform(text1,text2))
+一部を表示
+
+3
+
+Flammable Maths
+返信
+
+Omer Resnikoff
+Omer Resnikoff
+4 か月前
+>that anime background and aesthetic bar
+Flammy is hinting his new tech channel. You have my subscription, good man
+
+4
+
+Flammable Maths
+返信
+
+Flammable Maths さんの返信を表示
+ Rodrigo Pacheco
+Rodrigo Pacheco
+4 か月前
+SVG can be animated because it carries vector information within itself. Great video flammy
+
+7
+
+Flammable Maths
+返信
+
+Flammable Maths さんの返信を表示
+ PackSciences
+PackSciences
+4 か月前
+This is a very interesting video, I think I am going to play a bit with it next week.
+I think it is an interesting tool but I would like to see code from more complete projects to see how they animate. In particular:
+- How to code geometry
+- How to highlight certain parts of LateX code (like let's say I want to see a term is negligible  in an equation. Do I build two TextMObject and transform the term I want to remove or is there a function to change only part of the object?)
+- How to create graphs
+
+I am really looking forward to your next Manim Cast video. Thank you to the both of you.
+一部を表示
+
+6
+
+Flammable Maths
+返信
+
+返信を非表示
+ Flammable Maths
+Flammable Maths
+4 か月前
+Glad you liked it Pack!! :)
+
+1
+
+返信
+
+Transposed Tesseract
+Transposed Tesseract
+2 か月前（編集済み）
+Oh wow, I hear Spirited Away  (One Summer's Day) in the background!!!
+Edit... And now Howl's...!
+
+2
+
+返信
+
+J1 C
+J1 C
+4 か月前
+Vim Gang where u at
+
+3
+
+Flammable Maths
+返信
+
+9 件の返信を非表示
+ Kevin Zheng
+Kevin Zheng
+4 か月前
+vim good. emacs bad. ya yeet
+
+
+Flammable Maths
+返信
+
+vcubingx
+vcubingx
+4 か月前
+@Kevin Zheng agreed
+
+1
+
+Flammable Maths
+返信
+
+Kevin Zheng
+Kevin Zheng
+4 か月前
+@vcubingx Do you happen to have a vimrc on a github somewhere? I'd like to see what you got.
+
+
+Flammable Maths
+返信
+
+vcubingx
+vcubingx
+4 か月前
+@Kevin Zheng https://github.com/vivek3141/vim
+
+
+Flammable Maths
+返信
+
+vcubingx
+vcubingx
+4 か月前
+@Kevin Zheng In case my link is marked as spam, vivek3141/vim on GitHub
+
+
+Flammable Maths
+返信
+
+Kevin Zheng
+Kevin Zheng
+4 か月前
+@vcubingx got it, I like your material colorscheme, now I have decide whether or not I like it over my current one
+
+
+Flammable Maths
+返信
+
+vcubingx
+vcubingx
+4 か月前
+@Kevin Zheng For some reason, I have a huge thing for the material colors. I don't know why, but I use it on every text editor I ever use.
+
+1
+
+Flammable Maths
+返信
+
+Kevin Zheng
+Kevin Zheng
+4 か月前
+@vcubingx mine's at CoffeeVector/.vim
+Mine's kind eh, I like the features but I can't help but feel like my implementations are poor. I'm thinking of properly learning vimscript and cleaning up when I have the chance
+
+1
+
+Flammable Maths
+返信
+
+vcubingx
+vcubingx
+4 か月前（編集済み）
+@Kevin Zheng Looks neat! I'm not huge on customizing editors, I just go with whatever lol
+
+1
+
+Flammable Maths
+返信
+
+Leonhard Euler
+Leonhard Euler
+4 か月前
+Back in my time we just had one blackboard per class and only professor were allowed to use it.
+
+1
+
+Flammable Maths
+返信
+
+2 件の返信を非表示
+ Flammable Maths
+Flammable Maths
+4 か月前
+bruv
+
+1
+
+返信
+
+DD
+DD
+4 か月前
+Sup Wheeler
+
+1
+
+Flammable Maths
+返信
+
+Theorem of Beethoven
+Theorem of Beethoven
+4 か月前
+Hey! you stole my idea of using titles with gradient color! (just kidding bruh) Finally someone who can follow my work from Manim's tutorials.
+
+5
+
+Flammable Maths
+返信
+
+5 件の返信を非表示
+ vcubingx
+vcubingx
+4 か月前
+Thanks for all your work <3
+
+5
+
+Flammable Maths
+返信
+
+Flammable Maths
+Flammable Maths
+4 か月前
+hey :)
+
+1
+
+返信
+
+Theorem of Beethoven
+Theorem of Beethoven
+3 か月前
+@Flammable Maths Hey, good job!
+
+2
+
+Flammable Maths
+返信
+
+Flammable Maths
+Flammable Maths
+3 か月前
+Thanks =D
+
+2
+
+返信
+
+NovaWarrior77
+NovaWarrior77
+3 週間前
+@Theorem of Beethoven @vcubingx @Flammable Maths Hey! The family is together!
+
+1
+
+返信
+
+Clear Thinking
+Clear Thinking
+2 週間前
+Thanks a lot guys I really appreciate your explanations. I hope to make some of these videos a la grant in the upcoming years :)
+
+
+返信
+
+Luca Camino
+Luca Camino
+4 か月前（編集済み）
+Pls keep doing this series, absolutely great! What interests me is if it is possible to make the arrow style of the axis more „tikz“-like (tikz is the latex drawing environment). So, not the „filled-triangle“ but only „->“ where „>“ is nicely curved. Hope you understand what I mean.
+
+4
+
+Flammable Maths
+返信
+
+Flammable Maths さんなどの返信 4 件を表示
+ Nikolaj-K
+Nikolaj-K
+4 か月前
+Good idea to make an educational video on this. Maybe, through a broader user base, we'll see improvement of such systems to make them even easier to use.
+
+3
+
+Flammable Maths
+返信
+
+Flammable Maths さんの返信を表示
+ Dakers11
+Dakers11
+4 か月前
+Thanks Papa flammy & Vivec.
+
+2
+
+Flammable Maths
+返信
+
+Flammable Maths さんなどの返信 2 件を表示
+ Oscar Brogden
+Oscar Brogden
+4 か月前
+Damn, thanks Vivek and Flammy
+
+2
+
+Flammable Maths
+返信
+
+Flammable Maths さんなどの返信 2 件を表示
+ Chaitanya Varma
+Chaitanya Varma
+4 か月前（編集済み）
+What are you playing in the background? Sounds like Ghibli music.
+
+14
+
+Flammable Maths
+返信
+
+Flammable Maths さんの返信を表示
+ nicolas masset
+nicolas masset
+3 か月前
+Amazing tuto, thx for it. But how do you get these infos? Do you just try and try untill you understand it and then explain to us?
+
+
+返信
+
+Harshit
+Harshit
+4 か月前
+How do u synchronise audio with the animation. Like after title slide (/scene), you introduce the vid, and then proceed to next scene; how to manage that timing?
+
+1
+
+Flammable Maths
+返信
+
+返信を非表示
+ Flammable Maths
+Flammable Maths
+4 か月前
+practice
+
+
+返信
+
+Vincenzo Gargano
+Vincenzo Gargano
+1 か月前
+I love this video, please continue. I wold really wrote my thesis using also manim to explain better the concept. I want to learn use this, and the only wait to learn it's to watch the code from 3b1b and your videos.
+
+
+返信
+
+sojan prajapati
+sojan prajapati
+2 か月前
+This is gold!! Thanks guys!!
+
+
+返信
+
+Sameed Naama
+Sameed Naama
+1 か月前
+Hey, thanks a lot for the video. I can't find the link to the pdf file in the description. Can someone give it please?
+
+2
+
+返信
+
+Sancheneering
+Sancheneering
+3 か月前
+how do you animate objects simultaneously such as fading in squares at the same time?
+
+1
+
+返信
+
+Matthew James
+Matthew James
+1 週間前
+at 2:20 you say the flowchart pdf is available in the description. But I can't find it. :(
+
+
+返信
+
+Efraín Soto
+Efraín Soto
+2 か月前
+I think "Mobject" must mean "manim Object". Am I right?
+
+1
+
+Flammable Maths
+返信
+
+返信を非表示
+ Flammable Maths
+Flammable Maths
+2 か月前
+ye :)
+
+
+返信
+
+Ricardo Parada
+Ricardo Parada
+4 か月前
+Really cool stuff
+
+2
+
+Flammable Maths
+返信
+
+返信を非表示
+ Flammable Maths
+Flammable Maths
+4 か月前
+:)
+
+
+返信
+
+Ashish Sain
+Ashish Sain
+4 か月前
+how the surface is created in scene class without calling get_cairo_context method in camera class please help me
+
+1
+
+Flammable Maths
+返信
+
+kunarapu priyatham
+kunarapu priyatham
+2 か月前
+Hi @vcubingx. You said you'll link the pdf for the manim object hierarchy. Could you please put up that link..?
+
+
+返信
+
+3 件の返信を非表示
+ Flammable Maths
+Flammable Maths
+2 か月前
+It has always been in the description
+
+
+返信
+
+David Sicilian
+David Sicilian
+1 か月前
+@Flammable Maths I think the link is broken
+
+
+返信
+
+Sergio Aguero
+Sergio Aguero
+1 か月前
+@David Sicilian try this https://github.com/manim-kindergarten/manim_sandbox/blob/master/docs/manim%E7%B1%BB%E7%BB%93%E6%9E%84.pdf
+
+
+返信
+
+Delta Dsr
+Delta Dsr
+2 か月前
+Really really helpful 😊👍
+
+
+Flammable Maths
+返信
+
+Flammable Maths さんの返信を表示
+ Jenish Thanki
+Jenish Thanki
+4 か月前
+Very helpful thanks!
+
+1
+
+Flammable Maths
+返信
+
+Flammable Maths さんの返信を表示
+ Ravisankar R
+Ravisankar R
+2 週間前
+Can anybody give the link for the pdf?? 
+
+The link in the description is not working.
+
+
+返信
+
+Clausius
+Clausius
+1 か月前
+white backgroung? Who are you? LOL
+
+
+返信
+
+Shanto Noor
+Shanto Noor
+1 か月前
+Great video... Please, give the pdf link.
+
+
+返信
+
+niv
+4 か月前
+Interesting
+
+3
+
+
+返信
+
+Flammable Maths さんの返信を表示
+Krrish Dhiman
+4 か月前
+3Flammable1maths
+
+3
+
+
+返信
+
+Flammable Maths さんなどの返信 2 件を表示
+rootx
+3 週間前
+how you made your intro using svg??
+
+
+返信
+
+Ravi Arora
+2 か月前
+Guys where is the link for the PDF?
+
+
+返信
+
+2 件の返信を表示
+Nidhyan Foundation
+3 か月前
+Where is that pdf?
+
+1
+
+返信
+
+2 件の返信を表示
+Lord Woomy
+4 か月前
+Guten Tag.Ich brauche Ihrer Hilfe.
+Wie Alt waren Sie als Die die Schule verlassen haben , Sie hatten ein Abgangszeugnis in der 10.Klasse und müssten die 8Klasse lederhosen also waren Sie vielleicht 17.Sie hatten nach der Bäckerausbidung den Realschuabschluss bekommen dann haben Sie Fachabi gemacht ,wie funktoiniert das ?Musstest du win Abendgymnasuim besuchen?Ich habe ein Real schulabschluss wollte Abitur machen ging nicht , weil meine Noten zu Schlecht waren wollte die 10.Klasse wiederhole n ging nicht and seit den habe ich me in Ausbildung ich fang bald einen Ausbildung zum Brunnenbauer an in August .Was sollte ich nach meinem Ausbildung machen ?Ich will entweder Lehrer werden oder Maschienau studieren.Haben Die eine Emailadrease?
+続きを読む
+
+
+返信
+
+Gregorious Maths
+4 か月前
+UwU epic collab
+
+5
+
+
+返信
+
+Flammable Maths さんの返信を表示
+ 
+ 
+
+アドビの学割
+広告
+ adobe.com
+今すぐ購入
+次の動画
+自動再生
+
+16:15
+再生中
+The Manim Cast #3 - CONFIGS, Setting up Coordinate Systems and Graphing Functions [feat. @vcubingx]
+Flammable Maths
+4918 回視聴
+3 か月前
+
+
+18:20
+再生中
+The Manim Cast #4 - (3D) Graphing, Camera, Parametric Functions/Surfaces [feat. @vcubingx ]
+Flammable Maths
+5453 回視聴
+3 か月前
+
+
+13:59
+再生中
+Dear English People... THIS is how you pronounce German Mathematician's Names ( and Physicists )
+Flammable Maths
+15万 回視聴
+1 年前
+
+
+15:47
+再生中
+e to the pi i for dummies
+Mathologer
+229万 回視聴
+4 年前
+
+
+14:41
+再生中
+Logarithms of Negative BASES and Negative Arguments! [ Log of Complex Numbers z ]
+Flammable Maths
+6650 回視聴
+21 時間前
+新着
+
+
+45
+再生中
+Manim tutorial
+Theorem of Beethoven
+
+17:21
+再生中
+Catalan's Constant and the Taylor Series of the Inverse Tangent! [ + Exploring Python and Desmos ]
+Flammable Maths
+7484 回視聴
+1 年前
+
+
+12:08
+再生中
+The Limit (do not use L'Hospital rule)
+blackpenredpen
+27万 回視聴
+1 年前
+
+
+13:32
+再生中
+A Trig Extravaganza - The Secret Connection Between Cosine and Fibonacci
+Flammable Maths
+1.7万 回視聴
+4 か月前
+
+
+56:37
+再生中
+Why did they prove this amazing theorem in 200 different ways? Quadratic Reciprocity MASTERCLASS
+Mathologer
+20万 回視聴
+6 か月前
+
+
+16:03
+再生中
+The unexpectedly hard windmill question (2011 IMO, Q2)
+3Blue1Brown
+315万 回視聴
+1 年前
+
+
+11:44
+再生中
+Manim tutorial | 2 - TeX formulas
+Theorem of Beethoven
+1.1万 回視聴
+1 年前
+
+
+19:04
+再生中
+Why is pi here? And why is it squared? A geometric answer to the Basel problem
+3Blue1Brown
+244万 回視聴
+2 年前
+
+
+28:30
+再生中
+Gravitational Attraction: Time it takes for 2 objects to collide in free space
+Flammable Maths
+5.9万 回視聴
+2 年前
+
+
+15:51
+再生中
+e (Euler's Number) is seriously everywhere | The strange times it shows up and why it's so important
+Zach Star
+48万 回視聴
+1 年前
+
+
+53:50
+再生中
+The power tower puzzle | Lockdown math ep. 8
+3Blue1Brown
+32万 回視聴
+4 か月前 に配信済み
+
+
+31:33
+再生中
+This is How a Theoretical Quantum Mechanics Exam Looks that Only Two people Passed... @Andrew Dotson
+Flammable Maths
+18万 回視聴
+3 か月前
+
+
+12:52
+再生中
+Why Machines That Bend Are Better
+Veritasium
+659万 回視聴
+1 年前
+
+
+20:28
+再生中
+Visualizing the Riemann hypothesis and analytic continuation
+3Blue1Brown
+255万 回視聴
+3 年前
+
+
+12:10
+再生中
+I bought the World's MOST PRESTIGIOUS CHALK. Here's how it PERFORMS [ Hagoromo Chalk Unboxing ]
+Flammable Maths
+28万 回視聴
+1 年前
+
+
+21:46
+再生中
+This 1869 MIT Maths Entrance Exam Has Been Considered... Hard? [ Improvised Session + Solutions! ]
+Flammable Maths
+19万 回視聴
+3 か月前
+
+
+21:48
+再生中
+This Hard Linear Algebra Exam Crushed OVER 90% of All FIRST YEARS?!
+Flammable Maths
+6.8万 回視聴
+4 か月前
+
+
+16:21
+再生中
+Things get weird at infinity
+Zach Star
+14万 回視聴
+1 か月前
+
+
+14:29
+再生中
+A Relaxing Differential Equation.
+Flammable Maths
+1.4万 回視聴
+4 日前
+新着
+
+
+29:43
+再生中
+Pi hiding in prime regularities
+3Blue1Brown
+133万 回視聴
+3 年前
+
+
+29:18
+再生中
+What is the best way to lace your shoes? Dream proof.
+Mathologer
+15万 回視聴
+3 か月前
+
+
+25:16
+再生中
+The Applications of Matrices | What I wish my teachers told me way earlier
+Zach Star
+101万 回視聴
+11 か月前
+
+
+15:08
+再生中
+What does it feel like to invent math?
+3Blue1Brown
+249万 回視聴
+5 年前
+
+
+15:34
+再生中
+3BLUE1BROWN SERIES  シーズン 2 • エピソード 6
+Implicit differentiation, what's going on here? | Essence of calculus, chapter 6
+3Blue1Brown
+93万 回視聴
+3 年前
+
+
+25:31
+再生中
+e🅱️ic Math Meme Review #3
+Flammable Maths
+3.7万 回視聴
+2 週間前
+
+
+20:57
+再生中
+Physics Vs Engineering | Which Is Best For You?
+Zach Star
+47万 回視聴
+2 年前
+
+
+31:51
+再生中
+Visualizing quaternions (4d numbers) with stereographic projection
+3Blue1Brown
+164万 回視聴
+2 年前
+
+
+18:39
+再生中
+This equation will change how you see the world (the logistic map)
+Veritasium
+702万 回視聴
+8 か月前
+
+
+1:08:20
+再生中
+Tips to be a better problem solver [Last lecture] | Lockdown math ep. 10
+3Blue1Brown
+31万 回視聴
+4 か月前 に配信済み
+
+
+51:16
+再生中
+What is Euler's formula actually saying? | Lockdown math ep. 4
+3Blue1Brown
+33万 回視聴
+5 か月前 に配信済み
+
+
+6:54
+再生中
+Mathematicians vs. Engineering Classes be like...
+Flammable Maths
+61万 回視聴
+9 か月前
+
+
+17:05
+再生中
+3BLUE1BROWN SERIES  シーズン 2 • エピソード 1
+The Essence of Calculus, Chapter 1
+3Blue1Brown
+370万 回視聴
+3 年前
+
+
+26:07
+再生中
+ENGINEERING 101 [ Math Snaccs #1 ]
+Flammable Maths
+6.5万 回視聴
+1 年前
+
+
+7:18
+再生中
+How Well Can an AI Learn Physics? ⚛
+Two Minute Papers
+108万 回視聴
+3 か月前
+
+
+52:11
+再生中
+The simpler quadratic formula | Lockdown math ep. 1
+3Blue1Brown
+71万 回視聴
+5 か月前 に配信済み
+

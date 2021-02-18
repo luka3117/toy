@@ -1,0 +1,2 @@
+file '/Users/jclee/toy/iManimMASTER/media/videos/JcManimToy/480p15/partial_movie_files/ex/00000.mp4'
+file '/Users/jclee/toy/iManimMASTER/media/videos/JcManimToy/480p15/partial_movie_files/ex/00001.mp4'

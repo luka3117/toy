@@ -3,6 +3,22 @@
 
 from big_ol_pile_of_manim_imports import *
 
+
+class ex(Scene):
+    def construct(self):
+        a=TexMobject("aa")
+        circle=Square()
+
+        self.play(
+        ShowCreation(a), DrawBorderThenFill(circle)
+                )
+
+        self.play(
+        # ShowCreation(a.to_corner(UL)), DrawBorderThenFill(circle)
+        Transform(a,
+        TexMobject("aa").to_corner(UL)), DrawBorderThenFill(circle)
+                )
+
 class aa(Scene):
     def construct(self):
         one=TexMobject("aa")

@@ -5,6 +5,27 @@ output:
   html_document
 ---
 
+# dsjkkfjldsjfsd
+
+[aaa][1]
+
+[阪大][2]
+
+
+[1]:https://www.google.com/?client=safari "google"
+
+
+![image](shu1.png)
+
+
+
+
+# jdkslfjdslf
+
+```{r, child="bb.rmd"}
+
+```
+
 :::{style="display:flex"}
 
 ::{}
@@ -22,3 +43,8 @@ cars %>% DT::datatable()
 ```
 ::
 :::
+
+
+
+[2]:https://web.auth.osaka-u.ac.jp/portal/ja/
+

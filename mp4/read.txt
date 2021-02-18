@@ -1,0 +1,10 @@
+
+
+
+2020年10月16日
+
+
+FFmpeg taranformation
+
+
+~/t/mp4 ❯❯❯ ffmpeg -i Ch1.mp4 -r 10 aa.gif

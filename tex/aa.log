@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.euc) (TeX Live 2020) (preloaded format=platex 2020.6.11)  11 OCT 2020 12:24
+This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.euc) (TeX Live 2020) (preloaded format=platex 2020.6.11)  16 JAN 2021 20:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -179,118 +179,122 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 Chapter 1.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 19.95642pt on input line 13.
+(Font)              scaled to size 19.95642pt on input line 14.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 19.95642pt on input line 13.
+(Font)              scaled to size 19.95642pt on input line 14.
 
 LaTeX Font Warning: Font shape `JY1/hmc/b/n' undefined
-(Font)              using `JY1/hmc/bx/n' instead on input line 13.
+(Font)              using `JY1/hmc/bx/n' instead on input line 14.
 
 LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <20.74> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 13.
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 19.95642pt on input line 13.
+(Font)              scaled to size 19.95642pt on input line 14.
 LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <20.74> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 13.
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 19.95642pt on input line 13.
+(Font)              scaled to size 19.95642pt on input line 14.
 LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <24.88> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 13.
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 23.94002pt on input line 13.
+(Font)              scaled to size 23.94002pt on input line 14.
 LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <24.88> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 13.
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 23.94002pt on input line 13.
+(Font)              scaled to size 23.94002pt on input line 14.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 15.
+(Font)              scaled to size 13.85594pt on input line 16.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 15.
+(Font)              scaled to size 13.85594pt on input line 16.
 
 LaTeX Font Warning: Font shape `JY1/hmc/b/n' undefined
-(Font)              using `JY1/hmc/bx/n' instead on input line 15.
+(Font)              using `JY1/hmc/bx/n' instead on input line 16.
 
 LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 15.
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 15.
+(Font)              scaled to size 13.85594pt on input line 16.
 LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 15.
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 15.
+(Font)              scaled to size 13.85594pt on input line 16.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 17.
+ 18.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 17.
+ 18.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 17.
+ 18.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 17.
+ 18.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 23.94002pt on input line 21.
+(Font)              scaled to size 23.94002pt on input line 29.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 23.94002pt on input line 21.
+(Font)              scaled to size 23.94002pt on input line 29.
 LaTeX Font Info:    Font shape `JT1/utfj/m/5' will be
-(Font)              scaled to size 23.94002pt on input line 25.
+(Font)              scaled to size 23.94002pt on input line 33.
 LaTeX Font Info:    Font shape `JY1/utfj/m/5' will be
-(Font)              scaled to size 23.94002pt on input line 25.
+(Font)              scaled to size 23.94002pt on input line 33.
 LaTeX Font Info:    Font shape `JT1/utfj/m/6' will be
-(Font)              scaled to size 23.94002pt on input line 25.
+(Font)              scaled to size 23.94002pt on input line 33.
 LaTeX Font Info:    Font shape `JY1/utfj/m/6' will be
-(Font)              scaled to size 23.94002pt on input line 25.
-
-Underfull \vbox (badness 2351) has occurred while \output is active []
-
+(Font)              scaled to size 23.94002pt on input line 33.
  [1
 
 
 ]
 LaTeX Font Info:    Font shape `JT1/utfj/m/9' will be
-(Font)              scaled to size 23.94002pt on input line 32.
+(Font)              scaled to size 23.94002pt on input line 40.
 LaTeX Font Info:    Font shape `JY1/utfj/m/9' will be
-(Font)              scaled to size 23.94002pt on input line 32.
+(Font)              scaled to size 23.94002pt on input line 40.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 LaTeX Font Warning: Font shape `JT1/hmc/m/sl' undefined
-(Font)              using `JT1/hmc/m/n' instead on input line 51.
+(Font)              using `JT1/hmc/m/n' instead on input line 47.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/m/sl' undefined
-(Font)              using `JY1/hmc/m/n' instead on input line 51.
+(Font)              using `JY1/hmc/m/n' instead on input line 47.
 
 [2]
 LaTeX Font Info:    Font shape `JT1/hmc/m/sl' will be
-(Font)              scaled to size 9.6222pt on input line 60.
+(Font)              scaled to size 9.6222pt on input line 68.
 LaTeX Font Info:    Font shape `JY1/hmc/m/sl' will be
-(Font)              scaled to size 9.6222pt on input line 60.
- [3] [4] (./aa.aux)
+(Font)              scaled to size 9.6222pt on input line 68.
+ [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+[5] (./aa.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -304,4 +308,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  30i,6n,25p,348b,992s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on aa.dvi (4 pages, 4820 bytes).
+Output written on aa.dvi (5 pages, 4968 bytes).

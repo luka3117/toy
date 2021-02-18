@@ -1,0 +1,284 @@
+---
+title: "来店解析 : no_profile_20200330.csv"
+subtitle: "来店確率解析, RF, logistic, CART 比較 "
+author: "滋賀大学 佐藤、李"
+date: "最終更新: `r format(Sys.time(), '%Y/%m/%d')`"
+# date: "最終更新: 2019/07/16"
+
+output:
+  # word_document:
+  html_document:
+  # html_notebook:
+   number_section: true
+   toc: true
+   code_folding: hide
+   toc_float:
+     smooth_scroll: false
+     collapsed: false
+
+
+
+  # fig_width: 18
+  # fig_height: 12
+---
+
+
+
+
+```{r}
+rm(list=ls()); ls()
+load("cart.Rdata");
+load("predicted.rf.Rdata")
+# 使用package
+library(SMBC202006Pkg);
+suppressMessages(library(tidyverse));
+suppressMessages(library(party))
+suppressMessages(library(randomForest))
+ls()
+```
+
+#  RF 推定結果保存
+```{r}
+# predicted.rf.train <- predict(d1.rf.train, d1.train, type = "prob")
+# predicted.rf.test <- predict(d1.rf.train, d1.test, type = "prob")
+# save.image("predicted.rf.Rdata")
+```
+
+
+
+# CART 推定結果保存
+```{r}
+# res.cart.train <- ctree(y_binary ~ .,
+#                         data = d1.train,
+#                         controls = ctree_control(minsplit = 3, mincriterion = 0.9999))
+# save.image("cart.Rdata")
+```
+
+## CART 結果確認
+```{r}
+res.cart.train
+# plot(res.cart.train,type="simple", asp=4)
+# plot(res.cart.train)
+```
+
+## CART plot 保存
+```{r}
+# pdf(file = "res.cart.train.pdf",
+#     width = 20,
+#     height = 7)
+# plot(res.cart.train)
+# dev.off()
+```
+
+## CART plot 再表示
+
+```{r , fig.cap="c caption", out.width = '100%'}
+# knitr::include_graphics("res.cart.train.pdf")
+knitr::include_graphics("cart1.png")
+```
+
+
+## CART 予測確率
+```{r}
+predict.cart.train <-
+  predict(res.cart.train, d1.train, type = "prob") %>%
+  purrr::map_dbl(.x = . , function(x) {
+    x[2]
+  }) %>% tbl_df()
+
+predict.cart.test <-
+  predict(res.cart.train, d1.test, type = "prob") %>%
+  purrr::map_dbl(.x = . , function(x) {
+    x[2]
+  }) %>% tbl_df()
+```
+
+
+:::: {style="display: flex;"}
+:::{}
+### train data
+```{r}
+predict.cart.train
+```
+:::
+:::{}
+### test data
+```{r}
+predict.cart.test
+```
+:::
+::::
+
+
+
+
+
+# ROC
+
+## ３種のモデル予測確率 train and test data  
+
+```{r}
+pred.train<-cbind(
+  rf = predicted.rf.train[, 2],
+  logit = SMBC202006Pkg::predict.logit.train,
+  cart = predict.cart.train$value) 
+
+pred.test<-cbind(
+  rf = predicted.rf.test[, 2],
+  logit = SMBC202006Pkg::predict.logit.test,
+  cart = predict.cart.test$value) 
+```
+
+:::: {style="display: flex;"}
+:::{}
+```{r}
+pred.train %>% head() %>% round(3)
+```
+:::
+:::{}
+```{r}
+pred.test %>% head() %>% round(3)
+```
+:::
+::::
+
+
+
+```{r}
+suppressMessages(library(pROC))
+# rf train データ
+roc.rf.train<-roc(
+  as.numeric(d1.train$y_binary) - 1 ~ pred.train[, 1],
+  plot = F,
+  print.auc = T,
+  col = "red",
+  # add = T,
+  print.auc.y = 0.6,
+  print.auc.x = 1/2
+)
+
+roc.logit.train <-
+  roc(
+  as.numeric(d1.train$y_binary) - 1 ~ pred.train[, 2],
+  plot = F,
+  print.auc = T,
+  col = "green",
+  # add = T,
+  print.auc.y = 0.5,
+  print.auc.x = 1 / 2
+  )
+  
+roc.cart.train <-
+  roc(
+  as.numeric(d1.train$y_binary) - 1 ~ pred.train[, 3],
+  plot = F,
+  print.auc = T,
+  col = "blue",
+  # add = T,
+  print.auc.y = 0.4,
+  print.auc.x = 1 / 2
+  )
+  
+
+roc.rf.test <-
+  roc(
+  as.numeric(d1.test$y_binary) - 1 ~ pred.test[, 1],
+  plot = F,
+  print.auc = T,
+  col = "red",
+  # add = T,
+  print.auc.y = 0.3,
+  print.auc.x = 1 / 2
+  )
+  
+roc.logit.test <-
+  roc(
+  as.numeric(d1.test$y_binary) - 1 ~ pred.test[, 2],
+  plot = F,
+  print.auc = T,
+  col = "green",
+  # add = T,
+  print.auc.y = 0.2,
+  print.auc.x = 1 / 2
+  )
+  
+roc.cart.test <-
+  roc(
+  as.numeric(d1.test$y_binary) - 1 ~ pred.test[, 3],
+  plot = F,
+  print.auc = T,
+  col = "blue",
+  # add = T,
+  print.auc.y = 0.1,
+  print.auc.x = 1 / 2
+  )
+  
+plot(roc.rf.train, col = "red")
+plot(roc.rf.test, add = T, col = "red")
+
+plot(roc.logit.train, add = T, col = "green")
+plot(roc.logit.test, add = T, col = "green")
+
+plot(roc.cart.train, add = T, col = "blue")
+plot(roc.cart.test, add = T, col = "blue")
+
+
+
+legend("bottomright",legend = c("RF.train",  "Logistic.train",  "CART.train",  "RF.test",  "Logistic.test",  "CART.test"),col = c("red", "green", "blue"),
+  lwd = 4
+)
+
+```
+
+## auc
+
+
+
+:::: {style="display: flex;"}
+:::{}
+```{r}
+roc.rf.train$auc
+```
+:::
+
+:::{}
+```{r}
+roc.rf.test$auc
+```
+:::
+
+:::{}
+```{r}
+roc.logit.train$auc
+```
+:::
+
+:::{}
+```{r}
+roc.logit.test $auc
+```
+:::
+
+:::{}
+```{r}
+roc.cart.train$auc
+
+```
+:::
+
+:::{}
+```{r}
+roc.cart.test$auc
+```
+:::
+
+::::
+
+
+```{r}
+# png("cart.png",pointsize=40,height=2080,width=5000)
+# plot(res.cart.train)
+# dev.off()
+```
+
+

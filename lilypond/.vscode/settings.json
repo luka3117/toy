@@ -1,0 +1,5 @@
+{
+    "editor.minimap.side": "left",
+    "vslilypond.general.pathToLilypond": "/Applications/LilyPond.app/Contents/Resources/bin/lilypond",
+    "vslilypond.midiPlayback.output": "Apple DLS Synth"
+}

@@ -1,0 +1,620 @@
+%\documentclass[a4paper]{article}
+\documentclass[cn,blue,14pt,normal]{elegantnote}
+%\usepackage[UTF8]{ctex}
+%\usepackage[colorlinks, linkcolor=blue]{hyperref}
+%\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{tcolorbox, booktabs, fontspec, tikz, harmony}
+\title{\texttt{manim}常\UTF{89C1}\UTF{95EE}\UTF{9898}}
+
+\author{\UTF{9E64}翔万里\& catfish}
+\institute{\textsc{manim-kindergarten}}
+
+\version{3.0}
+\date{\zhtoday}
+
+
+\begin{document}
+	
+\maketitle
+
+\centerline{
+	\includegraphics[height=3\baselineskip]{assets/Logo.png}
+}
+
+\newpage
+
+\tableofcontents
+
+
+
+\newpage
+
+\section{安装\UTF{95EE}\UTF{9898}}
+
+安装\UTF{65F6}最好不要看\texttt{README.md}自己研究，
+推荐一\UTF{89C6}数学卷毛\UTF{6768}的\UTF{4E24}个教程，和教程文档中的安装指南\url{https://manim.ml/installation}：
+\begin{itemize}
+    \item \url{https://www.bilibili.com/video/av38126904}
+    \item \url{https://www.bilibili.com/read/cv4139851}
+\end{itemize}
+
+\subsection{\texttt{Python}\UTF{95EE}\UTF{9898}}
+\subsubsection*{Q1: 使用\texttt{anaconda}，命令行\UTF{8F93}入\texttt{python}无反\UTF{5E94}或\UTF{62A5}\UTF{9519}}
+
+考\UTF{8651}\texttt{path}\UTF{73AF}境\UTF{53D8}量是否填全\footnote{安装\texttt{anaconda}\UTF{65F6}是否勾\UTF{9009}添加到\texttt{path}\UTF{53D8}量}，\texttt{path}\UTF{53D8}量里\UTF{5E94}\UTF{8BE5}有：
+\begin{lstlisting}[frame=none]
+    <your_path>\Anaconda3;
+    <your_path>\Anaconda3\Scripts;
+    <your_path>\Anaconda3\Library\bin;
+\end{lstlisting}
+
+\subsubsection*{Q2: \texttt{pip install ...}\UTF{65F6}\UTF{6EE1}屏\UTF{7EA2}字\UTF{62A5}\UTF{9519}，或者安装\UTF{8FC7}慢}
+
+更\UTF{6362}国内\UTF{955C}像源，使用 
+\begin{lstlisting}[frame=none]
+    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+\end{lstlisting}
+代替\footnote{\UTF{4E34}\UTF{65F6}\UTF{6362}源}
+\begin{lstlisting}[frame=none]
+    pip install -r requirements.txt
+\end{lstlisting}
+
+\subsubsection*{Q3: \texttt{pip}安装\texttt{pycairo}\UTF{603B}是失\UTF{8D25}}
+
+下\UTF{8F7D}\texttt{pycairo}\UTF{5BF9}\UTF{5E94}版本的\texttt{whl}包
+\footnote{可在\url{https://www.lfd.uci.edu/~gohlke/pythonlibs/\#pycairo}中下\UTF{8F7D}，注意\texttt{Python}版本和系\UTF{7EDF}版本是否均合\UTF{9002}}
+并手\UTF{52A8}安装
+\begin{lstlisting}[frame=none]
+    pip install pycairo......whl
+\end{lstlisting}
+
+\subsubsection*{Q4: \texttt{pip}安装\UTF{8FC7}包，但\UTF{8FD0}行\UTF{65F6}提示没有模\UTF{5757}}
+考\UTF{8651}\UTF{7535}\UTF{8111}上是否有多个\texttt{Python}，\UTF{786E}定\texttt{pip}把包装到了需要使用的\texttt{Python}上面。
+
+\subsubsection*{Q5: \UTF{5173}于\texttt{scipy}有\UTF{62A5}\UTF{9519}}
+可能是版本不\UTF{5BF9}，使用\texttt{pip uninstall scipy}后重新\texttt{pip install scipy}
+
+\newpage
+
+\section{\UTF{8FD0}行\UTF{65F6}\UTF{95EE}\UTF{9898}}
+
+\begin{note}
+	在出\UTF{73B0}以下\UTF{95EE}\UTF{9898}\UTF{65F6}，\UTF{8BF7}\UTF{786E}保\UTF{4F60}正在使用最新版\texttt{master}分支的\texttt{manim}
+\end{note}
+
+\subsection{\texttt{import}\UTF{95EE}\UTF{9898}}
+\subsubsection*{Q1: 没有模\UTF{5757}\texttt{big\_ol\_pile\_of\_manim\_imports}}
+
+将文件中的
+\begin{lstlisting}[frame=none]
+    from big_ol_pile_of_manim_imports import *
+\end{lstlisting}
+
+改成
+\begin{lstlisting}[frame=none]
+    from manimlib.imports import *
+\end{lstlisting}
+
+\subsubsection*{Q2: 缺少模\UTF{5757}\texttt{pygments}\footnote{已在\href{https://github.com/3b1b/manim/pull/1147}{\#1147}中修\UTF{590D}}}
+
+手\UTF{52A8}安装 \texttt{pip install pygments}
+
+\subsection{\LaTeX \UTF{95EE}\UTF{9898}}
+\subsubsection*{Q1: \UTF{62A5}\UTF{9519}\texttt{Latex error converting to dvi}}
+先不要管\UTF{9519}\UTF{8BEF}在\UTF{54EA}，先把\texttt{manimlib/constants.py}中的\texttt{TEX\_USE\_CTEX}改成\texttt{True}再\UTF{8FD0}行
+
+\subsubsection*{Q2: \UTF{62A5}\UTF{9519} \texttt{xelatex error converting to xdv}}\label{sub:Q2}
+若\UTF{4E3A}\texttt{Windows}系\UTF{7EDF}，先把\texttt{manimlib/constants.py}的第29行：
+\begin{lstlisting}[frame=none]
+    MEDIA_DIR = "./media"
+\end{lstlisting}
+
+改成\footnote{已在\href{https://github.com/3b1b/manim/pull/689}{\#689}中修\UTF{590D}}
+\begin{lstlisting}[frame=none]
+    MEDIA_DIR = os.path.join(os.getcwd(), "media")
+\end{lstlisting}
+
+再\UTF{8FDB}行\UTF{5C1D}\UTF{8BD5}。如果仍然出\UTF{9519}，\UTF{5C1D}\UTF{8BD5}将\texttt{ctex\_template.tex}中的\texttt{\textbackslash usepacka}\\
+\texttt{ge\{ctex\}}提到\UTF{8BE5}文件的第二行再\UTF{8FDB}行\UTF{5C1D}\UTF{8BD5}\footnote{已在\href{https://github.com/3b1b/manim/pull/1187}{\#1187}中修\UTF{590D}}。
+\UTF{8FD8}出\UTF{9519}\UTF{8BEF}的\UTF{8BDD}，向下\UTF{7EE7}\UTF{7EED}按\UTF{6B65}\UTF{9AA4}\UTF{8FDB}行：
+
+\begin{enumerate}[I.]
+    \item \textbf{若安装的\texttt{\TeX}\UTF{53D1}行版\UTF{4E3A}\texttt{MiK\TeX}}
+    \begin{enumerate}[1.]
+        \item \texttt{MiK\TeX}的有\UTF{5173}路径是否添加到\UTF{73AF}境\UTF{53D8}量中
+        \item 是否有包没有装全
+    \end{enumerate}
+
+    \begin{tcolorbox}
+        \UTF{5BF9}于\texttt{2.}，可以正常\UTF{8FD0}行一遍\texttt{WriteStuff}\UTF{573A}景，看是否有框\UTF{5F39}出提示\texttt{install}什\UTF{4E48}\UTF{4E1C}西，
+        如果有，\UTF{5219}\texttt{install}，并重\UTF{590D}\UTF{8FD0}行安装\UTF{8FD0}行安装...直到不\UTF{62A5}\UTF{9519}\UTF{4E3A}止。 \\
+        或者使用\TeX \UTF{7F16}\UTF{8F91}器\texttt{\TeX Studio}
+        并使用\texttt{xelatex}手\UTF{52A8}\UTF{7F16}\UTF{8BD1}\texttt{media/Tex}文件\UTF{5939}中的{} \texttt{.tex}文件，\UTF{67E5}看是否有包没有安装。
+    \end{tcolorbox}
+        
+    \begin{tcolorbox}
+        \UTF{5BF9}于没有\texttt{1.}和\texttt{2.}\UTF{95EE}\UTF{9898}却依旧\UTF{62A5}\UTF{9519}的，可以\UTF{9009}\UTF{62E9}重新安装新版\texttt{MiK\TeX}或者安装\texttt{\TeX Live-full}版。
+    \end{tcolorbox}
+
+    \item \textbf{若安装的\texttt{\TeX}\UTF{53D1}行版\UTF{4E3A}\texttt{\TeX Live}}
+    \begin{enumerate}[1.]
+        \item \texttt{\TeX Live}有\UTF{5173}路径是否添加到\UTF{73AF}境\UTF{53D8}量中
+        \item 安装的是否\UTF{4E3A}\texttt{full}版本
+    \end{enumerate}
+
+    \item \textbf{若安装的\texttt{\TeX}\UTF{53D1}行版不\UTF{4E3A}以上\UTF{4E24}款}
+    
+    建\UTF{8BAE}\UTF{6362}成\texttt{\TeX Live-full}版或者\texttt{MiK\TeX}，并且在重新安装前\UTF{8BF7}\UTF{5220}除旧版
+\end{enumerate}
+
+\subsubsection*{Q3: \UTF{62A5}\UTF{9519}在文件\UTF{5939}内找不到\texttt{svg}文件}
+
+清空\texttt{media/Tex}文件\UTF{5939}内全部内容，再次\UTF{8FD0}行\UTF{5E26}文字的\UTF{573A}景，\UTF{67E5}看\texttt{Tex}文件\UTF{5939}中的内容：
+
+\begin{enumerate}[I.]
+    \item 若\UTF{4EC5}有\texttt{tex}文件和\texttt{log}文件,按照\texttt{\ref{sub:Q2}}中方法\UTF{5904}理
+    \item 若含有\texttt{xdv}文件但没有\texttt{svg}文件
+    \begin{enumerate}[1.]
+        \item \texttt{divsvgm}是否添加到\UTF{73AF}境\UTF{53D8}量，可以使用\texttt{dvisvgm --version}\UTF{89C2}察是否由\UTF{62A5}\UTF{9519}来\UTF{68C0}\UTF{67E5}%
+        \item \texttt{dvisvgm}版本是否\UTF{8FC7}低，若\texttt{dvisvgm --verison}的\UTF{8F93}出版本号\UTF{4E3A}1\UTF{5F00}\UTF{5934}，\UTF{8BF7}更\UTF{6362}新版\texttt{dvisvgm}\footnote{上网下\UTF{8F7D}、或者使用群文件中的版本}，并注意将含有\texttt{dvisvgm}的文件\UTF{5939}添加到\UTF{73AF}境\UTF{53D8}量中
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{中文\UTF{663E}示\UTF{95EE}\UTF{9898}}
+\subsubsection*{Q1: 含有中文的\texttt{TextMobject}\UTF{7F16}\UTF{8BD1}\UTF{62A5}\UTF{9519}，\texttt{Latex error converting to dvi}}
+
+将\texttt{manimlib/constants.py}中的\texttt{TEX\_USE\_CTEX}改成\texttt{True}再\UTF{5C1D}\UTF{8BD5}%
+
+\subsubsection*{Q2: 英文可以正常\UTF{663E}示，中文不\UTF{62A5}\UTF{9519}，但不\UTF{663E}示}
+
+考\UTF{8651}使用的是否\UTF{4E3A}\texttt{TextMobject}而不是\texttt{TexMobject}
+
+\subsection{文字\UTF{95EE}\UTF{9898}}
+\subsubsection*{Q1: \texttt{TextMobject}和\texttt{TexMobject}有什\UTF{4E48}区\UTF{522B}}
+
+\texttt{TextMobject}和\texttt{TexMobject}使用的都是\LaTeX \UTF{8BED}法
+
+其中\texttt{TextMobject}文字模式相当于直接在\LaTeX \UTF{73AF}境下\UTF{4E66}写
+
+\texttt{TexMobject}公式模式使用的是\LaTeX 的 \texttt{\textbackslash begin\{align*\}}
+\UTF{73AF}境或者可以看成加了$\texttt{\$}\texttt{\$}$的\UTF{73AF}境
+
+使用\texttt{TextMobject}与\texttt{TexMobject}\UTF{4E66}写公式\UTF{65F6}：
+
+\noindent \fbox{$\texttt{TextMobject("} \text{文字} \texttt{\$} \text{公式} \texttt{\$")} \Longleftrightarrow \texttt{TexMobject("\textbackslash \textbackslash text\{} \text{文字} \texttt{\}} \text{公式} \texttt{")}$}
+
+\subsubsection*{Q2: \texttt{TextMobject}中怎\UTF{4E48}改字体\UTF{6837}式}
+
+\texttt{TextMobject}中只能使用\LaTeX 的字体\UTF{6837}式
+
+字体常用\UTF{6837}式命令\UTF{89C1}表：
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{llll}
+        \toprule
+        字体\UTF{6837}式 & \LaTeX 代\UTF{7801}  & 字体\UTF{6837}式 & \LaTeX 代\UTF{7801} \\
+        \midrule
+        \textrm{roman}  & \texttt{\textbackslash textrm\{\dots\}} & \textbf{bold face} & \texttt{\textbackslash textbf\{\dots\}} \\
+        \textsf{sans serif} & \texttt{\textbackslash textsf\{\dots\}} & \textmd{medium weight} & \texttt{\textbackslash textmd\{\dots\}} \\
+        \texttt{typewriter} & \texttt{\textbackslash texttt\{\dots\}} & \textit{italic} & \texttt{\textbackslash textit\{\dots\}} \\
+        \textsc{Small Caps} & \texttt{\textbackslash textsc\{\dots\}} & \textsl{slanted} & \texttt{\textbackslash textsl\{\dots\}} \\
+        \textup{upright} & \texttt{\textbackslash textup\{\dots\}} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\UTF{4E25}格地\UTF{8BB2}中文字体并没有\UTF{886C}\UTF{7EBF}、无\UTF{886C}\UTF{7EBF}、等\UTF{5BBD}、斜体等概念
+
+\subsubsection*{Q3: 想自定\UTF{4E49}字体怎\UTF{4E48}\UTF{529E}}
+
+使用新版\texttt{manim}特有的\texttt{Text()}\UTF{7C7B}，
+方法如下$\texttt{Text("}\text{文字}\texttt{", font="}$
+$\text{字体}\texttt{")}$，
+其中字体要填写在\UTF{8BA1}算机内存\UTF{50A8}的格式\footnote{例如：Microsoft YaHei，Source Han Sans CN(Windows可以打\UTF{5F00}C:/Windows/Fonts中的字体文件\UTF{67E5}看名称)}，但是不能使用\LaTeX \UTF{8BED}法\UTF{4E66}写公式
+
+\subsubsection*{Q4: 想用自定\UTF{4E49}字体写公式怎\UTF{4E48}\UTF{529E}}
+
+可以使用\texttt{cigar666}\UTF{7F16}写的\texttt{MyText()}\UTF{7C7B}，源\UTF{7801}地址：\url{https://github.com/manim-kindergarten/manim_sandbox/blob/master/utils/mobjects/MyText.py}
+
+\subsubsection*{Q5: \texttt{TexMobject}中\UTF{6362}行是什\UTF{4E48}}
+四个右\UTF{5212}\UTF{7EBF}\texttt{\textbackslash \textbackslash \textbackslash \textbackslash}，
+\texttt{Python}\UTF{8F6C}\UTF{4E49}右\UTF{5212}\UTF{7EBF}，所以\UTF{6D89}及到\texttt{\textbackslash}的均要写成\UTF{4E24}个\texttt{\textbackslash \textbackslash}，
+而\UTF{6362}行在\LaTeX 中是\UTF{4E24}个右\UTF{5212}\UTF{7EBF}，所以要写成四个\footnote{或者在字符串前加r，正常\UTF{4E66}写}
+
+\subsubsection*{Q6: 公式怎\UTF{4E48}\UTF{5BF9}\UTF{9F50}}
+\begin{enumerate}[I.]
+    \item 直接在\texttt{TexMobject}中使用\texttt{\&}\UTF{5BF9}\UTF{9F50}%
+    \item \UTF{4E24}个\texttt{mobject}\UTF{5BF9}\UTF{9F50}，使用\texttt{obj2.next\_to(obj1, DOWN, aligned\_edge=LEFT)}使\texttt{obj2}在\texttt{obj1}下方，并左\UTF{5BF9}\UTF{9F50}%
+    \item \texttt{VGroup}内\UTF{5BF9}\UTF{9F50}，使用\texttt{group.arrange(DOWN, aligned\_edge=LEFT)}使\texttt{VGroup}中的子元素依次向下排\UTF{5F00}，并左\UTF{5BF9}\UTF{9F50}%
+\end{enumerate}
+
+写公式的示例：
+
+\url{https://github.com/Elteoremadebeethoven/AnimationsWithManim/blob/master/English/3_text_like_arrays/scenes.md}
+
+\subsubsection*{Q7: \texttt{TexMobject}上色\UTF{95EE}\UTF{9898}的\UTF{5904}理\UTF{529E}法}
+\begin{enumerate}[I.]
+    \item 将上色的字符分\UTF{5F00}，使用\texttt{text[i].set\_color(color)} 来上色
+    \item 将上色的字符分\UTF{5F00}，使用\texttt{text.set\_color\_by\_tex\_to\_color\_map(t2c)}\UTF{4F20}入\texttt{t2c}字典来\UTF{5BF9}相同的字符串上色
+    \item 只\UTF{4F20}入一个字符串，但同\UTF{65F6}\UTF{4F20}入\texttt{tex\_to\_color\_map=t2c}来自\UTF{52A8}拆分上色(容易出\UTF{95EE}\UTF{9898})
+    \item 只\UTF{4F20}入一个字符串，使用\texttt{text[0][i]}来\UTF{5BF9}\UTF{7EC6}小的路径上色(一般是一个字符一个下\UTF{6807})
+\end{enumerate}
+
+\subsubsection*{Q8: \texttt{TexMobject}的下\UTF{6807}怎\UTF{4E48}分析}
+
+\begin{enumerate}[I.]
+	\item 使用\texttt{debugTeX}\footnote{\url{https://github.com/manim-kindergarten/manim\_sandbox/blob/master/utils/functions/debugTeX.py}},先\texttt{self.add(tex)}然后再\texttt{debugTeX(self, tex)}，
+	\UTF{5BFC}出最后一\UTF{5E27}\footnote{-s \UTF{9009}\UTF{9879}}，\UTF{89C2}察\UTF{6BCF}段字符上的\UTF{6807}号，即\UTF{4E3A}下\UTF{6807}%
+	\item 使用自\UTF{5E26}的函数\texttt{get\_submobject\_index\_labels}\UTF{83B7}取下\UTF{6807}的\texttt{VGroup}，然后添加
+\end{enumerate}
+
+\UTF{5173}于\texttt{Tex(t)Mobject}的\UTF{7ED3}\UTF{6784}，\UTF{8BE6}\UTF{7EC6}可以看\UTF{89C6}\UTF{9891}\url{https://www.bilibili.com/video/BV1CC4y1H7kp}
+
+\subsubsection*{Q9: \texttt{TexMobject}使用 \texttt{\textbackslash frac} 拆分\UTF{65F6}出\UTF{9519}}
+\UTF{8FD9}个是\texttt{Grant}写\texttt{tex\_file\_writing.py} 的一个\texttt{bug}，
+建\UTF{8BAE}使用\texttt{\{}分子 \texttt{\textbackslash over}分母\texttt{\}}
+来代替 \texttt{\textbackslash frac\{}分子\texttt{\}\{}分母\texttt{\}}
+
+\subsubsection*{Q10: 使用\texttt{\textbackslash left\textbackslash\{ ...\textbackslash right.}\UTF{62A5}\UTF{9519}}
+\begin{lstlisting}[frame=none]
+    TexMobject(r"\left\{\begin{matrix} a+b \\ b+a \\ \end{matrix}\right.")
+\end{lstlisting}
+
+\texttt{matrix}\UTF{8FD9}\UTF{6837}的写法在\texttt{manim}中会\UTF{62A5}\UTF{9519}，无法生成\texttt{dvi}，
+原因是\texttt{manim}会自\UTF{52A8}\UTF{5BFB}找相\UTF{5BF9}\UTF{5E94}的括号来匹配，但\UTF{8FD9}里并没有右大括号，而是\texttt{.}
+
+所以推荐使用\texttt{cases}\UTF{73AF}境,效果是一\UTF{6837}的：$\begin{cases}
+    a+b \\
+    b+a \\
+\end{cases}$
+\begin{lstlisting}[frame=none]
+    TexMobject(r"\begin{cases} a+b \\ b+a \\ \end{cases}")
+\end{lstlisting}
+
+\subsection{素材引用\UTF{95EE}\UTF{9898}}
+\subsubsection*{Q1: 使用\texttt{SVGMobject}找不到\texttt{svg}文件}
+\begin{enumerate}[I.]
+    \item 直接使用\UTF{7EDD}\UTF{5BF9}路径引用\texttt{svg}文件
+    \item 将\texttt{svg}文件放到\texttt{assets/svg\_images/}文件\UTF{5939}中
+\end{enumerate}
+
+\subsubsection*{Q2: 如何使用\texttt{jpg}或者\texttt{png}文件}
+\begin{enumerate}[I.]
+    \item 直接使用\UTF{7EDD}\UTF{5BF9}路径引用，并使用\texttt{ImageMobject}
+    \item 将\texttt{jpg/png}文件放到\texttt{assets/raster\_images/}文件\UTF{5939}中
+\end{enumerate}
+
+\subsubsection*{Q3: 能否\UTF{5BFC}入\texttt{gif}文件}
+可以使用\texttt{ImageMobject}\UTF{5BFC}入，但是只保留第一\UTF{5E27}，不会\UTF{663E}示\UTF{52A8}\UTF{56FE}%
+
+\UTF{5173}于插入素材（\UTF{56FE}片），\UTF{8BE6}\UTF{7EC6}可以看\UTF{89C6}\UTF{9891}\url{https://www.bilibili.com/video/BV1CC4y1H7kp}
+
+\newpage
+
+\section{其它\UTF{95EE}\UTF{9898}}
+
+\subsubsection*{Q1: 有什\UTF{4E48}manim教程}
+\addcontentsline{toc}{subsection}{Q1: 有什\UTF{4E48}\texttt{manim}教程}
+\url{https://github.com/manim-kindergarten/manim}\UTF{8FD9}里的\texttt{README}文件中也有整合
+
+\begin{enumerate}[1.]
+	\item \texttt{manim}教程文档（制作中）：\url{https://manim.ml/}。
+	\item \texttt{MK}制作的系列\UTF{89C6}\UTF{9891}教程（制作中）
+	\begin{itemize}
+		\item \url{https://space.bilibili.com/171431343/favlist?fid=947158443}
+	\end{itemize}
+	\item \texttt{MK}制作的\UTF{89C6}\UTF{9891}源\UTF{7801}(videos/)和常用自定\UTF{4E49}\UTF{7C7B}(utils/)
+	\begin{itemize}
+		\item \url{https://github.com/manim-kindergarten/manim_sandbox/tree/master/videos}
+		\item \url{https://github.com/manim-kindergarten/manim_sandbox/tree/master/utils}
+	\end{itemize}
+    \item 群主\texttt{cigar666}的B站\UTF{4E13}\UTF{680F}%
+    \begin{itemize}
+        \item \url{https://www.bilibili.com/read/readlist/rl82339}
+    \end{itemize}
+    \item \texttt{pdcxs}大大\UTF{8F6C}\UTF{8F7D}的\texttt{manim}教程
+    \begin{itemize}
+        \item \url{https://www.bilibili.com/video/av64023740}
+        \item 源\UTF{7801} \url{https://github.com/Elteoremadebeethoven/AnimationsWithManim}
+    \end{itemize}
+    \item \texttt{GitHub}上\texttt{cai-hust}的中文教程
+    \begin{itemize}
+        \item \url{https://github.com/cai-hust/manim-tutorial-CN}
+    \end{itemize}
+    \item 看\texttt{manim}源\UTF{7801}%
+\end{enumerate}
+
+\subsubsection*{Q2: 没有\texttt{manim}源\UTF{7801}}
+\addcontentsline{toc}{subsection}{Q2: 没有\texttt{manim}源\UTF{7801}}
+最好不要使用\texttt{pip install manimlib}来装\texttt{manim}，\UTF{8BF7}在\texttt{GitHub}上\texttt{clone}下来\texttt{manim}的全部内容，
+可以\UTF{9009}\UTF{62E9}\texttt{MK}修改的版本：\url{https://github.com/manim-kindergarten/manim}
+
+\subsubsection*{Q3: 群友用的\texttt{manim}都是什\UTF{4E48}版本}
+\addcontentsline{toc}{subsection}{Q3: 群友用的\texttt{manim}都是什\UTF{4E48}版本}
+\texttt{manim}不看版本，一般使用的都是\texttt{GitHub}上的最新源\UTF{7801}，\texttt{release}里面\UTF{5E26}版本号的都可以看作旧版
+
+\subsubsection*{Q4: 如何使用傅里叶\UTF{7EA7}数作\UTF{56FE}}
+\addcontentsline{toc}{subsection}{Q4: 如何使用傅里叶\UTF{7EA7}数作\UTF{56FE}}
+套用 Grant 写好的文件 （有部分代\UTF{7801}\texttt{import}部分路径不\UTF{5BF9}，\UTF{8BF7}自行\UTF{8C03}整）
+\begin{lstlisting}[frame=none]
+    from_3b1b/active/diffyq/part2/fourier_series.py
+    from_3b1b/active/diffyq/part4/fourier_series_scenes.py
+    from_3b1b/active/diffyq/part4/long_fourier_series.py
+\end{lstlisting}
+
+\subsubsection*{Q5: 傅里叶\UTF{7EA7}数作\UTF{56FE}如何\UTF{8C03}整\UTF{65F6}\UTF{957F}}
+\addcontentsline{toc}{subsection}{Q5: 傅里叶\UTF{7EA7}数作\UTF{56FE}如何\UTF{8C03}整\UTF{65F6}\UTF{957F}}
+\texttt{CONFIG}中\texttt{run\_time}无法控制，使用\texttt{slow\_factor}和\texttt{n\_cycles}来控制
+
+$\mathtt{\dfrac{1}{slow\_factor}}$\UTF{4E3A}一个循\UTF{73AF}的\UTF{65F6}\UTF{95F4}，\texttt{n\_cycles}\UTF{4E3A}循\UTF{73AF}的个数
+
+
+只需要更\UTF{6362}\texttt{svg}素材即可\footnote{自己制作，或者使用\UTF{8FD9}里的\texttt{svg}素材:\url{https://github.com/manim-kindergarten/manim_sandbox/tree/master/assets/svg_images}}
+
+\subsubsection*{Q6: \texttt{svg}用什\UTF{4E48}\UTF{8F6F}件制作}
+\addcontentsline{toc}{subsection}{Q6: \texttt{svg}用什\UTF{4E48}\UTF{8F6F}件制作}
+\texttt{Adobe Illustrator}(\UTF{7B80}称 AI，推荐)或者\texttt{inkscape}(\UTF{7B80}称 ink，不推荐)。而且不要使用网\UTF{9875}版\UTF{7F16}\UTF{8F91}器
+
+目前\texttt{manim}\UTF{5BF9}\texttt{SVG}的解析很局限，推荐使用\texttt{AI}\footnote{并且使用“\UTF{53E6}存\UTF{4E3A}$\to$SVG”的方式，不要使用\UTF{5BFC}出}
+
+\subsubsection*{Q7: \UTF{52A8}画怎\UTF{4E48}\UTF{663E}示旋\UTF{8F6C}一个物体}
+\addcontentsline{toc}{subsection}{Q7: \UTF{52A8}画怎\UTF{4E48}\UTF{663E}示旋\UTF{8F6C}一个物体}
+使用\texttt{Ratate}和\texttt{Rotating}，区\UTF{522B}在群文件中有\UTF{89C6}\UTF{9891}%
+
+\subsubsection*{Q8: \texttt{Transform}和\texttt{ReplacementTransform}有什\UTF{4E48}区\UTF{522B}}
+\addcontentsline{toc}{subsection}{Q8: \texttt{Transform}和\texttt{ReplacementTransform}有什\UTF{4E48}区\UTF{522B}}
+\begin{enumerate}[1.]
+	\item \texttt{Transform(A, B)}在画面上\texttt{A}\UTF{53D8}成了\texttt{B}的\UTF{6837}子，但是画面上的物体名字\UTF{8FD8}叫\texttt{A}
+	\item \texttt{ReplacementTransform(A, B)}在画面上\texttt{A}\UTF{53D8}成了\texttt{B}的\UTF{6837}子，并且画面上的物体名字叫\texttt{B}
+\end{enumerate}
+
+所以以下\UTF{4E24}个效果相同
+\begin{lstlisting}[frame=none]
+self.play(Transform(A, B))
+self.play(Transform(A, C))
+\end{lstlisting}
+
+\begin{lstlisting}[frame=none]
+self.play(ReplacementTransform(A, B))
+self.play(ReplacementTransform(B, C))
+\end{lstlisting}
+
+\subsubsection*{Q9: 怎\UTF{4E48}控制物体移\UTF{52A8}或者\texttt{Transform}的速率}
+\addcontentsline{toc}{subsection}{Q9: 怎\UTF{4E48}控制物体移\UTF{52A8}或者\texttt{Transform}的速率}
+使用\texttt{rate\_func}，一些\texttt{manim}中已\UTF{7ECF}定\UTF{4E49}的在群文件中有\UTF{89C6}\UTF{9891}%
+
+\begin{figure}[htbp]
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/linear.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/lingering.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/result.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/running_start.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/rush_from.png}}    
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/rush_into.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/slow_into.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/smooth.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/wiggle.png}}    
+    \end{minipage}
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/there_and_back.png}}    
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{minipage}{0.18\linewidth}
+        \centerline{\includegraphics[width=1in]{assets/double_smooth.png}}    
+    \end{minipage}
+    \begin{minipage}{0.2\linewidth}
+        \centerline{\includegraphics[width=1.2in]{assets/exponential_decay.png}}    
+    \end{minipage}
+    \begin{minipage}{0.3\linewidth}
+        \centerline{\includegraphics[width=1.8in]{assets/there_and_back_with_pause.png}}    
+    \end{minipage}
+\end{figure}
+
+\subsubsection*{Q10: 数学符号/公式 用\LaTeX 怎\UTF{4E48}打}
+\addcontentsline{toc}{subsection}{Q10: 数学符号\texttt{/}公式 用\LaTeX 怎\UTF{4E48}打}
+\UTF{8BF7}\UTF{89C1} \url{https://www.luogu.com.cn/blog/IowaBattleship/latex-gong-shi-tai-quan}
+
+推荐\UTF{5988}\UTF{54AA}叔\UTF{7EF4}\UTF{62A4}的\url{https://www.latexlive.com/}
+
+\subsubsection*{Q11: 一些特殊\LaTeX 的外部包}
+\addcontentsline{toc}{subsection}{Q11: 一些特殊\LaTeX 的外部包}
+
+\Ganz \Halb \Vier \Acht \Sech \Zwdr
+
+\textbf{如何使用\texttt{manim}画出上面的音符，或怎\UTF{4E48}使用\UTF{8FD9}些包？}
+
+在\texttt{manimlib}目\UTF{5F55}下的\texttt{ctex\_template.tex}或者\texttt{tex\_template.tex}文件中
+添加外部包的名称\footnote{修改\texttt{TEX\_USE\_CTEX}\UTF{4E3A}\texttt{True}的，可以只在\texttt{ctex\_template.tex}中添加}
+
+就拿上面的音符\UTF{4E3A}例，因\UTF{4E3A}是在\texttt{harmony}包中的，所以在\texttt{tex}文件中添加\texttt{\textbackslash usepackage\{harmony\}}\footnote{不需要使用的\UTF{65F6}候\UTF{8BB0}得改回来哦\label{change}}
+
+然后新建一个\texttt{py}文件，写入代\UTF{7801}%
+\begin{lstlisting}
+    from manimlib.imports import *
+    class TestHarmony(Scene):
+        def construct(self):
+            # harmony具体用法\UTF{8BF7}百度
+            harmony = TextMobject(r"\Ganz \Halb \Vier \Acht \Sech \Zwdr")
+            self.play(ShowCreation(harmony))
+            self.wait()
+\end{lstlisting}
+
+\UTF{8FD0}行py文件即可
+
+\subsubsection*{Q12: 使用\LaTeX 外部包，\UTF{7F16}\UTF{8BD1}\UTF{9519}\UTF{8BEF}或者无\UTF{663E}示}
+\addcontentsline{toc}{subsection}{Q12: 使用\LaTeX 外部包，\UTF{7F16}\UTF{8BD1}\UTF{9519}\UTF{8BEF}或者无\UTF{663E}示}
+首先，并不是所有外部包都能在\texttt{manim}中\UTF{987A}利使用，大多都不支持\texttt{xelatex}\UTF{7F16}\UTF{8BD1}，
+所以建\UTF{8BAE}需要使用外部包\UTF{65F6}只用\texttt{latex}\UTF{7F16}\UTF{8BD1}\footnote{即把\texttt{TEX\_USE\_CTEX}改\UTF{4E3A}\texttt{False}}
+
+至于有些群友常用\texttt{TiKZ}\UTF{8FD9}个外部包，也是使用\texttt{latex}才能\UTF{987A}利\UTF{8FD0}行，
+在\texttt{xelatex}用{} \texttt{\textbackslash draw}会无法\UTF{663E}示，
+需要修改\texttt{tex\_template.tex}文件\textsuperscript{\ref{change}}，修改成如下：
+
+\begin{lstlisting}
+    \documentclass[preview, dvisvgm]{standalone}
+    \usepackage{tikz}
+\end{lstlisting}
+
+新建\texttt{py}文件，写入代\UTF{7801}来画一条\UTF{7EBF}：\begin{tikzpicture}
+    \draw (-1, 0) -- (1, 0);
+\end{tikzpicture}
+
+\begin{lstlisting}
+    class TestTikz(Scene):
+        def construct(self):
+            tikz = TextMobject(
+                # tikz具体用法\UTF{8BF7}百度
+                r"\tikz{\draw (-1, 0) -- (1, 0);}",
+                color=WHITE,
+                stroke_width=1,
+                stroke_opacity=1,
+            )
+            self.play(ShowCreation(tikz))
+            self.wait()
+\end{lstlisting}
+
+\UTF{8FD0}行py文件即可
+
+\subsubsection*{Q13: 一些比\UTF{8F83}\UTF{590D}\UTF{6742},操\UTF{7EB5}\UTF{4E1C}西比\UTF{8F83}多的\UTF{52A8}画怎\UTF{4E48}做}
+\addcontentsline{toc}{subsection}{Q13: 一些比\UTF{8F83}\UTF{590D}\UTF{6742},操\UTF{7EB5}\UTF{4E1C}西比\UTF{8F83}多的\UTF{52A8}画怎\UTF{4E48}做}
+使用外部剪\UTF{8F91}\UTF{8F6F}件,例如\texttt{Adobe Premiere Pro}或者\UTF{8FBE}芬奇
+
+
+\subsubsection*{Q14: 一个\texttt{self.play}里写\UTF{4E24}个\texttt{ApplyMethod}只\UTF{5BF9}一个起作用怎\UTF{4E48}\UTF{529E}}
+\addcontentsline{toc}{subsection}{Q14: 一个\texttt{self.play}里写\UTF{4E24}个\texttt{ApplyMethod}只\UTF{5BF9}一个起作用怎\UTF{4E48}\UTF{529E}}
+去掉\texttt{ApplyMethod}，例如：
+\begin{lstlisting}[frame=none]
+    self.play(ApplyMethod(mob.scale, 2), ApplyMethod(mob.shift, DOWN))
+\end{lstlisting}
+
+改成
+\begin{lstlisting}[frame=none]
+    self.play(mob.scale, 2, mob.shift, DOWN)
+\end{lstlisting}
+
+%\newpage
+
+\subsubsection*{Q15: 如何解决二\UTF{7EF4}画面中的\UTF{56FE}\UTF{5C42}\UTF{95EE}\UTF{9898}}
+\addcontentsline{toc}{subsection}{Q15: 如何解决二\UTF{7EF4}画面中的\UTF{56FE}\UTF{5C42}\UTF{95EE}\UTF{9898}}
+可以使用\texttt{pdcxs}添加的\texttt{plot\_depth}，具体更改\UTF{89C1}下\UTF{56FE}\footnote{\texttt{plot\_depth}的\UTF{503C}越大，\UTF{8FD0}行出来的物体就越在上面}
+
+\texttt{MK fork}的版本已\UTF{7ECF}做了修改：\url{https://github.com/manim-kindergarten/manim}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{assets/pd1.png}
+	\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{assets/pd2.png}
+\end{center}
+\end{figure}
+
+
+
+\newpage
+
+\subsubsection*{Q16: 如何\UTF{5BFC}出\texttt{gif}文件}
+\addcontentsline{toc}{subsection}{Q16: 如何\UTF{5BFC}出\texttt{gif}文件}
+在新版本中，\texttt{manim}\UTF{5BFC}出\texttt{gif}已\UTF{7ECF}失效，可以\UTF{5BFC}出\texttt{mp4}，后用\texttt{ffmpeg}\UTF{8F6C}\UTF{6362}。也可以按照下\UTF{56FE}修改源\UTF{7801}%
+
+\texttt{MK fork}的版本已\UTF{7ECF}做了修改：\url{https://github.com/manim-kindergarten/manim}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{assets/gif.png}
+	\end{center}
+\end{figure}
+
+改\UTF{8FC7}后，在\UTF{8F93}入命令\UTF{65F6}加上\texttt{-i}\UTF{9009}\UTF{9879}，就能\UTF{5BFC}出\texttt{gif}了
+
+\subsubsection*{Q17: 如何\UTF{5BFC}出透明的\UTF{56FE}片或者\UTF{89C6}\UTF{9891}}
+\addcontentsline{toc}{subsection}{Q17: 如何\UTF{5BFC}出透明的\UTF{56FE}片或者\UTF{89C6}\UTF{9891}}
+在\UTF{8FD0}行命令的\UTF{65F6}候加上 \texttt{-t}\UTF{9009}\UTF{9879}%
+\begin{itemize}
+	\item 如果是 \texttt{-s}保存\UTF{56FE}片，\UTF{5219}会存\UTF{50A8}\UTF{4E3A}背景透明的\texttt{png}\UTF{56FE}片
+	\item 如果是 \texttt{-l/-m/-w}保存\UTF{89C6}\UTF{9891}，\UTF{5219}会存\UTF{50A8}\UTF{4E3A}背景透明的\texttt{mov}\UTF{89C6}\UTF{9891}文件，方便\texttt{pr}中的剪\UTF{8F91}%
+\end{itemize}
+
+\subsubsection*{Q18: \UTF{6E32}染\UTF{89C6}\UTF{9891}的画\UTF{8D28}和\UTF{5E27}率怎\UTF{4E48}\UTF{8C03}整}
+\addcontentsline{toc}{subsection}{Q18: \UTF{6E32}染\UTF{89C6}\UTF{9891}的画\UTF{8D28}和\UTF{5E27}率怎\UTF{4E48}\UTF{8C03}整}
+\texttt{manim}的默\UTF{8BA4}画\UTF{8D28}有四\UTF{79CD}%
+\begin{itemize}
+	\item \texttt{-l} 最低画\UTF{8D28} \texttt{480P15}
+	\item \texttt{-m} 中等画\UTF{8D28} \texttt{720P30}
+	\item \texttt{--high\_quality}\footnote{没有\UTF{7F29}写} 高画\UTF{8D28} \texttt{1080P60}
+	\item \texttt{-w} \UTF{5BFC}出(最高)画\UTF{8D28} \texttt{1440P60(2K)}
+	\item \texttt{-uhd} 超高清 \texttt{4K120fps}(B站最高)\footnote{\UTF{4EC5}限\texttt{MK}版本\texttt{manim}}
+\end{itemize}
+
+不加画\UTF{8D28}\UTF{9009}\UTF{9879}，默\UTF{8BA4}使用 \texttt{-w}最高画\UTF{8D28}\footnote{比如 \texttt{-p}(\UTF{867D}然很多人把 \texttt{-p}当成了 \texttt{-w}。。。)}。
+可以通\UTF{8FC7}修改\texttt{constants.py}中\UTF{5BF9}\UTF{5E94}的画面\UTF{957F}\UTF{5BBD}和\UTF{5E27}率来修改\footnote{\texttt{manimlib/constants.py}的\texttt{118}行\UTF{5F00}始}
+
+一般把 \texttt{-w}最高画\UTF{8D28}修改成\texttt{1080P60}
+
+
+\subsubsection*{Q19: 有没有什\UTF{4E48}好的\UTF{573A}景例子供学\UTF{4E60}}
+\addcontentsline{toc}{subsection}{Q19: 有没有什\UTF{4E48}好的\UTF{573A}景例子供学\UTF{4E60}}
+
+\begin{enumerate}[1.]
+	\item \texttt{GitHub}上\texttt{manim-kindergarten/manim\_sandbox}中的\texttt{demo}和\texttt{videos}文件\UTF{5939}中的代\UTF{7801}%
+	\item \texttt{Grant}的代\UTF{7801}\footnote{\texttt{from\_3b1b}文件\UTF{5939}中}\UTF{5BF9}\UTF{5E94}\texttt{3B1B}的\UTF{89C6}\UTF{9891}，可能会有\UTF{62A5}\UTF{9519}，需要魔改
+	\item 群文件里“\texttt{manim}相\UTF{5173}的\texttt{python}代\UTF{7801}及\UTF{89C6}\UTF{9891}\UTF{7ED3}果”
+	\item 群里几个B站\texttt{up}主的\texttt{GitHub}\UTF{5E93}\UTF{5BF9}\UTF{5E94}他\UTF{4EEC}的代\UTF{7801}%
+	\begin{itemize}
+		\item \texttt{cigar666} \url{https://github.com/cigar666/my_manim_projects}
+		\item \UTF{9E64}翔万里 \url{https://github.com/Tony031218/manim_projects}
+		\item \texttt{pdcxs} \url{https://github.com/pdcxs/ManimProjects}
+		\item 有一\UTF{79CD}悲\UTF{4F24}叫\UTF{9893}\UTF{5E9F} \url{https://github.com/136108Haumea/my-manim}
+	\end{itemize}
+\end{enumerate}
+
+\subsubsection*{Q20: \texttt{shaders}分支是什\UTF{4E48}，和普通的有什\UTF{4E48}区\UTF{522B}}
+\addcontentsline{toc}{subsection}{Q20: \texttt{shaders}分支是什\UTF{4E48}，和普通的有什\UTF{4E48}区\UTF{522B}}
+
+\texttt{shaders}分支中的\texttt{manim}是Grant正在制作完善的新版\texttt{manim}，它使用\texttt{modernGL}来\UTF{8FDB}行GPU\UTF{6E32}染，会有更快的速度。
+但是目前仍不\UTF{7A33}定，有能力的可以\UTF{5C1D}\UTF{8BD5}使用。
+
+\UTF{5173}于三个版本的\texttt{manim}的\UTF{7B80}要\UTF{8BF4}明在\href{https://github.com/3b1b/manim/issues/1243}{\#1243}
+
+\newpage
+
+\section{注意}
+
+如果有以上之外的\UTF{95EE}\UTF{9898},可以在群里提出,也可以在GitHub上提出issue，或者按照下\UTF{56FE}操作
+
+    \begin{figure}[h]
+        \begin{center}
+            \includegraphics[width=6cm]{assets/grant.png}
+        \end{center}
+    \end{figure}
+
+也\UTF{8BF7}注意群\UTF{89C4}第 3,4 条
+\begin{itemize}
+    \item 3.\UTF{867D}\UTF{4E3A} manim 交流群,但不要一有\UTF{95EE}\UTF{9898}就提出来,\UTF{7B80}\UTF{5355}的\UTF{95EE}\UTF{9898}能自己解决最好,不能解决\UTF{65F6}再\UTF{5BFB}求\UTF{5E2E}助
+    \item 4.群主和管理\UTF{5458}平\UTF{65F6}\UTF{8F83}忙,有\UTF{65F6}若不能及\UTF{65F6}回\UTF{590D}敬\UTF{8BF7}\UTF{8C05}解
+\end{itemize}
+
+\begin{center}
+\textbf{最后，祝大家好\UTF{8FD0}（*＾-＾*）}
+\end{center}
+
+\end{document}

@@ -1,0 +1,210 @@
+---
+title: "来店解析 : no_profile_20200330.csv"
+subtitle: "来店確率解析 "
+author: "滋賀大学 佐藤、李"
+date: "最終更新: `r format(Sys.time(), '%Y/%m/%d')`"
+# date: "最終更新: 2019/07/16"
+
+output:
+  # word_document:
+  html_document:
+  # html_notebook:
+   number_section: true
+   toc: true
+   code_folding: hide
+   toc_float: 
+    collapsed: false
+    smooth_scroll: false
+  
+  # fig_width: 18
+  # fig_height: 12
+---
+
+
+```{r, echo=FALSE}
+library(data.table)
+suppressMessages(library(tidyverse))
+```
+
+
+# data import
+```{r,echo=FALSE}
+d <- fread(file = "no_profile_20200330.csv", encoding = "UTF-8")
+colnames(d) <- iconv(colnames(d), "cp932", "utf8")
+
+source("0 aaaa.R")
+d1 %>% colnames()
+colnames(d1) <- read.table("var eng.txt", stringsAsFactors = F)[[1]]
+d1 <- tbl_df(d1)
+dim(d1)
+```
+
+```{r,echo=FALSE}
+# report continuous variable 
+nums <- unlist(lapply(d1, is.numeric))
+df_new <- d1[, nums]
+# install.packages("DataExplorer")
+# DataExplorer::create_report(df_new)
+```
+
+
+# 支払い系変数の整理
+```{r}
+# d1[grepl(colnames(d1), pattern = "info_flg")] %>% colnames() %>% cat()
+# d1[grepl(colnames(d1), pattern = "zido")]
+d1 <-
+  d1 %>% select(
+    -info_flg_ng_tel_sales,
+    -info_flg_in_income,
+    -info_flg_in_pension,
+    -info_flg_in_div,
+    -info_flg_nhk,
+    -info_flg_tel,
+    -info_flg_electric,
+    -info_flg_gas,
+    -info_flg_water,
+    -info_flg_othr
+  )
+
+```
+
+
+# logistic reg(AIC 変数選択済み)
+
+```{r}
+# logistic.res<-glm(factor(d1$y_binary)~ . , data = d1[,-2], family=binomial())
+# AIC.res<-MASS::stepAIC(logistic.res)
+# save.image(file = "aa.Rdata")
+
+load("aa.Rdata")
+
+logistic.res %>% broom::tidy()
+
+AIC.res %>% broom::tidy() %>% arrange(p.value) %>% tibble::column_to_rownames("term") %>% round(2) %>% DT::datatable()
+```
+
+
+# variable name 日本語、英語対応表 
+```{r}
+
+bind_cols(
+read_csv("var eng.txt", col_names = "Eng"),
+read_csv("var jpn.txt", col_names = "Jpn")
+) %>% 
+  # knitr::kable()
+  DT::datatable()
+```
+
+
+# RF データ pre processing 
+```{r}
+d1.factor<-d1[sapply(d1, is.character)] %>% 
+lapply(factor) %>% as.data.frame() %>% tbl_df()
+
+d1.numeric<-d1[sapply(d1, is.numeric)]
+
+d1.rf<-bind_cols(d1.factor, d1.numeric) %>% select(y_binary, everything()) %>% select(-y_count)
+d1.rf$assign_branch_name_jp<-iconv(d1.rf$assign_branch_name_jp, "cp932", "utf8") 
+d1.rf$assign_branch_name_jp<-as.factor(d1.rf$assign_branch_name_jp)
+```
+
+
+# RF fitting, importance
+```{r, fig.width=10, fig.asp=1}
+# set.seed(0) #乱数に再現性があるように初期値を固定
+# index <- sample(1:nrow(d1.rf), round(nrow(d1.rf) * 0.6)) #6割で訓練、4割で評価
+# 訓練データ
+# d1.train <- d1.rf[index, ]
+# d1.test <- d1.rf[-index, ]
+
+suppressMessages(library(randomForest))
+# s <- proc.time()
+# d1.rf.train <- randomForest(y_binary ~ ., data = d1.train, method = "class")
+# end <- s - proc.time()
+#  ユーザ   システム       経過  
+# -198.758     -2.057   -202.974 
+
+# save.image("rf.Rdata")
+
+
+load("rf.Rdata")
+d1.rf.train$importance %>%
+  tbl_df() %>%
+  mutate(var = colnames(d1.train)[-1]) %>%
+  arrange(desc(MeanDecreaseGini)) %>%
+  # knitr::kable()
+  DT::datatable()
+par(family= "HiraKakuProN-W3")
+varImpPlot(d1.rf.train)
+```
+
+
+```{r}
+Predicted.train <- predict(d1.rf.train, d1.train, type="prob")
+Predicted.test <- predict(d1.rf.train, d1.test, type="prob")
+```
+
+```{r}
+Predicted.train %>% tbl_df()
+Predicted.test %>% tbl_df()
+```
+
+
+```{r}
+# AIC.res
+
+m<-glm(formula = factor(d1$y_binary) ~ zido_barai + channel_desc + 
+    category + age + gender + info_job + vintage + info_income + 
+    Num_of_months_since_the_last_visit + Num_of_visits_past_3_months + 
+    Num_of_visits_last_12_months + Num_of_visits_during_the_whole_period + 
+    job_function + Total_deposit_balance + distance + IB_login_count + 
+    Num_of_months_since_last_visit + Num_of_months_since_the_last_call + 
+    Num_of_phone_call_differences_last_3_months + Num_of_phone_call_differences_last_12_months + 
+    Num_of_phone_calls_differing_from_all_past_periods + Visits_last_12_months + 
+    Num_of_visits_in_all_past_periods + Received_power_last_3_months + 
+    icc_cnt, family = binomial(), data = d1[, -2])
+m$fitted.values %>% tbl_df()
+```
+
+<!-- # ROC -->
+<!-- ```{r,echo=FALSE, message=F} -->
+<!-- library(pROC) -->
+<!-- roc( -->
+<!--   m$y ~ m$fitted.values,  -->
+<!--   plot = T, -->
+<!--   print.auc = T, -->
+<!--   col = "red", -->
+<!--   legacy.axes = T, -->
+<!--   xlab="False Positive", -->
+<!--   ylab="True Positive" -->
+<!-- ) -->
+
+<!-- # rf 訓練データ -->
+<!-- roc( -->
+<!--   d1.test$y_binary ~ Predicted.test[,2], -->
+<!--   plot = T, -->
+<!--   print.auc = T, -->
+<!--   col = "blue", -->
+<!--   add = T, -->
+<!--   print.auc.y = 0.4, -->
+<!--   print.auc.x = 1 -->
+
+<!-- ) -->
+
+<!-- # rf 評価データ -->
+<!-- roc( -->
+<!--   d1.train$y_binary ~ Predicted.train[,2], -->
+<!--   plot = T, -->
+<!--   print.auc = T, -->
+<!--   col = "grey", -->
+<!--   add = T, -->
+<!--   print.auc.y = 0.3, -->
+<!--   print.auc.x = 1 -->
+
+<!-- ) -->
+
+
+<!-- legend("bottomright", legend = c("logistic", "RF.test", "RF.train"),  -->
+<!--        col = c("red", "blue", "grey"), lwd=4) -->
+
+<!-- ``` -->

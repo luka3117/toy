@@ -1,0 +1,14 @@
+
+window size
+
+"window.zoomLevel": 1.5,
+setting 
+
+
+
+midi play
+click
+lilypond midi playback
+
+
+

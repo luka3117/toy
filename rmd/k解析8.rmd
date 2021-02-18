@@ -1,0 +1,256 @@
+---
+title: "来店解析 : no_profile_20200330.csv"
+subtitle: "来店確率解析, CART 店舗比較 "
+author: "滋賀大学 佐藤、李"
+# date: "最終更新: `r format(Sys.time(), '%Y/%m/%d')`"
+date: "最終更新: 2020/07/16 向け"
+
+output:
+  # word_document:
+  html_document:
+  # html_notebook:
+   number_section: true
+   toc: true
+   code_folding: hide
+   toc_float:
+     smooth_scroll: false
+     collapsed: false
+  # fig_width: 18
+  # fig_height: 12
+---
+
+# data 読み込みと変数削除
+- final data name : d
+
+# 92直近来店からの経過月数
+- 93過去３ヶ月以内来店回数
+- 94過去6ヶ月以内来店回数 
+- 95過去12ヶ月以内来店回数
+- 96過去３年以内来店回数
+- 97過去全期間来店回数
+
+```{r}
+# install.packages("./SMBC202006Pkg/", repos = NULL, type = "source")
+library(SMBC202006Pkg)
+suppressMessages(library(party))
+suppressMessages(library(tidyverse))
+suppressMessages(library(pROC))
+
+d <-
+SMBC202006Pkg::d1.rf %>% select(
+-Num_of_months_since_the_last_visit,
+-Num_of_visits_past_3_months,
+-Num_of_visits_last_6_months,
+-Num_of_visits_last_12_months,
+-Num_of_visits_past_3_years,
+-Num_of_visits_during_the_whole_period
+)
+
+d$num_br <- as.factor(d$num_br)
+d$info_job <- as.factor(d$info_job)
+```
+
+## data dimension and overall structure
+```{r}
+dim(d)
+d %>% head() %>% DT::datatable()
+```
+
+# CART
+## cart total
+```{r}
+cart.total <- ctree(y_binary ~ ., data = d,
+                    controls = ctree_control(minsplit = 10 ^ 4 + 10 ^ 4 / 2))
+cart.total
+```
+
+### cart plot save and include
+
+```{r , fig.cap="c caption", out.width = '100%'}
+# a=1.8
+# pdf(file = "cart.total.pdf",width=12*a, height=5*a)
+# plot(cart.total)
+# dev.off()
+
+knitr::include_graphics("cart.total.pdf")
+```
+
+## cart 福岡 (num_br==45)
+
+```{r}
+# num_br==45 
+d.Fukuoka<-d%>%filter(num_br==45) %>% select(-num_br)
+
+
+cart.Fukuoka<-ctree(y_binary ~ .,data = d.Fukuoka, controls = ctree_control(minsplit =20))
+
+cart.Fukuoka
+
+cart.Fukuoka %>% plot()
+
+```
+
+
+## cart 札幌 (num_br==35)
+
+```{r}
+d.Sapporo<-d%>%filter(num_br==35) %>% select(-num_br)
+
+cart.Sapporo <- ctree(y_binary ~ ., data = d.Sapporo)
+cart.Sapporo
+```
+
+
+# ROC
+
+## predicted value
+
+```{r}
+cart.total.predicted <-
+  predict(cart.total, type = "prob") %>%
+  purrr::map_dbl(.x = . , function(x) {
+    x[2]
+  }) %>% tbl_df()
+
+
+
+cart.Sapporo.predicted <-
+  predict(cart.Sapporo, type = "prob") %>%
+  purrr::map_dbl(.x = . , function(x) {
+    x[2]
+  }) %>% tbl_df()
+
+cart.Fukuoka.predicted <-
+  predict(cart.Fukuoka, type = "prob") %>%
+  purrr::map_dbl(.x = . , function(x) {
+    x[2]
+  }) %>% tbl_df()
+
+
+
+# cbind(cart.total.predicted,cart.Sapporo.predicted,cart.Fukuoka.predicted)
+
+Roc.total <- cbind(y=as.numeric(d$y_binary)-1, cart.total.predicted) %>% tbl_df()
+Roc.Sapporo <- cbind(y=as.numeric(d.Sapporo$y_binary)-1, cart.Sapporo.predicted) %>% tbl_df()
+Roc.Fukuoka <- cbind(y=as.numeric(d.Fukuoka$y_binary)-1, cart.Fukuoka.predicted) %>% tbl_df()
+
+```
+
+### pred
+:::: {style="display: flex;"}
+:::{}
+- 全店舗
+```{r, warning=F}
+Roc.total %>% round(2) %>% DT::datatable()
+```
+:::
+:::{}
+- 札幌
+```{r}
+Roc.Sapporo %>% round(2) %>% DT::datatable()
+```
+:::
+:::{}
+- 福岡
+```{r}
+Roc.Fukuoka %>% round(2) %>% DT::datatable()
+```
+:::
+::::
+
+
+## result of AUC
+```{r}
+
+a<-roc(
+  Roc.total$y~Roc.total$value,
+  plot = F,
+  print.auc = T,
+  col = "red",
+  # add = T,
+  print.auc.y = 0.6,
+  print.auc.x = 1/2
+)
+
+
+
+b<-roc(
+  Roc.Fukuoka$y~Roc.Fukuoka$value,
+  plot = F,
+  print.auc = T,
+  col = "red",
+  add = T,
+  print.auc.y = 0.6,
+  print.auc.x = 1/2
+) 
+
+
+c<-roc(
+  Roc.Sapporo$y~Roc.Sapporo$value,
+  plot = F,
+  print.auc = T,
+  col = "red",
+  add = T,
+  print.auc.y = 0.6,
+  print.auc.x = 1/2
+) 
+
+
+
+cbind(全店舗=a$auc, 福岡=b$auc,札幌=c$auc)
+
+```
+
+
+## comparison of ROCs
+```{r}
+col<- c("red", "green",  "blue")
+
+
+par(family= "HiraKakuProN-W3")
+
+roc(
+  Roc.total$y~Roc.total$value,
+  plot = F,
+  print.auc = T,
+  col = "red",
+  # add = T,
+  print.auc.y = 0.6,
+  print.auc.x = 1/2
+) %>% plot(col=col[1])
+
+
+roc(
+  Roc.Fukuoka$y~Roc.Fukuoka$value,
+  plot = F,
+  print.auc = T,
+  col = "red",
+  add = T,
+  print.auc.y = 0.6,
+  print.auc.x = 1/2
+) %>% plot(add=T, col=col[2])
+
+
+roc(
+  Roc.Sapporo$y~Roc.Sapporo$value,
+  plot = F,
+  print.auc = T,
+  col = "red",
+  add = T,
+  print.auc.y = 0.6,
+  print.auc.x = 1/2
+) %>% plot(add=T, col=col[3])
+
+
+legend("bottomright",
+  legend = c(
+    "全店舗",
+    "福岡",
+    "札幌"
+  ),
+  col = c("red", "green", "blue"),
+  lwd = 4
+)
+
+```
+

@@ -1,0 +1,9 @@
+
+ 1743  git branch -a
+
+ 1721  git branch MacPro
+ 1728  git checkout MacPro 
+
+ 1738  git remote -v
+
+ 1740  git push --set-upstream origin MacPro

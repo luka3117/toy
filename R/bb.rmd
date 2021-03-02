@@ -1,6 +1,6 @@
 
 ## dsklfjldsfjdslkfj
 ```{r}
-iris
+iris %>% head()
 ```
 

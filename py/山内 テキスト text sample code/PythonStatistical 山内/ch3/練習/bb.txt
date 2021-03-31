@@ -1,0 +1,114 @@
+#-*- coding: utf-8 -*-
+# List 3-1  平均値の計算
+height = [168.3, 179.2, 165.8, 170.5, 188.2, 
+    174.6, 162.8, 175.5, 178.1, 177.1]
+average = sum(height)/len(height)
+print(average)
+# 出力結果は、　174.00999999999996
+
+# -*- coding: utf-8 -*-
+import numpy as np
+import matplotlib.pyplot as plt
+x = [0, 95, 60, 30, 0, 60, 67, 67, 65, 80,
+   100, 91, 0, 0, 83, 67, 90, 91, 73, 61,
+   74, 99, 44, 75, 98, 98, 68, 69, 79, 95,
+   87, 87, 60, 78, 100, 0, 63, 72, 75, 79,
+   69, 60, 83, 83, 65, 80, 73, 85, 0, 60,
+   80, 60, 92, 99, 81, 66, 48, 83, 97, 68,
+   77, 89, 0, 89, 0, 62, 88, 37, 87, 93,
+   60, 83, 71, 65]
+plt.hist(x, bins=20, color='gray')
+plt.title('成績の頻度分布')
+plt.xlabel('点数')
+plt.ylabel('人数（頻度）')
+plt.show()
+# -*- coding: utf-8 -*-
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.loadtxt('seiseki.csv', delimiter=',')  # CSVファイルからデータを読込む
+plt.hist(x, bins=20, color='gray')
+plt.title('成績の頻度分布')
+plt.xlabel('点数')
+plt.ylabel('人数（頻度）')
+plt.show()# -*- coding: utf-8 -*-
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.array(np.loadtxt('seiseki.csv', delimiter=","))  # CSVファイルからデータを読込む
+
+print('variance', x.var().round(4))
+print('std-deviation', x.std().round(4))
+# 出力結果は
+
+
+plt.boxplot(x)       # 箱ひげ図をつくる
+plt.xticks([1], ['国語'])
+plt.title('箱ひげ図（0点は除いた）')
+plt.grid()
+plt.xlabel('科目')
+plt.ylabel('点数')
+plt.show()
+#-*- coding: utf-8 -*-
+# List 3-2 パッケージstatisticsの算術平均関数を使う
+from statistics import mean      # <-- statisticsパッケージからmeanをimport
+height = [168.3, 179.2, 165.8, 170.5, 188.2, 
+    174.6, 162.8, 175.5, 178.1, 177.1]
+average = mean(height)   # importしたmeanを使う
+print(average)
+
+#-*- coding: utf-8 -*-
+# List 3-3 パッケージstatisticsの算術平均関数を使う
+import statistics      # <-- statisticsパッケージをimport
+height = [168.3, 179.2, 165.8, 170.5, 188.2, 
+    174.6, 162.8, 175.5, 178.1, 177.1]
+average = statistics.mean(height)   # importしたstatisticsパッケージの中のmeanを使う
+print(average)
+#-*- coding: utf-8 -*-
+# List 3-4 パッケージstatisticsの算術平均関数を使
+from statistics import mean      # <-- statisticsパッケージからすべてをimport
+height = [168.3, 179.2, 165.8, 170.5, 188.2, 
+    174.6, 162.8, 175.5, 178.1, 177.1]
+average = mean(height)   # <--importした中にmeanも含まれている
+print(average)
+#-*- coding: utf-8 -*-
+# List 3-5 パッケージstatisticsのメジアン・モード関数を使う
+from statistics import median, mode      # <-- statisticsパッケージからmedianとmodeをimport
+print(median([168.3, 179.2, 165.8, 170.5, 188.2, 
+    174.6, 162.8, 175.5, 178.1, 177.1]))
+# 出力結果は　175.05
+print(mode([19, 21, 19, 20, 22, 19, 20, 21, 20, 20,]))
+# 出力結果は　20
+
+#-*- coding: utf-8 -*-
+# List 3-6 パッケージscipy.statsの幾何平均関数を使う
+from scipy.stats import gmean      # <-- scipy.statsパッケージからmedianとmodeをimport
+print(gmean([1, 2, 4, 8, 16])) 
+# 出力結果は　4.0
+#-*- coding: utf-8 -*-
+# List 3-7 幾何平均を自前で計算する
+import numpy as np
+x = np.array([1, 2, 4, 8, 16])
+print( np.power(x.prod(), 1/len(x)) )
+# 出力結果は　4.0# -*- coding: utf-8 -*-
+# List 3-8 トリム平均の計算
+from scipy import stats
+x = [168.3, 179.2, 165.8, 170.5, 188.2, 
+    174.6, 162.8, 175.5, 178.1, 177.1]
+print(stats.trim_mean(x, 0.1))  # xに対して両側から0.1ずつトリムして平均
+# 出力結果は　173.6375
+#-*- coding: utf-8 -*-
+# List 3-9 matplotlibでグラフを描くプログラム例
+import numpy as np          # numpyをnpとしてimport
+import matplotlib.pyplot as plt  # matplotlibのpyplotをpltとしてimport
+
+t = np.arange(0., 5., 0.2)   # 0から5まで、0.2おきに数を生成→リストtへ
+
+plt.title('drawing example1')           # グラフのタイトルを描く
+plt.plot(t, t, 'r--', label='linear')   # y=xの直線を描く
+plt.plot(t, t**2, 'bs', label='square') # y=x**2の直線を描く
+plt.plot(t, t**3, 'g^', label='cube')   # y=x**3の直線を描く
+plt.xlabel('x values')                  # x軸のラベルを描く
+plt.ylabel('y values')                  # y軸のラベルを描く
+plt.legend()                            # 凡例を描く
+plt.show()                              # 図全体を出力（表示）する
+

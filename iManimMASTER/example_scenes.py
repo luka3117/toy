@@ -2,6 +2,16 @@
 
 from big_ol_pile_of_manim_imports import *
 
+import sys
+import os
+
+# sys.path = ["<your python path>"] + sys.path
+sys.path = [os.getcwd()] + sys.path
+
+print(sys.path)
+
+
+
 # To watch one of these scenes, run the following:
 # python -m manim example_scenes.py SquareToCircle -pl
 #

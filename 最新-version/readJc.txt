@@ -1,0 +1,32 @@
+
+# -----------------
+
+令和3年4月12日
+
+# -----------------
+
+pwd
+
+/Users/jc/Dropbox/dplyr-tutorial-master/ManimJcCompProj/最新-version
+
+
+work with old command in
+
+  mac mini
+  mac pro
+
+in mac mini big sur os need to chnage openGL setting
+see the gmail
+
+
+runnin command
+
+
+python -m manim ..... -pl
+
+
+this version is created at 2020年10月31日
+
+hit
+
+git log

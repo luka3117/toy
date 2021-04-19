@@ -1,0 +1,61 @@
+\documentclass[preview]{standalone}
+
+% # --------------------------------------------------------------------
+% \usepackage[whole]{bxcjkjatype}　<- これのみ必要　もしかして必要ないかも？？？2020/11/21
+\usepackage{CJKutf8}
+\newcommand*{\Ja}[1]{%
+% ゴシック
+  \begin{CJK}{UTF8}{ipxg}#1\end{CJK}}
+
+% 明朝
+  % \begin{CJK}{UTF8}{ipxm}#1\end{CJK}}
+
+% 不明フォント
+  % \begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+
+
+% 日本語フォント情報は以下のリンクから：令和2年11月21日
+% https://tex.stackexchange.com/questions/392083/change-kanji-display-with-cjkutf8
+% \begin{CJK}{UTF8}{ipxm}直\end{CJK} and \begin{CJK}{UTF8}{gbsn}直\end{CJK}
+
+% # --------------------------------------------------------------------
+
+% # --------------------------------------------------------------------
+\usepackage{kotex}
+% # --------------------------------------------------------------------
+
+% # --------------------------------------------------------------------
+\usepackage[english]{babel}
+% # --------------------------------------------------------------------
+
+% # --------------------------------------------------------------------
+% this line is originally turned on, but I changed this off to use Japanes
+% 2020年11月13日
+% \usepackage[utf8]{inputenc}　
+% # --------------------------------------------------------------------
+
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+%\usepackage[UTF8]{ctex}
+\linespread{1}
+
+\begin{document}
+
+あああis some
+
+\end{document}

@@ -1,0 +1,55 @@
+\documentclass[preview]{standalone}
+
+% \usepackage[whole]{bxcjkjatype}　<- これのみ必要
+% \usepackage{CJKutf8}
+
+\usepackage[whole]{bxcjkjatype}
+\usepackage{CJKutf8}
+% \usepackage{kotex}
+
+\newcommand*{\Ja}[1]{%
+  \begin{CJK}{UTF8}{ipxg}#1\end{CJK}}
+
+\newcommand*{\Ko}[1]{%
+  \begin{CJK}{UTF8}{} \CJKfamily{mj}
+#1\end{CJK}}
+
+
+
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+%\usepackage[UTF8]{ctex}
+\linespread{1}
+
+\begin{document}
+
+\begin{table}[ht]
+        \centering
+        \begin{tabular}{rrrr}
+        \hline
+        & coffee & cola & pepsi \\
+        \hline
+        F &   0 &   0 &   2 \\
+        M &   3 &   0 &   1 \\
+        \hline
+        \end{tabular}
+        \end{table}
+
+\end{document}

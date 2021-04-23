@@ -1,4 +1,5 @@
-from big_ol_pile_of_manim_imports import *
+# from big_ol_pile_of_manim_imports import *
+from manimlib.imports import *
 
 
 # rendering order
@@ -15,8 +16,9 @@ from big_ol_pile_of_manim_imports import *
 
 class A0_config(Scene):
     CONFIG = {
-        "Shiga_logo": ImageMobject("0 SMBC/fig/logo/ShigaUnivLogo.png"),
-        "SumMoon_logo": ImageMobject("0 SMBC/fig/logo/SMBC_logo.png"),
+        # "Shiga_logo": ImageMobject("0 SMBC/fig/logo/ShigaUnivLogo.png"),
+        "Shiga_logo": ImageMobject("0ZEZE/fig/logo/zeze_logo.jpg"),
+        "SumMoon_logo": ImageMobject("0ZEZE/fig/logo/zeze_logo.jpg"),
         "author": TextMobject("speaker : JC Lee"),
         "sas_data": TextMobject(r"""
         \begin{table}[ht]

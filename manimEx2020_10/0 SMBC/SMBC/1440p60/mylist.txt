@@ -1,0 +1,3 @@
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/0 SMBC/SMBC/1440p60/A0_Intro.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/0 SMBC/SMBC/1440p60/test.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/0 SMBC/SMBC/1440p60/test1.mp4'

@@ -1,0 +1,14 @@
+{
+    "dialog-state": {
+        "query": "plotl",
+        "path": "",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [],
+        "excludeFilePatterns": [],
+        "resultsCount": 0,
+        "errorCount": 0,
+        "replaceErrors": "",
+        "projectRelative": true
+    }
+}

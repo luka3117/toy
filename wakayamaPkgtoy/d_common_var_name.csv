@@ -1,0 +1,139 @@
+value
+key
+pref.id
+sex
+pref.E
+pref.A
+pref.J
+
+健康/疾患
+  Trt_rate_Hospitalization_Malignant_neoplasm_2017
+  Trt_rate_hospitalization_heart_dz_2017
+  Trt_rate_Hospitalization_Cerebrovascular_dz_2017
+  Trt_rate_Outpatient_Malignant_neoplasm_2017
+  Trt_rate_outpatient_heart_dz_2017
+  Trt_rate_Outpatient_Cerebrovascular_dz_2017
+
+医療施設
+  Num_of_hospitals_2019
+  Num_of_clinics_2019
+  Num_of_general_clinics
+  HM_Num_of_general_hospitals
+  HM_Num_of_general_dental_clinics_per_100k_pop
+  HM_Num_of_doctors_engaged_in_medical_facilities_per_100k_pop
+  HM_Num_of_public_health_nurses_per_100k_pop
+
+医療従事者
+  Num_of_certified_cancer_doctors_2020
+  Num_of_cardiologists_2020
+  Num_of_endoscopists_2020
+
+文化
+  Book_purchase_price_2019
+  Num_of_libraries
+  Sports_Participant_Rate
+  Travel_Rate1
+  Volunteer_Activity_Participant_Rate
+
+
+人口
+  pop_Young_pop_Ratio_2020
+  pop_oldElderly_pop_Ratio_2020
+  pop_Working_Age_pop_Ratio_2020
+  pop_Rough_Mortality_2020
+  pop_Double_income_household_ratio_2020
+
+自然環境
+  Natural_environment_annual_avg_temperature
+  Natural_environment_annual_avg_relative_humidity
+  Natural_environment_annual_rain
+  Natural_environment_annual_Num_of_snow_days
+
+経済
+  Economic_pref_income
+  Admin_base_Financial_strength_index
+  Admin_base_balance_ratio
+  Admin_infrastructure_living_protection_cost_ratio_(prefectural_finance)
+  Admin_infrastructure_Edu_cost_ratio_(prefectural_finance)
+  Gini_coeff_2014
+  Income_Gini_Coeff_Working_Household_2014
+
+
+教育
+  Edu_Ptc_of_university_graduate_students_with_a_final_academic_background
+  Academic_ability_middle_school_2015
+  Academic_ability_elementary_school_2015
+
+労働
+  Labor_primary_industry_emp_ratio
+  Labor_secondary_industry_emp_ratio
+  Labor_tertiary_industry_emp_ratio
+  Labor_Unemp_rate
+  Total_working_hours_2016
+  Total_salary_2016
+
+住居
+  Residence_owner_ratio
+  Residence_house_ratio
+  Residence_water_supply_pop_ratio
+  Residence_sewerage_ratio
+  Residential_city_park_area_(per_pop)
+  Residence_road_pavement_rate
+  Residence_simachi_pavement_rate
+  Safety_Num_of_traffic_accidents_per_100k_pop
+  Residence_Num_of_city_parks
+
+
+家計経済
+  Household_actual_income
+  Household_consumption_expenditure
+  Household_Edu_cost_ratio
+  Household_Liberal_Arts_and_Entertainment_Expenditure_Ratio
+  Household_Savings
+  Household_Smartphone_ownership_quantity
+  Household_PC_ownership_quantity
+  Household_Car_ownership_quantity
+  Household_Tablet_terminal_Ownership_quantity
+  pop_Household_Ratio_of_elderly_single_person_households
+
+疾患
+  Hypertension_Hospitalization_2014
+  Hypertension_Outpatient_2014
+  Diabetes_hospitalization_2014
+  Diabetes_Outpatient_2014
+  Total_Num_of_caries_2014
+  Total_Num_of_periodontal_2014
+  Bone_density_disorder_2014
+  Fracture_2014
+  Tooth_supplement_2014
+  Alzheimer_dz_2014
+
+食
+  Meat_2014
+  Seafood_2014
+  Milk_2014
+  Dairy_2014
+  Egg_2014
+  Soybean_2014
+
+住居施設
+  Usual_barrier_free_handrails_2013
+  Usual_barrier_free_no_steps_2013
+  High_barrier_free_handrails_2013
+  High_barrier_free_no_steps_2013
+  High_barrier_free_wheelchairs_pass_Width
+
+食消費
+
+  Fish_meat_consumption_2014
+  Fish_meat_consumption_2015
+  Fish_meat_consumption_2016
+  Fish_meat_consumption_avg_2014_2016
+  Confectionery_consumption_2014
+  Confectionery_consumption_2015
+  Confectionery_consumption_2016
+  Confectionery_consumption_avg_2014_2016
+  Fruits_consumption_2014
+  Fruits_consumption_2015
+  Fruits_consumption_2016
+  Fruit_consumption_avg_2014_2016

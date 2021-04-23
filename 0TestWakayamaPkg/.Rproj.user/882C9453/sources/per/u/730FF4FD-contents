@@ -1,0 +1,13 @@
+plot_ly(data = iris, x=~Sepal.Length, 
+        y=~Sepal.Width, frame = ~Sepal.Length) %>% 
+  add_paths()
+
+
+
+
+
+
+
+Petal.Length Petal.Width Species
+
+colnames(iris) %>% cat()

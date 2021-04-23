@@ -1,0 +1,18 @@
+aa<-iris %>% select(-5) %>% pivot_longer(everything()) %>% tbl_df() %>% 
+  group_by(name) %>% nest() 
+
+%>% mutate(map(data,mean))
+
+
+aa$`map(data, mean)`
+
+
+sapply(aa$data, mean)
+
+aa$data
+
+
+
+mean(iris[1])
+
+

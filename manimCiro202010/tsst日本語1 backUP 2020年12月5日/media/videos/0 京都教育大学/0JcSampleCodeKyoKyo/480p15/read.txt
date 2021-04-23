@@ -1,0 +1,5 @@
+
+
+FFmpeg command
+
+~/D/d/M/t/m/v/0/0/480p15 ❯❯❯ ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4

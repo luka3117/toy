@@ -1,0 +1,36 @@
+system("open .")
+
+
+
+
+Wakayama::d %>% dim()
+
+Wakayama::JpnEng %>% tbl_df() %>% xtable::xtable()
+
+
+
+Wakayama::d_m %>% select(LE_2015) %>% bind_cols(Wakayama::pref["pref.J"]) %>% dplyr::arrange(LE_2015) %>% mutate(rank=row_number()) %>%
+  xtable::xtable()
+
+
+Wakayama::d_f %>% select(LE_2015) %>% bind_cols(Wakayama::pref["pref.J"]) %>% dplyr::arrange(LE_2015) %>% mutate(rank=row_number()) %>%
+  xtable::xtable()
+
+
+Wakayama::d_m %>% select(HLE_2016) %>%
+  bind_cols(Wakayama::pref["pref.J"]) %>%
+  dplyr::arrange(HLE_2016) %>% mutate(rank=row_number()) %>%
+  xtable::xtable()
+
+Wakayama::d_f %>% select(HLE_2016) %>%
+  bind_cols(Wakayama::pref["pref.J"]) %>%
+  dplyr::arrange(HLE_2016) %>% mutate(rank=row_number()) %>%
+  xtable::xtable()
+
+system("open .")
+
+
+
+
+
+

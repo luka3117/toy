@@ -1,0 +1,483 @@
+---
+title: "京都教育大学：講義資料 chapter 1 "
+subtitle: "2020年度秋学期 統計学 "
+author: "担当：滋賀大学 李鍾賛"
+# date: "最終更新: 2020/10/02"
+date: "最終更新: `r format(Sys.time(), '%Y/%m/%d')`"
+output:
+  # word_document:
+  html_document:
+     # html_notebook:
+   number_section: true
+   toc: true
+   code_folding: hide
+   toc_float:
+     smooth_scroll: false
+   collapsed: false
+   # fig_width: 18
+   # fig_height: 12
+---
+
+<!-- # Tabset {.tabset .tabset-fade .tabset-pills} -->
+<!-- ## Tab 1 -->
+<!-- text 1 -->
+<!-- ## Tab 2 -->
+<!-- text 2 -->
+<!-- ### End tabset -->
+
+```{r, echo=FALSE}
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+# par(family = "HiraKakuProN-W3")
+```
+
+# データの入力
+```{r}
+room <- read.csv("room.csv", fileEncoding = "cp932")
+population_h26 <- read.csv("population_h26.csv", fileEncoding = "cp932")
+death <- read.csv("death.csv", fileEncoding = "cp932")
+Salary <- read.csv("Salary.csv", fileEncoding = "cp932")
+```
+
+
+# data 確認 {.tabset .tabset-fade .tabset-pills} 
+## room  
+```{r}
+room %>% DT::datatable()
+```
+
+## population_h26 
+```{r}
+population_h26  %>% DT::datatable()
+```
+
+## death 
+```{r}
+death  %>% DT::datatable()
+```
+
+## Salary 
+```{r}
+Salary %>% DT::datatable()
+```
+###
+
+
+# ヒストグラム {.tabset .tabset-fade .tabset-pills} 
+## 図1.1のヒストグラム
+
+```{r}
+par(family= "HiraKakuProN-W3")
+a<-hist(room$家賃, breaks=seq(60000,160000,10000), xlab="家賃", ylab="度数",
+  main="", col="gray")
+bind_cols(階級=a$mids, 頻度=a$counts) %>% as.data.frame()
+```
+
+
+## 図1.2のヒストグラム
+```{r}
+par(family= "HiraKakuProN-W3")
+a<-hist(room$家賃, breaks=seq(60000,160000,5000), xlab="家賃", ylab="度数",
+  main="", col="gray")
+bind_cols(階級=a$mids, 頻度=a$counts) %>% as.data.frame()
+```
+
+
+## 図1.3のヒストグラム
+```{r}
+par(family= "HiraKakuProN-W3")
+a<-hist(room$家賃, breaks=seq(60000,160000,20000), xlab="家賃", ylab="度数",
+  main="",col="gray")
+bind_cols(階級=a$mids, 頻度=a$counts) %>% as.data.frame()
+```
+
+
+# 分布の形 {.tabset .tabset-fade .tabset-pills} 
+## 図1.5（上段左）のグラフ
+
+```{r}
+par(family= "HiraKakuProN-W3")
+curve(dnorm(x),-4,4, xlab="", ylab="", yaxs="i", ylim=c(0,0.45))
+
+```
+
+## 図1.5（上段中央）のグラフ
+
+```{r}
+par(family= "HiraKakuProN-W3")
+
+curve(dbeta(x,1.8,5), 0, 1, xlab="", ylab="", yaxs="i", ylim=c(0,3))
+```
+
+
+## 図1.5（上段右）のグラフ
+
+```{r}
+par(family= "HiraKakuProN-W3")
+
+curve(dbeta(x,5,1.8), 0, 1, xlab="", ylab="", yaxs="i", ylim=c(0,3))
+```
+
+
+## 図1.5（下段）のグラフ
+```{r}
+curve(dunif(x), -0.5, 1.5, xlab="", ylab="", yaxs="i", ylim=c(0,1.05), n=40000)
+```
+
+
+# 図1.6の幹葉図
+```{r}
+stem(room$家賃, scale=0.5)
+```
+
+
+# 累積分布図 {.tabset}
+
+
+## 図1.7の累積分布図
+```{r}
+Fn <- ecdf(room$家賃)
+plot(Fn, do.point=F, verticals=T, xlab="", ylab="", main="")
+
+```
+
+
+## 図1.8のグラフ
+
+```{r}
+
+curve(pnorm(x,5),0,10, xlab="", ylab="", yaxs="i", ylim=c(0,1))
+par(new=T)
+curve(pnorm(x,3),0,10, xlab="", ylab="", yaxs="i", ylim=c(0,1), lty=2)
+par(new=T)
+curve(pnorm(x,7),0,10, xlab="", ylab="", yaxs="i", ylim=c(0,1), lty=3)
+text(2.5,0.5,"A")
+text(4.5,0.5,"B")
+text(6.5,0.5,"C")
+```
+
+
+## 図1.9の累積分布図
+```{r}
+x <- c(60000,70000,80000,90000,100000,110000,120000,130000,140000,150000)
+y <- c(0,0.029,0.1,0.35,0.6,0.714,0.814,0.893,0.95,1)
+plot(x, y, type="l", xlab="", ylab="", yaxs="i", main="")
+```
+
+# ローレンツ曲線 {.tabset}
+## 図1.10のローレンツ曲線
+
+```{r}
+par(family= "HiraKakuProN-W3")
+x <- c(0,0.2,0.4,0.6,0.8,1.0)
+y1 <- c(0,200,200,200,200,200)
+y1fn <- cumsum(y1)/sum(y1)
+y2 <- c(0,100,100,200,300,300)
+y2fn <- cumsum(y2)/sum(y2)
+y3 <- c(0,0,0,100,100,300)
+y3fn <- cumsum(y3)/sum(y3)
+
+op<-par()
+par(pty="s")
+plot(x*100,y1fn*100, type="l", bty="n", xlab="従業員の累積相対度数 (%)",
+  ylab="給与の累積相対度数 (%)", lwd=3)
+par(new=T)
+plot(x*100,y2fn*100, type="l", bty="n", xlab="", ylab="", lty=2, lwd=3)
+par(new=T)
+plot(x*100,y3fn*100, type="l", bty="n", xlab="", ylab="", lty=3, lwd=3)
+polygon(c(0,100,100,0), c(0,0,100,100))
+
+labels <- c("会社1","会社2","会社3")
+legend(5,95, legend=labels, lty=1:3, lwd=rep(2,3))
+par(pty=op$pty)
+```
+
+
+
+## 図1.11のローレンツ曲線
+```{r}
+par(family= "HiraKakuProN-W3")
+x <- c(0,0.2,0.4,0.6,0.8,1.0)
+y <- c(0,239100,342552,422916,546313,791970)
+yfn <- cumsum(y)/sum(y)
+op<-par()
+par(pty="s")
+plot(x*100, yfn*100, type="l", bty="n",
+  xlab="世帯数の累積相対度数 (%)", ylab="年間収入の累積相対度数 (%)")
+segments(0,0,100,100,lty=2)
+polygon(c(0,100,100,0), c(0,0,100,100))
+par(pty=op$pty)
+```
+
+
+# 図1.15の箱ひげ図
+
+```{r}
+par(family= "HiraKakuProN-W3")
+boxplot(家賃~近さ, xlab="近さ", ylab="家賃（円）", range=0, data=room)
+```
+
+# 異常値の探索{.tabset}
+
+## data
+```{r}
+population_h26 %>% DT::datatable()
+```
+
+
+## 図1.16（左）のヒストグラム
+```{r}
+par(family= "HiraKakuProN-W3")
+hist(population_h26$人口, breaks=seq(0,15000000,by=1000000), main="", xaxt="n",
+  xlab="人口（人）", ylab="度数", col="gray")
+axis(side=1, at=seq(0,12500000,by=2500000),
+  labels=c(0,"2500000","5000000","7500000","10000000","12500000"), las=1)
+
+```
+
+
+## 図1.16（右）の箱ひげ図
+```{r}
+par(family= "HiraKakuProN-W3")
+op <- par()
+par(mgp=c(5,1,0), mar=c(3.1,7.1,4.1,2.1))
+boxplot(population_h26$人口, yaxt="n", xlab="", ylab="人口", col="gray")
+axis(side=2, at=seq(0,12500000,by=2500000),
+labels <- c(0,"2500000","5000000","7500000","10000000","12500000"), las=1)
+par(mgp=op$mgp, mar=op$mar)
+```
+
+
+# 質的変数の可視化グラフ{.tabset}
+
+## 頻度表 table 
+```{r}
+table(room$間取り)
+```
+
+
+## 図1.17の棒グラフ
+```{r}
+par(family= "HiraKakuProN-W3")
+barplot(table(room$間取り), xlab="間取り", ylab="度数")
+```
+
+
+## 図1.18の円グラフ
+
+```{r}
+par(family= "HiraKakuProN-W3")
+data <- c(23,33,37,14,21,6,1,5)
+names(data) <- c("東","南東","南","南西","西","北西","北","北東")
+pie(data, labels=names(data), main="方角", clockwise=TRUE)
+```
+
+
+# 図1.19の散布図
+
+```{r}
+par(family= "HiraKakuProN-W3")
+plot(room$大きさ, room$家賃, pch=c(1, 2)[unclass(room$近さ)],
+  xlab="大きさ", ylab="家賃")
+Labels <- c("A：近い","B：遠い")
+legend(45,100000, legend=Labels, pch=1:2)
+
+```
+
+
+# 散布図 {.tabset}
+
+## 図1.20（左）のグラフ
+
+```{r}
+plot(c(1,1,2,2,3,3,4,4,5,5),c(1,2,2,3,3,4,3,4,4,5),
+  xlab="x", ylab="y", xlim=c(0,6), ylim=c(0,6))
+
+```
+
+
+## 図1.20（中央）のグラフ
+```{r}
+plot(c(1,1,2,2,3,3,4,4,5,5),c(3,4,2,3,2,3,3,4,2,4),
+  xlab="x", ylab="y", xlim=c(0,6), ylim=c(0,6))
+
+```
+
+
+## 図1.20（右）のグラフ
+
+```{r}
+
+plot(c(1,1,2,2,3,3,4,4,5,5),c(4,5,3,4,3,4,2,3,1,2),
+  xlab="x", ylab="y", xlim=c(0,6), ylim=c(0,6))
+
+```
+
+## 図1.21（左）のグラフ
+```{r}
+plot(c(1,1,2,2,3,3,4,5,5),c(1,1.5,2,2.5,3,3.5,4,4.5,5),
+  xlab="x", ylab="y", xlim=c(0,6), ylim=c(0,6))
+
+```
+
+
+## 図1.21（中央）のグラフ
+```{r}
+plot(c(1,1,2,2,3,3,4,4,5,5),c(1,2,2,3,3,4,3,4,4,5),
+  xlab="x", ylab="y", xlim=c(0,6), ylim=c(0,6))
+
+```
+
+
+## 図1.21（右）のグラフ
+```{r}
+plot(c(1,1,2,2,3,3,4,4,5,5),c(1,3,2,3,2,3,3,4,3,4),
+  xlab="x", ylab="y", xlim=c(0,6), ylim=c(0,6))
+```
+
+
+# 図1.24のグラフ
+```{r}
+par(family= "HiraKakuProN-W3")
+LabelsX <-  c("X15歳以下","X16.24歳","X25.29歳","X30.39歳",
+  "X40.49歳","X50.59歳","X60.64歳","X65.74歳","X75歳以上")
+Labels <-  c("15歳以下","16～24歳","25～29歳","30～39歳","40～49歳",
+  "50～59歳","60～64歳","65～74歳","75歳以上")
+matplot(death$平成暦年, death[, LabelsX], type="b", lty=1:9,
+  pch = 1:9, col=1:9, xlab="平成（年）", ylab="")
+legend(20.3,1500,legend=Labels, lty=1:9, pch = 1:9, col=1:9, cex = 0.7)
+```
+
+# 時系列データ{.tabset}
+
+## 図1.25のグラフ
+```{r}
+par(family= "HiraKakuProN-W3")
+mean2000<-apply(Salary[1:12,2:3],2,mean)
+SalaryIndex.ts<-ts(sweep(Salary[,2:3], 2, mean2000, FUN="/"),
+  start=c(2000,1), frequency=12)
+plot(SalaryIndex.ts, xlab="年月", main="")
+```
+
+## 図1.26のグラフ
+
+```{r}
+par(family= "HiraKakuProN-W3")
+
+SalaryofTokyo.ts<-ts(Salary[,3]/10000,start=c(2000,1),frequency=12)
+plot(decompose(SalaryofTokyo.ts), xlab="年月")
+```
+
+## 図1.27のコレログラム
+
+```{r}
+par(family= "HiraKakuProN-W3")
+
+acf(Salary$Tokyo,main="コレログラム：東京",xlab="月差")
+```
+
+
+
+# 表1.4
+
+```{r}
+label <- c("60,001～70,000", "70,001～80,000", "80,001～90,000", "90,001～100,000",
+  "100,001～110,000", "110,001～120,000", "120,001～130,000", "130,001～140,000",
+  "140,001～150,000")
+
+table(cut(room$家賃,seq(60000,150000,by=10000),labels=label)) 
+
+table(cut(room$家賃,seq(60000,150000,by=10000),labels=label))/length(room$家賃) 
+```
+
+
+
+# 表1.8、表1.9のの平均、中央値、最頻値、分散、標準偏差、5数要約、四分位範囲
+
+-（Rで分散、標準偏差を計算する関数は、不偏分散（n-1で割る分散）に基づいて計算する）
+
+- （1章の分散はnで割る分散を計算しているので、修正が必要となる）
+
+```{r}
+x <- c(room$家賃)
+y <- c(room$大きさ)
+z <- c(room$築年数)
+n <- length(x)
+mean(x);median(x);names(which.max(table(x)));
+  var(x)*(n-1)/n;sd(x)*sqrt((n-1)/n);quantile(x);IQR(x) 
+mean(y);median(y);names(which.max(table(y)));
+  var(y)*(n-1)/n;sd(y)*sqrt((n-1)/n);quantile(y);IQR(y) 
+mean(z);median(z);names(which.max(table(z)));
+  var(z)*(n-1)/n;sd(z)*sqrt((n-1)/n);quantile(z);IQR(z)
+
+```
+
+
+# 表1.10、表1.11の度数分布表
+
+```{r}
+table(room$間取り)
+table(room$間取り)/length(room$間取り)
+
+table(room$方角)[c("東","南東","南","南西","西","北西","北","北東")]
+table(room$方角)[c("東","南東","南","南西","西","北西","北","北東")]/length(room$方角)
+
+```
+
+
+# 表1.12
+```{r}
+label1 <- c("～15以下", "15～20", "20～25", "25～30", "30～35", "35～40",
+  "40～45", "45～50", "50～55", "55～60")
+label2 <- c("～7以下", "7～8", "8～9", "9～10", "10～11", "11～12",
+  "12～13", "13～14", "14～15")
+table(cut(room$大きさ, seq(10,60,by=5), labels=label1),
+  cut(room$家賃, seq(60000,150000,by=10000), labels=label2)) %>% knitr::kable()
+
+```
+
+
+
+# 1.6.3の相関係数(p.32の上部)
+
+```{r}
+x <- c(room$家賃)
+y <- c(room$大きさ)
+z <- c(room$築年数)
+cor(x,y);cor(y,z);cor(x,z)
+
+```
+
+
+# p.37(1行目)の回帰直線の傾き、切片、相関係数、決定係数
+```{r}
+cov(room$家賃,room$大きさ)/var(room$大きさ)
+mean(room$家賃)-cov(room$家賃,room$大きさ)/var(room$大きさ)*mean(room$大きさ)
+cor(room$家賃,room$大きさ)
+summary(lm(room$家賃~room$大きさ))$r.squared
+```
+
+
+
+# 表1.13のクロス集計表
+
+```{r}
+table(cut(room$大きさ, c(0, 25, 100), right=FALSE, labels=c("狭い", "広い")),
+  cut(room$家賃, c(0, 100000, 200000), right=FALSE, labels=c("安い", "高い")))
+
+```
+
+
+# 表1.14のクロス集計表
+
+```{r}
+table(room$近さ,
+  cut(room$家賃, c(0, 100000, 200000), right=FALSE, labels=c("安い", "高い")))
+
+```
+

@@ -1,0 +1,22 @@
+from big_ol_pile_of_manim_imports improt *
+
+import numpy as np
+
+
+class graphx(Scene):
+    CONFIG={
+    x_min:-4,
+    x_max:4,
+    x_axis_label:"$x$",
+    x_axis_label:"$y$",
+    }
+
+    def showfun(self):
+        self.setup_axes(animation=True)
+
+        def func(x):
+            return x
+        graph=self.get_graph(func, x_min=-1)
+        self.play(ShowCreation(graph))
+    def construct(self):
+        self.showfun()

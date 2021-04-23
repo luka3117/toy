@@ -1,0 +1,262 @@
+
+# -----------------
+2020年11月25日
+
+# -----------------
+Manim tutorial |
+8.2 - Advanced animations 1
+- Using methods and alpha parameter
+# -----------------
+
+https://www.youtube.com/watch?v=DnWMwkcZGkM&t=198s
+
+
+
+5,011 回視聴•2020/02/09
+
+Theorem of Beethoven
+[W1] Resume
+https://github.com/Elteoremadebeethov...
+
+[W2] Source code
+https://github.com/Elteoremadebeethov...
+
+[W3] ScreenGrid
+https://github.com/Elteoremadebeethov...
+
+[W4] Source code of the animation at 11:27
+https://github.com/Elteoremadebeethov...
+
+[W5] Check SVG
+https://github.com/Elteoremadebeethov...
+
+Support the channel:
+Patreon: https://www.patreon.com/theoremofbeet...
+PayPal: https://paypal.me/zavdn
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - -- - - - - - - -  Doubts about how to use Manim- - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you have questions about how to use Manim, please refer to these pages:
+Official documentation (it is from the most recent version of Manim):
+https://www.eulertour.com/learn/manim/
+My documentation on the version of 3/Feb/2019
+https://manim-tb-manual.000webhostapp...
+Issues GitHub:
+https://github.com/3b1b/manim/issues?...
+Questions in StackOverflow:
+https://stackoverflow.com/questions/t...
+
+If you cannot find a solution to your doubt, please open an issue on GitHub or ask a question on StackOverflow (with details) of your problem. Put the link of your post in the comments to make it easier for me to help you.
+一部を表示
+24 件のコメント
+並べ替え
+ 李鍾賛
+公開コメントを入力...
+Theorem of Beethoven
+Theorem of Beethoven さんによって固定されています
+Theorem of Beethoven
+9 か月前
+Sorry for the lack of narration, hopefully for the next video my narrator will be available again.
+
+6
+
+返信
+
+2 件の返信を表示
+ Amit Kumar
+Amit Kumar
+9 か月前
+The whole video is very informative and the resulting animations are so beautiful to watch. The outro was extremely beautiful too.
+
+3
+
+返信
+
+Amit Kumar
+Amit Kumar
+9 か月前
+This is the only channel, where I click the like button first and then, watch the video.
+
+2
+
+返信
+
+Xiang Deng
+Xiang Deng
+8 か月前
+excellent and beautiful works!! can't help to notice, in update_rotate_move alpha function, the square2 should be mob
+
+2
+
+Theorem of Beethoven
+返信
+
+返信を非表示
+ Theorem of Beethoven
+Theorem of Beethoven
+8 か月前
+Yes, technically this should be the case, but we can also use objects outside the scope of the update function, that's why I did it like this.
+
+
+返信
+
+Pritish Mishra
+Pritish Mishra
+1 か月前
+Ohhhh my goodddd !!! You made it so easy very much thanks 🥰
+
+
+Theorem of Beethoven
+返信
+
+Myles Holley
+Myles Holley
+5 か月前
+this song is a banger
+
+
+返信
+
+abhijith muthyala
+abhijith muthyala
+9 か月前
+Such an informative video ! Thanks a lot ! Can you please tell how to apply the add_updater( ) function to a list of mobjects?
+
+1
+
+返信
+
+2 件の返信を非表示
+ Theorem of Beethoven
+Theorem of Beethoven
+9 か月前
+You can use a for cycle, or apply the updater to a VGroup
+
+2
+
+返信
+
+abhijith muthyala
+abhijith muthyala
+9 か月前
+@Theorem of Beethoven Thank you
+
+
+返信
+
+glyn hodges
+glyn hodges
+4 か月前
+Thanks for these videos.  They have helped me get started.  A small point but you have stroke_opatity when it should be stroke_opacity.
+I am new to python (coming from C) - is there no way to get errors such as this to flag up a warning?  Python seems to be happy for you to write any old rubbish and seems to ignore stupid mistakes.   I am not sure I like that.
+続きを読む
+
+
+返信
+
+返信を非表示
+ Brian Amedee
+Brian Amedee
+4 か月前
+Python will spot a typo as an error, and tell you which line it is on :) You can't put any old rubbish in Python, otherwise my animations would look much better!
+
+
+返信
+
+Михаил Пономарев
+Михаил Пономарев
+3 週間前
+strange, but if I print variable  of object which I changed via method it shows me its base value.
+
+
+返信
+
+Martynas Venckus
+Martynas Venckus
+3 か月前（編集済み）
+Hello, nice video. I have a few questions, If I may, and they are from 10:30 animation (RotationAndMoveFail scene):
+1. Why do you provide the parameter 'mob' to the 'update_rotate_move' function, if you don't use 'mob' anywhere inside the function?
+2. Can we specify the step of alpha? In this video, it divides the line into 10 equal parts, and each step is 1/10 length. Can we somehow modify this fraction?
+3. Since 'interpolate_mobject' is already in the source code, it means you are redefining this method to do something else?
+4. Lastly, a question about RotateWithPath scene - I don't understand how does this code 'path.points[1:3] += UP*2' bend the path? I tried playing along with the numbers (2:5, or 1:4 instead 1:3), but it still didn't make sense to me.
+
+Thanks
+一部を表示
+
+
+返信
+
+2 件の返信を非表示
+ Theorem of Beethoven
+Theorem of Beethoven
+3 か月前（編集済み）
+1. Yes, that was my mistake, they had already left me in the comments.
+2. No, alpha depends on the video fps, you can't assign it yourself, but with the interpolate function you can change the range from (0,1) to any range. See the Alpha and dt examples video.
+3. Where did I use interpolate_mobject?
+4. Those are the bezier points, watch the Custom Graphs video.
+続きを読む
+
+2
+
+返信
+
+Theorem of Beethoven
+Theorem of Beethoven
+3 か月前
+I already saw where I used that method, yes, it is already defined in the Animation class, that is why it can be used.
+
+2
+
+返信
+
+Gustavo Sanchez de la Rosa
+Gustavo Sanchez de la Rosa
+9 か月前
+Como se llama la ultima cancion???
+
+1
+
+返信
+
+返信を非表示
+ Theorem of Beethoven
+Theorem of Beethoven
+9 か月前
+Beach Disco, en la biblioteca de youtube
+
+
+返信
+
+Studio Math
+Studio Math
+1 か月前
+When I run advanced_animation.py it doesn't recognize screen_grid
+
+
+返信
+
+3 件の返信を非表示
+ Theorem of Beethoven
+Theorem of Beethoven
+1 か月前
+You have to import it, see tutorial 1.3
+
+
+返信
+
+Studio Math
+Studio Math
+1 か月前
+@Theorem of Beethoven Thanks! Got it, I copied the screen_grid code into advanced_animation, and it now advanced animation worked.  Is there a way to do it where you don't have to copy the code into advnaced_animation?
+
+
+返信
+
+Theorem of Beethoven
+Theorem of Beethoven
+1 か月前
+@Studio Math send a PR to the Repo
+
+
+返信

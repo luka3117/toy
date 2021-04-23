@@ -1,0 +1,7 @@
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/1440p60/A1_Intro.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/1440p60/A3_motivatio.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/1440p60/A4_self_introduce.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/1440p60/A5_necessary_ability.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/1440p60/A6_practical.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/1440p60/A7_software_R.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/1440p60/A8_ending.mp4'

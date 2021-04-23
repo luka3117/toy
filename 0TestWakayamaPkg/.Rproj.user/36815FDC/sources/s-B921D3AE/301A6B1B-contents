@@ -1,0 +1,55 @@
+ls()
+
+
+aa<-
+  
+  
+  aa<-  mpg %>%
+  group_by(model) %>%
+  summarise(c = mean(cty), h = mean(hwy)) 
+
+d_m %>% colnames() %>% cat
+
+
+
+
+
+LE_2015
+
+library(plotly)
+
+t<-d_m %>% select(pref.E,HLE_2016,LE_2015) %>% 
+  mutate(pref.E=forcats::fct_reorder(pref.E, LE_2015))
+t$pref.E
+
+t %>%
+  plot_ly() %>%
+    add_segments(
+  x=~HLE_2016,y=~pref.E ,
+  xend=~LE_2015,yend=~pref.E ,
+    # x = ~c, y = ~model,
+    # xend = ~h, yend = ~model, 
+    color = I("gray"), showlegend = FALSE
+  ) %>%
+  add_markers(
+    # x = ~c, y = ~model, 
+  x=~HLE_2016,y=~pref.E ,
+    color = I("blue"), 
+    name = "mpg city"
+  ) %>%
+  add_markers(
+    # x = ~h, y = ~model, 
+  x=~LE_2015,y=~pref.E ,
+    color = I("red"),
+    name  = "mpg highway"
+  ) %>%
+  layout(
+    xaxis = list(
+      range=c(60,83), 
+      title="aaaa"
+    )
+  ) 
+
+
+         
+         

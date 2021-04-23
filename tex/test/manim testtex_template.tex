@@ -1,0 +1,55 @@
+%https://qiita.com/zr_tex8r/items/cdaac1500718eb9fa330
+% \documentclass{standalone}
+\documentclass[preview]{standalone}
+% \documentclass[a5paper]{article}
+\usepackage[whole]{bxcjkjatype}
+\usepackage{CJKutf8}
+
+\newcommand*{\Ja}[1]{%
+  \begin{CJK}{UTF8}{ipxg}#1\end{CJK}}
+
+%\newcommand*{\Ko}[1]{%
+%  \begin{CJK}{UTF8}{} \CJKfamily{mj}
+%#1\end{CJK}}
+
+\newcommand*{\Ko}[1]{%
+  \begin{CJK}{UTF8}{}\CJKfamily{mj}
+#1\end{CJK}}
+
+
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+%\usepackage[UTF8]{ctex}
+\linespread{1}
+
+\begin{document}
+
+YourTextHere
+
+
+\textbf{\Ko{80\UTF{C138} \UTF{C0DD}\UTF{C2E0}\UTF{C744} \UTF{CD95}\UTF{D558}\UTF{B4DC}\UTF{B824}\UTF{C694}}}
+
+\textgt{\Ko{80\UTF{C138} \UTF{C0DD}\UTF{C2E0}\UTF{C744} \UTF{CD95}\UTF{D558}\UTF{B4DC}\UTF{B824}\UTF{C694}}}
+
+{\Ko{80\UTF{C138} \UTF{C0DD}\UTF{C2E0}\UTF{C744} \UTF{CD95}\UTF{D558}\UTF{B4DC}\UTF{B824}\UTF{C694}}}
+
+
+
+
+\end{document}

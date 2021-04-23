@@ -1,0 +1,5 @@
+mktextfm ipxm-r-uc1
+mktextfm ipxm-r-uc1
+mktextfm ipxm-r-uc1
+mktextfm ipxm-r-uc1
+mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 cyberbc6

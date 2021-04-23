@@ -1,0 +1,23 @@
+
+
+devtools::install_github(repo = "luka3117/JcPackage/OsakaUniv2020")
+devtools::install_github(repo = "luka3117/JcPackage/RoadStation", type = "source")
+
+remove.packages("OsakaUniv2020")
+remove.packages("RoadStation",)
+
+
+
+
+
+devtools::install_github()
+
+devtools::install_github(repo = "luka3117/WakayamaHealthPkg")
+
+
+luka3117
+/
+  WakayamaHealthPkg
+
+
+Unwatch 

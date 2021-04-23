@@ -1,0 +1,6 @@
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/alt_calc/480p15/partial_movie_files/ShowJacobianZoomedIn/00000.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/alt_calc/480p15/partial_movie_files/ShowJacobianZoomedIn/00001.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/alt_calc/480p15/partial_movie_files/ShowJacobianZoomedIn/00002.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/alt_calc/480p15/partial_movie_files/ShowJacobianZoomedIn/00003.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/alt_calc/480p15/partial_movie_files/ShowJacobianZoomedIn/00004.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/iManimMASTER/media/videos/alt_calc/480p15/partial_movie_files/ShowJacobianZoomedIn/00005.mp4'

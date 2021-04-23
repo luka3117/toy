@@ -1,0 +1,2 @@
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/Jc_rate_fun/480p15/partial_movie_files/ExampleRateFunc/00000.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/Jc_rate_fun/480p15/partial_movie_files/ExampleRateFunc/00001.mp4'

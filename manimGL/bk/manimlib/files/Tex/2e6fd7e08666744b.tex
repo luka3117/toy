@@ -1,0 +1,61 @@
+%https://qiita.com/zr_tex8r/items/cdaac1500718eb9fa330
+% \documentclass{standalone}
+\documentclass[preview]{standalone}
+% \documentclass[a5paper]{article}
+\usepackage[whole]{bxcjkjatype}
+\usepackage{CJKutf8}
+% \usepackage{kotex}
+
+\newcommand*{\Ja}[1]{%
+  \begin{CJK}{UTF8}{ipxg}#1\end{CJK}}
+
+\newcommand*{\Ko}[1]{%
+  \begin{CJK}{UTF8}{} \CJKfamily{mj}
+#1\end{CJK}}
+
+
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+% \usepackage{calligra}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+%\usepackage[UTF8]{ctex}
+\linespread{1}
+
+
+\begin{document}
+
+\centering \begin{tabular}{llllll}
+\hline
+id & gender & age & dose & pressure1 & pressure2 \\\hline",
+1 & M & 45 & 2 & 100.2 & 100.1 \\
+2 & M & 41 & 1 & 98.5 & 100 \\
+3 & F & 51 & 2 & 100.8 & 101.1 \\
+4 & F & 46 & 2 & 101.1 & 100.9 \\
+5 & F & 47 & 3 & 100 & 99.8 \\
+. & . & . & . & . & . \\
+. & . & . & . & . & . \\
+. & . & . & . & . & . \\
+16 & F & 42 & 1 & 101.1 & 100.1 \\
+17 & M & 41 & 2 & 100.7 & 100.3 \\
+18 & F & 40 & 1 & 97.8 & 98.1 \\
+19 & F & 45 & 2 & 100 & 100.4 \\
+20 & F & 37 & 3 & 101.5 & 100.8 \\
+\hline
+\end{tabular}
+
+\end{document}

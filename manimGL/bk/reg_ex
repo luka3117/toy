@@ -1,0 +1,13 @@
+import numpy as np
+
+x = np.array([0,1,2,3,4,5])
+y = np.array([0,0.8,0.9,0.1,-0.8,-1])
+
+
+pl=np.polyfit(x, y, 1)
+
+
+from matplotlib.pyplot import *
+
+plot(x, y, "o")
+plot(x, np.polyval(pl, x), "b-")

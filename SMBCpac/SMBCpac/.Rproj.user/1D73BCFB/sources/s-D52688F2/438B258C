@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586357021520.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2815177093",
+    "id" : "438B258C",
+    "lastKnownWriteTime" : 1586357964,
+    "last_content_update" : 1586357964378,
+    "path" : "~/toy/SMBCpac/SMBCpac/man/smbc.Rd",
+    "project_path" : "man/smbc.Rd",
+    "properties" : {
+        "cursorPosition" : "14,0",
+        "scrollLine" : "7"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

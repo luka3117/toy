@@ -1,0 +1,70 @@
+%https://qiita.com/zr_tex8r/items/cdaac1500718eb9fa330
+% \documentclass{standalone}
+\documentclass[preview]{standalone}
+% \documentclass[a5paper]{article}
+\usepackage[whole]{bxcjkjatype}
+\usepackage{CJKutf8}
+% \usepackage{kotex}
+
+\newcommand*{\Ja}[1]{%
+  \begin{CJK}{UTF8}{ipxg}#1\end{CJK}}
+
+\newcommand*{\Ko}[1]{%
+  \begin{CJK}{UTF8}{} \CJKfamily{mj}
+#1\end{CJK}}
+
+
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+% \usepackage{calligra}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+%\usepackage[UTF8]{ctex}
+\linespread{1}
+
+
+\begin{document}
+
+\centering egin{table}[ht]
+    	egin{tabular}{rlllrrrlll}
+    		\hline
+    		   & Name         & name    & Sex & Age & HT    & WT     & grade & preference & income      \
+    		\hline
+    		1  & アルフレッド & Alfred  & M   & 14  & 69.00 & 112.50 & C     & coffee     & $<$15000    \
+    		2  & アリス       & Alice   & F   & 13  & 56.50 & 84.00  & A     & coffee     & 15000-25000 \
+    		3  & バーバラ     & Barbara & F   & 13  & 65.30 & 98.00  & B     & coffee     & $<$15000    \
+    		4  & キャロル     & Carol   & F   & 14  & 62.80 & 102.50 & B     & pepsi      & 15000-25000 \
+    		5  & ヘンリー     & Henry   & M   & 14  & 63.50 & 102.50 & C     & pepsi      & 25000-40000 \
+    		6  & ジェームズ   & James   & M   & 12  & 57.30 & 83.00  & B     & pepsi      & $>$40000    \
+    		7  & ジェーン     & Jane    & F   & 12  & 59.80 & 84.50  & B     & cola       & $>$40000    \
+    		8  & ジャネット   & Janet   & F   & 15  & 62.50 & 112.50 & C     & pepsi      & 15000-25000 \
+    		9  & ジェフリー   & Jeffrey & M   & 13  & 62.50 & 84.00  & C     & cola       & $<$15000    \
+    		10 & ジョン       & John    & M   & 12  & 59.00 & 99.50  & A     & pepsi      & 15000-25000 \
+    		11 & ジョイス     & Joyce   & F   & 11  & 51.30 & 50.50  & C     & cola       & $<$15000    \
+    		12 & ジュディー   & Judy    & F   & 14  & 64.30 & 90.00  & B     & coffee     & $<$15000    \
+    		13 & ルイーズ     & Louise  & F   & 12  & 56.30 & 77.00  & A     & pepsi      & 15000-25000 \
+    		14 & メアリー     & Mary    & F   & 15  & 66.50 & 112.00 & B     & cola       & $<$15000    \
+    		15 & フィリップ   & Philip  & M   & 16  & 72.00 & 150.00 & A     & cola       & $>$40000    \
+    		16 & ロバート     & Robert  & M   & 12  & 64.80 & 128.00 & B     & pepsi      & 15000-25000 \
+    		17 & ロナルド     & Ronald  & M   & 15  & 67.00 & 133.00 & B     & coffee     & 15000-25000 \
+    		18 & トーマス     & Thomas  & M   & 11  & 57.50 & 85.00  & A     & pepsi      & 25000-40000 \
+    		19 & ウィリアム   & William & M   & 15  & 66.50 & 112.00 & B     & cola       & 15000-25000 \
+    		\hline
+    	\end{tabular}
+    \end{table}
+
+\end{document}

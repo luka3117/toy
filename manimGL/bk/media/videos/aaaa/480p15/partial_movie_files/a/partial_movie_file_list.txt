@@ -1,0 +1,5 @@
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/aaaa/480p15/partial_movie_files/a/00000.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/aaaa/480p15/partial_movie_files/a/00001.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/aaaa/480p15/partial_movie_files/a/00002.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/aaaa/480p15/partial_movie_files/a/00003.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/aaaa/480p15/partial_movie_files/a/00004.mp4'

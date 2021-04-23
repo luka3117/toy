@@ -1,0 +1,10 @@
+# -----------------
+2020/11/18
+# -----------------
+
+main file :
+  HappyBirth2.py
+
+
+image files:
+  BirthDayImage

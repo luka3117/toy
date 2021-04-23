@@ -1,0 +1,11 @@
+This is LuaTeX, Version 1.07.0 (TeX Live 2018)  (format=luatex 2019.3.5)  10 OCT 2020 05:26
+ restricted system commands enabled.
+**/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/manimlib/file
+s/Tex/a187e6aba7e84bfd.tex
+
+(/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/manimlib/files
+/Tex/a187e6aba7e84bfd.tex
+! Undefined control sequence.
+l.2 \documentclass
+                [preview]{standalone}
+!  ==> Fatal error occurred, no output PDF file produced!

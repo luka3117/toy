@@ -1,0 +1,8 @@
+Script started on Tue Mar 24 00:33:02 2020
+[?1034hbash-3.2$ ls
+aa.txt			product normal site.txt	令和2年3月20日.txt
+ccc.txt			read.txt
+djklsfj.txt		text1.txt
+bash-3.2$ exit
+
+Script done on Tue Mar 24 00:33:09 2020

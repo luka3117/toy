@@ -1,0 +1,172 @@
+%--------------------------------------------------------------%
+%   Style File for Shiga DS Report                             %
+%   Center for Data Science and education, Shiga Univ.         %
+%   Designed by LaTeX Team                                     %
+%	Encoding:UTF-8                                             %
+%--------------------------------------------------------------%
+
+\usepackage{style/common}
+\usepackage{style/subfigure}
+\usepackage[a4paper]{geometry}
+%\usepackage{datetime} % for current time 
+
+%— line number —
+%\usepackage[right]{lineno} %実行1-1段組み
+%\usepackage[switch,columnwise]{lineno}　%実行2-2段組
+%\linenumbers
+%\pagewiselinenumbers 　%ページごとに実行
+%\modulolinenumbers[5]
+%https://tex.stackexchange.com/questions/20368/lineno-for-2-column
+%— line number —
+
+%----------------------------------------------------------------
+% 余白などの設定
+%----------------------------------------------------------------
+
+%\setlength{\textwidth}{165mm}			% テキストの幅 a4=210mm
+%\setlength{\textheight}{247mm}			% テキストの高さ a4=297mm
+%\setlength{\topmargin}{-10mm}			% 初期マージン 38.5mm
+%\setlength{\oddsidemargin}{-0.5mm}		% 偶数ページの初期左マージン 25.5mm
+%\setlength{\evensidemargin}{-0.5mm}		% 奇数ページの初期左マージン 25.5mm
+%\setlength{\footskip}{10mm}				% 下マージン
+
+\setcounter{page}{0}		% ページ番号の設定
+%\setcounter{tocdepth}{2}	% 目次階層(subsectionまで使用)
+\renewcommand{\baselinestretch}{1.2}	% 行間の調整
+
+\geometry{right=5mm, left=5mm}
+
+%----------------------------------------------------------------
+% 表紙の定義
+% 引数　#1:タイトル #2:著者 #3:日付 #4:DS Rport No
+%----------------------------------------------------------------
+
+\newcommand{\shigads}[4]{
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\begin{center}
+% Upper part of the page
+\includegraphics[width=0.3\textwidth]{./style/dsreport.png}\\[1cm]    
+\vspace{4cm}	
+%\textsc{\Huge \bf 滋賀大学データサイエンス学部 資料}\\[1.5cm]
+\textsc{\Large \bf データサイエンス学部, 教育研究センター 研究資料}\\[1.5cm]
+
+\textsc{\Large Report No. #1}\\[0.5cm]
+%{\large \today}
+{\large Ver: \today(\the\hour 時 \the\minute 分)}
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries #2}\\[0.4cm]
+\HRule \\[1.5cm]
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+%\emph{Author:}\\
+#3 %\textsc{Smith}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+%\emph{Supervisor:} \\
+#4 %\textsc{Brown}
+\end{flushright}
+\end{minipage}
+\vfill
+% Bottom of the page
+{\large \today}
+\end{center}
+\end{titlepage}
+}
+
+%----------------------------------------------------------------
+% 目次の再定義
+%----------------------------------------------------------------
+
+\contentsmargin{2.55em}
+\dottedcontents{chapter}[5em]{}{3.5em}{1pc}
+%\titlecontents{chapter}[3em]
+%  {\addvspace{.5pc}\bfseries}
+%  {\contentslabel[\thecontentslabel]{5pc}}
+%  {}
+%  {\dotfill\thecontentspage}
+\dottedcontents{section}[5em]{}{2.3em}{1pc}
+\dottedcontents{subsection}[5.9em]{}{3.2em}{1pc}
+
+%----------------------------------------------------------------
+% captionなどの再定義
+%----------------------------------------------------------------
+
+% captionの再定義
+\titleformat{\chapter}
+	{\vspace*{-20mm}
+	\titlerule[1pt]%
+	\vspace{1pt}%
+	\titlerule
+	\vspace{1pc}%
+	\normalfont\LARGE\filright\sffamily}
+	{\LARGE\MakeUppercase{\chaptertitlename} \thechapter 章}
+	{1pc}{}[\vspace{1pc}\titlerule]
+
+% sectionの再定義
+\renewcommand{\section}{%
+	\@startsection{section}{1}{\z@}%
+	{.3\Cvs \@plus.5\Cdp \@minus.2 \Cdp}%
+	{.2\Cvs \@plus.3\Cdp}%
+	{\reset@font\large\bfseries}}
+
+% subsectionの再定義
+\renewcommand{\subsection}{%
+	\@startsection{subsection}{1}{\z@}%
+	{.2\Cvs \@plus.5\Cdp \@minus.2 \Cdp}%
+	{.1\Cvs \@plus.3\Cdp}%
+	{\reset@font\bfseries}}
+
+%----------------------------------------------------------------
+% 引用記号の再定義
+%----------------------------------------------------------------
+
+\def\@biblabel#1{#1)}
+\def\@cite#1#2{{$^{\mbox{\scriptsize $#1$}}$%
+	\if@tempswa , #2\fi}$^{\mbox{\scriptsize $)$}}$ }
+
+%----------------------------------------------------------------
+% nameの変更
+%----------------------------------------------------------------
+
+\renewcommand{\abstractname}{Abstract}
+\renewcommand{\bibname}{参考文献}
+
+%----------------------------------------------------------------
+% 図，表の参照に章番号を付加
+%----------------------------------------------------------------
+
+\newcommand{\keywords}[1]{\\ \textbf{キーワード:}\ #1}
+
+%----------------------------------------------------------------
+% キャプションの:を削除，図をFig，表をTableに変更
+%----------------------------------------------------------------
+
+\long\def\@makecaption#1#2{%
+	\vskip\abovecaptionskip
+	\iftdir\sbox\@tempboxa{#1\hskip1zw#2}%
+	\else\sbox\@tempboxa{#1\hskip1zw #2}%
+	\fi
+	\ifdim \wd\@tempboxa >\hsize
+		\iftdir #1\hskip1zw#2\relax\par
+		\else #1\hskip1zw #2\relax\par\fi
+	\else
+		\global \@minipagefalse
+		\hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+	\fi
+	\vskip\belowcaptionskip}
+
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table.}
+
+%----------------------------------------------------------------
+% 図表及び数式の参照方法を定義
+%----------------------------------------------------------------
+
+\def\fgref#1{\figurename\hskip1ex \ref{#1}}
+\def\tbref#1{\tablename\hskip1ex \ref{#1}}
+\def\eqref#1{式(\ref{#1})}

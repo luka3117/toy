@@ -1,0 +1,20 @@
+
+
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+suppressMessages(library(plotly))
+iris %>%
+  plot_ly() %>%
+  add_paths(
+    x = iris$Sepal.Length,
+    y = iris$Petal.Length,
+    color = iris$Species
+  )
+
+
+

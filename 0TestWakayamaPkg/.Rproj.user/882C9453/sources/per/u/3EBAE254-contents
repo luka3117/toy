@@ -1,0 +1,35 @@
+aa<-mpg %>%
+  group_by(model) %>%
+  summarise(c = mean(cty), h = mean(hwy)) %>%
+  mutate(model = forcats::fct_reorder(model, c)) 
+
+
+
+
+plot_ly(data = aa,  y=~h)
+
+aa%>%
+  plot_ly() %>%
+  add_segments(
+    x = ~c, y = ~model,
+    xend = ~h
+    , yend = ~model
+  ) 
+
+
+%>%
+  add_markers(
+    x = ~c, y = ~model, 
+    color = I("blue"), 
+    name = "mpg city"
+  ) %>%
+  add_markers(
+    x = ~h, y = ~model, 
+    color = I("red"),
+    name  = "mpg highway"
+  ) %>%
+  layout(xaxis = list(title = "Miles per gallon"))
+
+
+
+

@@ -1,0 +1,8 @@
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00000.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00001.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00002.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00003.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00004.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00005.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00006.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 Rohit Malhotra/Rohit Malhotra/480p15/partial_movie_files/Graphing/00007.mp4'

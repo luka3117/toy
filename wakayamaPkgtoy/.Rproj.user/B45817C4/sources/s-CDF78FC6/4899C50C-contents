@@ -1,0 +1,26 @@
+ls()
+
+
+aa<-d_common_standarize_long %>% group_by(var_name) %>% nest()
+
+temp<-aa$data[[1]]
+
+
+name1 <- function(temp) {
+  temp %>% select(value) %>% .[[1]] %>% density() %>% 
+    broom::tidy()
+}
+  
+d_common_standarize_long_density<-
+d_common_standarize_long %>% group_by(var_name) %>% nest() %>% mutate(dens=map(data, name1)) %>% select(var_name, dens) %>% unnest()
+
+d_common_standarize_long_density %>% as.data.frame() %>% tbl_df() %>% ggplot(aes(x = x, y = y))+
+    geom_line()
+
+plot(d_common_standarize_long_density$x, 
+     d_common_standarize_long_density$y
+)
+
+
+d_common_standarize_long_density %>% ggplot(aes(x = x, y = y))+
+  ggplot2::facet_wrap(~var_name)+ geom_line()

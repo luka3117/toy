@@ -1,0 +1,14 @@
+
+jc_rank <- function(d, var_name) {
+# d is dataset 
+# var is varname to see the rank
+  d %>%
+    select(var_name) %>%
+    bind_cols(Wakayama::pref["pref.J"]) %>%
+    dplyr::arrange(LE_2015) %>% mutate(rank = row_number()) %>% DT::datatable()
+}
+
+
+
+
+system("open .")

@@ -1,0 +1,83 @@
+from big_ol_pile_of_manim_imports import *
+
+def B(n, p):
+    return lambda k: choose(n, k) * (p**(k)) * ((1 - p)**(n - k))
+
+class A(Scene):
+    CONFIG={
+    "chart_height":3
+    }
+    def construct(self):
+        # screen_grid = ScreenGrid()
+        # self.add(screen_grid)
+        x=list(range(11))
+        dist=map(B(10, p), (.1))
+        values=list(map(dist, x))
+
+        print(x)
+        print(values)
+        
+        chart=BarChart(values=values, bar_names=x)
+        #         chart.set_height(self.chart_height)
+
+        print(chart.get_height())
+        print(self.chart_height)
+
+
+
+A()
+
+
+
+
+
+
+
+
+# class JcBinomialDist1(Scene):
+#     # import scipy is needed!!
+#
+#     CONFIG = {
+#         "chart_height": 3,
+#     }
+#
+#     def construct(self):
+#         self.show_binomial()
+#
+#     def show_binomial(self):
+#         binomial = self.get_binomial()
+#         title = TextMobject("Probable scores")
+#         title.scale(0.85)
+#         title.next_to(binomial.bars, UP, 1.5 * LARGE_BUFF)
+#
+#         self.play(
+#             Write(title, run_time=1),
+#             FadeIn(binomial, run_time=1, submobject_mode="lagged_start"),
+#         )
+#         for values in binomial.values_list:
+#             self.play(binomial.change_bar_values, values)
+#             self.wait()
+#         self.wait()
+#
+#         binomial.add(title)
+#         self.binomial = binomial
+#
+#     def get_binomial(self):
+#         k_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#
+#         dists = [self.B(n, p) for p in [.1, .2, .3]]
+#
+#         # def B(n, p):
+#         #     return lambda k : choose(n, k)*(p**(k))*((1-p)**(n-k))
+#
+#         values_list = [
+#             list(map(dist, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+#             for dist in dists
+#         ]
+#         chart = BarChart(
+#             values=values_list[-1],
+#             bar_names=k_range
+#         )
+#         chart.set_height(self.chart_height)
+#         chart.values_list = values_list
+#         return chart

@@ -1,0 +1,75 @@
+
+iris$Sepal.Length
+iris$Petal.Length
+iris$Species
+
+
+
+
+
+
+iris$Sepal.Length
+
+iris$Petal.Length
+
+
+
+iris$Species
+
+
+iris$Sepal.Length
+iris$Sepal.Length
+iris$Petal.Length
+iris$Species
+
+mtcars
+mtcars
+mtcars
+
+
+
+mtcars$vs
+mtcars$hp
+mtcars$wt
+
+
+
+
+
+
+
+
+
+iris$Species
+
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+
+
+iris %>% select(1:4) %>% 
+
+tt<-iris %>% tidyr::nest(-Species)
+
+aa<-tt$data %>% dimnames()<-letters[1:3]
+aa<-tt$data %>% names()<-letters[1:3]
+
+names(tt$data)<-letters[1:3]
+
+
+tt
+tt$data 
+
+tt$data
+aa
+
+
+
+iris$Species
+
+iris %>%  %>% 
+

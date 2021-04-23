@@ -1,0 +1,9 @@
+system("open .")
+
+install.packages("readxl")
+install.packages("tidyverse")
+install.packages("data.table")
+install.packages("kableExtra")
+install.packages("DT")
+install.packages("plotly")
+install.packages("gapminder")

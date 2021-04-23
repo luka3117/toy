@@ -1,0 +1,12 @@
+{
+    "dialog-state" : {
+        "caseSensitive" : false,
+        "filePatterns" : [
+            "*.r",
+            "*.R"
+        ],
+        "path" : "~/Dropbox/00000健康衛生(滋賀県)",
+        "query" : "滋賀",
+        "regex" : false
+    }
+}

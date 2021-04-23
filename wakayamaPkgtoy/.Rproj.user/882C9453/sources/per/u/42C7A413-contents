@@ -1,0 +1,66 @@
+install.packages("ggrepel")
+
+library(ggrepel)
+
+set.seed(42)
+
+p <- 
+  
+  
+ggplot(mtcars, aes(y = wt, x = 1, label = rownames(mtcars))) + geom_point(color = "red") +
+  ylim(1, 5.5) +
+  theme(
+    axis.line.x  = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.text.x  = element_blank(),
+    axis.title.x = element_blank()
+  )
+
+p1 <-
+  
+  
+  p +
+  xlim(1, 1.33) +
+  geom_text_repel(
+    force        = 0.5,
+    nudge_x      = 0.15,
+    direction    = "y",
+    hjust        = 0,
+    segment.size = 0.2
+  ) +
+  ggtitle("hjust = 0")
+
+
+p1+ggtitle("hjust = 1")
+
+p1+ggplot2::theme_bw()
+
+gridExtra::grid.arrange(p1,p1, ncol = 2)
+
+
+p1
+
+p2 <- p +
+  xlim(1, 1.375) +
+  geom_text_repel(
+    force        = 0.5,
+    nudge_x      = 0.2,
+    direction    = "y",
+    hjust        = 0.5,
+    segment.size = 0.2
+  ) +
+  ggtitle("hjust = 0.5 (default)")
+
+p3 <- p +
+  xlim(0.25, 1) +
+  scale_y_continuous(position = "right") +
+  geom_text_repel(
+    force        = 0.5,
+    nudge_x      = -0.25,
+    direction    = "y",
+    hjust        = 1,
+    segment.size = 0.2
+  ) +
+  ggtitle("hjust = 1")
+
+gridExtra::grid.arrange(p1, p2, p3, ncol = 3)

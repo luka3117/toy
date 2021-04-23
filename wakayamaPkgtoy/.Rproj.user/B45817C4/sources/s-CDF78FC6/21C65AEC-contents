@@ -1,0 +1,7 @@
+help(package = "zemi")
+library(zemi)
+
+zemi::JcPCA
+
+
+system("open .")

@@ -1,0 +1,4 @@
+  276  platex aa.tex
+  280  dvisvgm --no-fonts aa.dvi
+  284  uplatex aa.tex
+  285  dvisvgm aa.dvi

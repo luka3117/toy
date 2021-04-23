@@ -1,0 +1,9 @@
+
+
+/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0ZEZE/zeze/1440p60/ZeZe_Scene0.mp4
+/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0ZEZE/zeze/1440p60/ZeZe_Scene1.mp4
+/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0ZEZE/zeze/1440p60/ZeZe_Scene2.mp4
+/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0ZEZE/zeze/1440p60/ZeZe_Scene3.mp4
+
+
+

@@ -1,0 +1,132 @@
+#-*- coding: utf-8 -*-
+# List 4-1  １７歳身長統計を正規分布と比較する
+from scipy.stats import norm
+import pandas as pd
+from matplotlib import pyplot as plt
+
+filename = "./h28_学校保健統計_身長分布.csv"
+df = pd.read_csv(filename)
+df2 = df.iloc[61:110,[0,13]].astype(float)  #17歳のみ切り出し、
+df2 = df2.rename(columns={'Unnamed: 0':'height', 'Unnamed: 13':'permil'}) # 欄名を変更
+
+u = [norm.pdf(x=i, loc=170.7, scale=5.81)*1000.0 for i in df2['height']] # 正規分布関数値を生成
+df2['norm'] = u  # データフレームに追加
+
+print(df2)
+print(sum(df2.iloc[:,1]), sum(df2.iloc[:,2]))
+ax = df2.plot.scatter(x='height',y='permil', color='black', marker='x', label='身長統計')
+df2.plot(x='height',y='norm', color='black', kind='line', ax=ax, 
+         label='N(170.7, 5.81)')  #重ねて描くためにax=axとする
+plt.grid()     #グリット線を引いてくれる
+plt.xlabel('身長')     #x軸のラベル
+plt.ylabel('パーミル‰')     #y軸のラベル
+plt.legend(loc="upper left")   #凡例を左上に表示
+plt.title('17歳男子の身長統計と正規分布')
+plt.show()
+
+
+#-*- coding: utf-8 -*-
+# List 4-2  skew、kurtosisの例
+from scipy.stats import skew, kurtosis, norm, uniform, kurtosistest
+import math
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+numsamples = 100000
+v1 = norm.rvs(loc=0.0, scale=1.0, size=numsamples)
+print('正規分布N(0,1)', 'skew=', round(skew(v1),4), 'kurtosis=', round(kurtosis(v1),4))
+vt = np.array([math.sqrt(u*16/numsamples) for u in range(numsamples)]) #右上がり三角分布を作る
+#print('4', 'skew=', skew(v4), 'kurtosis=', kurtosis(v4))
+v = v1+(vt*3.0)  # v1とvtを要素ごとに足す。正規分布要素に右上がり三角要素が足される。
+print('正規+右上がり', 'skew=', round(skew(v),4), 'kurtosis=', round(kurtosis(v),4))
+# 出力結果は
+# 正規分布N(0,1) skew= 0.0033 kurtosis= -0.0279
+# 正規+右上がり skew= -0.4748 kurtosis= -0.4724
+plt.hist(v, bins=50, normed=True, color='black', alpha=0.5)
+plt.grid()     #グリット線を引いてくれる
+plt.xlabel('x')     #x軸のラベル
+plt.ylabel('頻度')     #y軸のラベル
+plt.title('正規分布+右上がり三角分布のヒストグラム')
+plt.show()
+# -*- coding: utf-8 -*-
+# List 4-3 二項分布の平均と分散をサンプルデータから計算
+import numpy as np
+from scipy.stats import uniform
+import matplotlib.pyplot as plt
+n = 1000   # 試行数
+p = 0.5    # 確率
+b = []
+for i in range(1000):
+    v = [1 if u>p else 0 for u in uniform.rvs(loc=0, scale=1, size=n)]
+    b.append(sum(v))
+
+print('mean=', np.mean(b), 'std=', np.std(b), 'var=', np.var(b))   # 結果を表示
+# 出力結果は
+# mean= 499.438 std= 16.0505 var= 257.6182
+
+plt.hist(b, rwidth=0.8, bins=50, color='black')   # ヒストグラムを描画、棒幅を0.8
+plt.title('コイン投げで表の出る回数の分布')
+plt.xlabel('1000試行中の表の回数')
+plt.ylabel('頻度')
+
+plt.show()
+
+# -*- coding: utf-8 -*-
+# List 4-4 正規分布の確率密度を計算する
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy.stats as st
+# 正規分布の密度関数を定義式から計算する関数を自分で用意する場合
+#   下記の関数定義を準備する
+def seiki(x):
+    y = (1 / np.sqrt(2 * np.pi * i[0] ) ) * np.exp(-(x - i[1]) ** 2 / (2 * i[0]) )     #ガウス分布の公式
+    return y
+
+sigma = 1.0     #σの値
+mus = [0.0, 4.0, -4.0]    #μの値
+x = np.arange(-8., 8., 0.1)     #-8から８まで0.01刻みの配列
+
+for mu in mus:     # muの値についてすべて
+    y = st.norm.pdf(x, loc=mu, scale=sigma)   # もしくは自分で定義した関数seiki(x)を使う
+    plt.plot(x, y, color='black')     # x, yをplotする
+    plt.grid()          # グリット線を引いてくれる
+    plt.xlabel('x')     # x軸のラベル
+    plt.ylabel('y')     # y軸のラベル
+    plt.text(mu, 0.1, 'μ='+str(mu), ha='center')
+plt.title('平均値μが-4, 0, 4の時の正規分布(σ=1)')
+plt.show()
+
+# -*- coding: utf-8 -*-
+# List 4-5 正規分布の累積分布を計算する
+import numpy as np
+import scipy.stats as st
+sigma = 1.0     # σの値
+mu = 0.0        # μの値
+limits = [1.0, 2.0, 3.0]
+for limit in limits:
+    print(1 - 2*(st.norm.cdf(-limit, loc=mu, scale=sigma)))
+
+# 出力結果は
+# 0.682689492137
+# 0.954499736104
+# 0.997300203937
+# -*- coding: utf-8 -*-
+# List 4-5 正規分布の累積分布を計算する
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy.stats as st
+lambdas = [0.5, 1.0] # λの値
+
+x = np.arange(0, 6, 0.1)     #0から6まで0.1刻みの配列
+for l in lambdas:     # lambdaの値についてすべて
+    y = st.expon.pdf(x, loc=0, scale=1/l)
+    #y = st.expon.pdf(x)
+    plt.plot(x, y, color='black')     # x, yをplotする
+    plt.grid()     # グリット線を引いてくれる
+    plt.xlabel('x')     # x軸のラベル
+    plt.ylabel('y')     # y軸のラベル
+    plt.text(0.5, 0.8*l, 'λ='+str(l), ha='center')
+plt.title('λが0.5, 1の時の指数分布')
+plt.show()
+
+

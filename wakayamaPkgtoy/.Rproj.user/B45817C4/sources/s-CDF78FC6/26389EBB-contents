@@ -1,0 +1,8 @@
+d_common_standarize_long_density %>%
+  plot_ly(x=~x, y=~y) %>%
+  add_lines(frame=~var_name, 
+            text = ~paste(var_name),
+            hoverinfo = "text"
+            ) %>% 
+  layout(title="aaa")
+

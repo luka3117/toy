@@ -1,0 +1,26 @@
+x1<-iris$Sepal.Length
+
+x2<-iris$Sepal.Width
+
+
+
+purrr::map2(x1, x2, ~.x+.y)
+
+purrr::map_dbl(x1, ~.x^2)
+
+
+ purrr::pmap_dbl(
+  
+  list(x1, x2), function(a, b) {
+  
+  a*b
+  
+}
+)
+
+
+iris %>% tail()
+
+pmap()
+
+

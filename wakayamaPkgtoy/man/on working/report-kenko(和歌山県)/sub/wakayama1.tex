@@ -1,0 +1,1217 @@
+% !TEX root = ../report_kenko._wakayama.tex
+
+
+
+
+%---------------------------------------------------------------------------
+\chapter{本事業の概要}
+%---------------------------------------------------------------------------
+\section{背景}
+日本は, ここ25年の間, 平均寿命の延伸, 死亡率の低下により, 高齢化率が2016年において27\%を示しており, 既に「高齢社会(総人口に対して65歳以上の割合が14\%以上)」を過ぎて「超高齢社会」に入っている.\footnote{
+	高齢化率とは総人口に対して65歳以上の高齢者人口が占める割合. 世界保健機構(WHO)や国連の定義によると, 高齢化率が7％を超えた社会を「高齢化社会」, 14％を超えた社会を「高齢社会」, 21％を超えた社会を「超高齢社会」と定義.
+}
+%また, 野村ら(Lancet, 2017)の研究では, 「疾病の地域格差(regional variation of disease)」問題を指摘し,
+こうした現状を考慮すると
+国・自治体の健康政策
+も「健康の質」を上げる方向に
+立案する必要性が求められる。
+
+
+海外では既に国の保健対策をデータに基づいて行う変革が実施されており(Global Burden of Disease :  Generating Evidence, Guiding Policy, 2010),
+和歌山県の保健活動にもデータに基づくエビデンスを重視して行うべきだと考えられる。
+
+
+\section{目的}
+和歌山県の健康・医療・介護に関するデータ、経済状況・ボランティア参加率等の社会環境因子に関わるデータを利活用した現状分析を実施するとともに
+和歌山県の位置づけや強み・弱みを把握し,
+得られた新たな知見を県の施策に反映し、県民の健康寿命の延伸を図ることを目的とする。
+
+
+
+
+健康の質を表す健康寿命やそれと関連のある指標を用いて統計解析し,
+
+ 今後, 和歌山県の健康及びヘルスケア産業における政策立案に役に立つ参考資料を示すことを目的とする.
+
+\section{実施期間}
+\tb{令和２年１１月１日$\sim$令和３年３月３１日まで}
+
+
+\section{データ}
+データは和歌山県が収集した47都道府県の公的データを活用し、
+公的データを活用することにする。
+データの詳細は後述するが、
+経済、文化、など多様なデータが用いられる。
+
+
+
+\section{方法}
+\tb{都道府県間の健康指標の比較を行った野村ら(Lancet, 2017)の研究の方法論を参考にしながら, より和歌山県の視点から和歌山県を中心として統計分析を実施する. 上記の「データ」を用いて, 解析には主に統計ソフトRを利用する. 提供データの形式に最も適合する最新の可視化統計手法を取り入れ, 探索データ解析を行うとともに, 健康寿命に影響を与える要因を探るため,  医学的変数のほか, 社会的説明変数を絞り込み, 多変量解析, 一般化線形モデリング解析などを行う. なお, 解析の方針と統計手法の詳細は, 担当者の間で意見交換しあい, 適切な方法を取り入れる.
+}
+
+
+\section{期待効果}
+\tb{県民向けには本県が「住みやすい街」,「健康な県」という事実を再認識され, 県外在住者には移住促進政策のための発信情報として活用できると期待される.
+ビックデータ時代に, 他県に先駆けて官学連携による健康データを活用する取り組みは, データに基づく県政を推奨している国の方針とも当てはまるので, 他県のベンチマーク事例になることが期待される.
+}
+
+%------------------------------------------------------------
+\chapter{平均寿命、健康寿命の概要}
+%------------------------------------------------------------
+
+
+\subsection{平均寿命とは}
+
+
+\tb{厚生労働省が公表している「生命表」（毎年の「簡易生命表」、5年ごと（国勢調査年）の「生命表」（完全生命表）、「都道府県別生命表」、「市区町村別生命表」）により、平均寿命を調べることができます。平均寿命とは、0歳における平均余命（その年の年齢別死亡率で死亡していくとした場合、0歳の者が生きることとなる平均年数）をいいます。
+}
+
+
+
+平均寿命の算定には、ある年の年齢別死亡率を用いて生命表によって計算される（尾島俊之　2015）。具体的には、10万人が誕生したとして、０歳の死亡率から1歳の誕生日での生存数が計算され、さらに1歳の死亡率から2歳の誕生日での生存数が計算される。そのようにして、図2.1に示す生存数曲線を描くことができる。次に、
+
+図2.2に示すように、
+
+\tb{との面積が}
+等しくなる年齢を求める。言い換えると図2.1の生存数曲線の下の面積を10万人で割り算すると、それが寿命の平均値である平均寿命となる。
+なお、全国の生命表には、完全生命表〔5年に一度の国勢調査人口と人口動態統計（確定数）から作成〕、簡易生命表〔それ以外の年には推計人口と人口動態統計（概数）から作成〕がある。
+
+
+
+図2.1 年齢別死亡率から計算した生存数曲線（尾島俊之　2015より）
+
+図2.2 生存数曲線から寿命の平均値を計算（尾島俊之　2015より）
+
+
+
+
+\subsection{健康寿命とは}
+
+
+次に、健康寿命の定義と算定方法について述べる。健康寿命の概念を理解するためには、まず、「疾病負荷(disease burden)」という概念を理解する必要がある。疾病負荷とは疾病により失われた生命や生活の質の期間を意味する。疾病負荷を計量化した指標の内、近年最も広く使われている指標が障害調整生命年(DALYs) である。ある人における障害調整生命年(DALY、disability adjusted life year) の計算は損失生存年数(YLL、years of life lost) と障害生存年数(YLD、years lived with disability)の合計
+DALY = Y LL + Y LD
+で計算され、障害生存年数(YLD)まで考慮した疾病負荷の指標である。
+
+図2.3 DALY の算出概念図、出典：wikipedia.org、障害調整生命年
+健康寿命とは、「健康上の問題で、日常生活が制限されることなく生活できる期間」を意味し,「生存年数(life year)―障害生存年数(YLD)」で定義される.
+今回は3つの方法を採用することにする。
+１．	国民生活基礎調査による項目  に基づく算出（2.4節で詳述）
+２．	介護保険の要介護認定により算出（2.3節で詳述）
+３．	DALYによる算出
+
+
+\section{健康寿命の定義と算出方式}
+\bb{健康寿命の概念を理解するためには, まず, 「疾病負荷（disease burden）」という概念を理解する必要がある. 疾病負荷とは疾病により失われた生命や生活の質の期間を意味する. 疾病負荷を計量化した指標の内, 近年最も広く使われている指標が障害調整生命年 (DALYs) である.
+	ある人における障害調整生命年 (DALY, disability adjusted lit year) の計算は損失生存年数 (YLL, years of life lost) と障害生存年数 (YLD, years lived with disability)の合計
+	$$DALY=YLL+YLD$$
+	%「障害調整生命年 (DALY) = 損失生存年数 (YLL) + 障害生存年数 (YLD)」
+	で計算され, 障害生存年数 (YLD)まで考慮した疾病負荷の指標である.
+}
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/daly.png}
+		\caption{DALYの算出概念図, 出典：wikipedia.org, 障害調整生命年
+		}
+	\end{center}
+\end{figure}
+
+
+\bb{健康寿命はとは, 「健康上の問題で, 日常生活が制限されることなく生活できる期間」を意味し, 「生存年数(life year)- 障害生存年数 (YLD)」で定義される.
+}
+
+ある社会構成員における平均健康寿命と平均寿命\footnote{平均寿命は, 5年ごとの国勢調査で確定した人口とその年を含む前後3年間の死亡数をもとに, 厚生労働省により公表. 都道府県別, 市町村別,男女別に公表
+}
+との差を縮めることにより, 医療費や介護給付金の軽減, および個人の生活の質の低下を防ぐことができ, 社会が安定させることが出来る.
+そのため, 健康寿命を延ばすこと, すなわち, 『健康寿命の延伸』が社会的に注目を集めている.
+%
+%健康寿命とは, 寿命期間の内, 健康上の問題で日常生活が制限されることなく 自立して生活できる期間をいう.
+
+現在, 健康寿命の算出方式は主に,
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 国民生活基礎調査でのアンケート項目\footnote{
+		      統計調査の調査票(健康表)
+		      \url{http : //www.mhlw.go.jp/toukei/chousahyo/index.html#00450061}.
+	      }
+	      より算出
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 例) あなたは, 現在, 傷病で病院や診療所に通ってますか.
+		            \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+			            \item[] 1. 通っている~~~~~~2. 通っていない
+		            \end{itemize}
+	      \end{itemize}
+
+	\item 介護保険の要介護認定率より算出
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 要介護２以上を不健康とするもの
+	      \end{itemize}
+\end{itemize}
+２種類のデータから算出される.\footnote{
+	健康寿命算出プログラム
+	\url{http : //toukei.umin.jp/kenkoujyumyou/}.
+}
+二つの方法の内, 介護保険に基づいた後者の方式は,
+ほぼすべての県民が介護保険の対象となっていること, 全国同一
+の基準で判定されていることから, 客観的で信頼度の高い数値ととらえる.
+
+
+
+
+%------------------------------------------------------------
+\section{和歌山県の健康寿命(要介護度方式)}
+%------------------------------------------------------------
+\subsection{介護保険制度と要支援・要介護度}
+健康寿命の要介護度方式による算出方式は, 要介護度を利用するため, 介護保険制度と要介護度の概念を整理しておく.
+
+介護保険制度は社会保険制度\footnote{一般的に医療, 年金, 介護保険を指す. 広義の定義では雇用, 労災保険まで含む.
+	%https : //hoken.azukichi.net/shaho.html#1
+}の一つとして,
+高齢者や, 介護が必要な人に対する保障制度である.
+40歳以上の人に加入が義務付けられている.\footnote{
+	現在の介護保険制度は, 1997年に制定され, 2000年4月1日に施行された介護保険法(平成9年法律第123号)に基づいて実施されている.
+}
+%高齢者の介護を保障する制度である.
+
+
+保険給付を受けるにあたって, 被保険者は市町村に申請して認定を受けなければならない.
+認定を受けられる被保険者は, 65歳以上の人もしくは, 4064歳までで加齢が原因と思われる「特定疾病(16種類)」の人となる.
+判定は下記の手順でおこなう.
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 1次判定  :  訪問調査, コンピュータにより判定
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 申請者の心身の状況, 置かれている環境等について, 全国一律の基準に基づいて訪問調査
+	      \end{itemize}
+	\item 被保険者の主治医に対して, 被保険者の疾病や負傷の状況等について意見を聞き取り
+	\item 2次判定  :  介護認定審査会により判定
+	      %市町村の(保健・医療・福祉の専門家により構成)は,
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 訪問調査結果(1次判定)や主治医の意見等をもとに審査・判定を行い, その結果を市町村に通知
+	      \end{itemize}
+\end{itemize}
+市町村は, 介護認定審査会(保健・医療・福祉の専門家により構成)の2次判定結果に基づいて要支援・要介護認定を行う.
+
+\subsection{要支援・要介護認定の結果}
+要支援・要介護認定は7段階で構成されており,  要支援は2段階, 要介護は5段階ある.
+%要支援・要介護は段階によって分かれており,
+それぞれの段階において利用できる介護サービスの範囲や量, 負担料金の上限が決まる.
+
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 要支援1  :  支給限度額 ：5万30円/月
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 日常生活上の基本動作については, ほぼ自分で行うことが可能だが, 要介護状態への進行を予防するために, IADL(手段的日常生活動作)において何らかの支援が必要な状態.
+	      \end{itemize}
+
+	\item 要支援2  :  支給限度額 ：10万4730円/月
+
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 要支援1と比べて, IADL(手段的日常生活動作)を行う能力がわずかに低下し, 機能の維持や改善のために何らかの支援が必要な状態.
+
+	      \end{itemize}
+
+	\item 要介護1 : 支給限度額 ：16万6920円/月
+
+
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 要支援の状態からさらにIADL(手段的日常生活動作)の能力が低下. 排せつや入浴などに部分的な介護が必要な状態.
+
+	      \end{itemize}
+
+	\item 要介護2 : 支給限度額 ：19万6160円/月
+
+
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 要介護1の状態に加えて, 歩行や起き上がりなどに部分的な介護が必要な状態.
+
+	      \end{itemize}
+
+	\item 要介護3 : 支給限度額 ：26万9310円/月
+
+
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 要介護2の状態からさらにIADL(手段的日常生活動作)およびADL(日常生活動作)が著しく低下し, 立ち上がりや歩行が自力ではできず, 排泄や入浴, 衣服の着脱などにもほぼ全面的な介護が必要な状態.
+
+	      \end{itemize}
+
+	\item 要介護4 : 支給限度額 ：30万8060円/月
+
+
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 要介護3よりも動作能力が著しく低下し, 日常生活ほぼ全般を介護なしで行うことが困難な状態.
+
+	      \end{itemize}
+
+	\item 要介護5 : 支給限度額 ：36万650円/月
+
+
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 要介護4の状態よりさらに動作能力が低下し, 意思の伝達も困難になり, 介護なしには日常生活を送ることが不可能な状態.
+
+	      \end{itemize}
+
+
+\end{itemize}
+
+
+%いずれかの区分に認定されたのちに, 介護保険サービスを利用することができます.
+
+
+
+%要支援・要介護とは, 介護サービスを受ける際に, その状態がどの程度なのかを判定するものです.
+
+
+
+
+
+
+%申請を受けた市町村は, 申請者の心身の状況, 置かれている環境等について, 全国一律の基準に基づいて訪問調査を行い, コンピュータにより判定する(1次判定). また, 市町村は, 被保険者の主治医に対して, 被保険者の疾病や負傷の状況等について意見を求める. 市町村の介護認定審査会(保健・医療・福祉の専門家により構成)は, 訪問調査結果や主治医の意見等をもとに審査・判定を行い, その結果を市町村に通知する(2次判定).
+
+%認定は, 原則として申請日から30日以内に行われる.
+%認定の効力は申請日にさかのぼり, 申請日以降に利用したサービスについて給付が受けられる. 認定には有効期間が設定され, 定期的に更新される. また, 有効期間内であっても要支援・要介護状態に変化があった場合は, 被保険者の申請または市町村の職権により, 変更の認定, 認定の取消し等を行うことができる.
+%となっています.
+%
+
+
+
+
+%\footnote{国際的には, ドイツ, 韓国などは日本と同様に社会保険方式を採用しているが, イギリス, スウェーデンなどは一般税財源による社会サービス方式を採用している.
+%}
+%高齢者や, 老化で介護が必要な人に対する保障制度で, 40歳以上の人に加入が義務付けられています.
+%訪問介護や老人福祉施設の利用などの各種サービスを受けられます.
+
+%保険料は, 65歳未満の人は健康保険や国民健康保険などの医療保険に含まれる形になっています. 65歳以上になると医療保険と切り離され, 原則として年金から天引きされます.
+
+%以下は,
+%
+%日本の介護保険制度の概要である
+%要介護度の基準は厚生労働省が決めている.
+
+%以下参考にしてください
+
+
+%
+%
+%
+
+
+
+
+
+
+
+
+
+%------------------------------------------------------------
+\chapter{これまでの和歌山県の取り組み}
+%------------------------------------------------------------
+
+
+
+\begin{itemize}
+\item 和歌山県の健康に関する取り組みを依頼すること
+\end{itemize}
+
+
+
+
+
+
+%------------------------------------------------------------
+\chapter{和歌山県の寿命データの現状}
+%------------------------------------------------------------
+
+
+本事業の研究にあたり、
+前置きとして、
+和歌山県の平均寿命に関して、
+時系列的にその変動具合を確認してみる。
+
+
+%これまで和歌山県が取り組んで来た保健対策や組織の変遷について, 時系列的に
+%どのような変化があったのか調べる必要がある.
+
+
+
+\subsection{和歌山県の平均寿命の時系列変動}
+
+\tb{2015年に実施された国勢調査に基づいて算出された平均寿命の結果、
+和歌山県の平均寿命は、男性が79.94歳、女性は86.47歳を示し、
+それぞれ、47都道府県の中で、
+男性44位、女性41位と平均寿命が低いと報告された。
+}
+
+
+
+
+
+
+% latex table generated in R 3.5.3 by xtable 1.8-4 package
+% Fri Mar 19 20:17:39 2021
+\begin{table}[ht]
+\centering
+\begin{tabular}{r|rr|rr}
+  \hline
+	 & 男性 &  & 女性 &  \\
+	年度 & 平均寿命 & 順位 & 平均寿命 & 順位 \\
+  \hline
+  1975 & 71.25 & 28.50 & 76.81 & 22.50 \\
+  1985 & 74.19 & 40.50 & 80.13 & 43.00 \\
+  1990 & 75.23 & 44.00 & 81.70 & 40.00 \\
+  1995 & 76.07 & 44.00 & 82.71 & 44.00 \\
+  1900 & 77.01 & 41.00 & 84.23 & 41.00 \\
+  1905 & 77.97 & 42.00 & 85.34 & 41.00 \\
+  2010 & 79.07 & 37.00 & 85.69 & 45.00 \\
+  2015 & 79.94 & 44.00 & 86.47 & 41.00 \\
+   \hline
+\end{tabular}
+\caption{和歌山県の平均寿命と47都道府県の中での順位。順位が大きいほど平均寿命が低いことを意味する。}
+
+\end{table}
+
+
+
+
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[ width=1\linewidth]{fig/WakayamaTrend.pdf}
+%		\includegraphics[ width=0.49\linewidth]{fig/rankfemale.pdf}
+		     \put(-0.5,0.9){和歌山県の男性, 44位}
+		     \put(-0.5,0.7){和歌山県の女性, 41位}
+		\caption{\tb{都道府県別平均寿命順位推移(1975年〜2015年)}
+}
+	\end{center}
+\end{figure}
+
+
+
+%------------------------------------------------------------
+\chapter{データの収集および変更履歴}
+%------------------------------------------------------------
+
+
+本研究に用いられるデータは、
+47都道府県を基本単位とし、平均寿命と健康寿命を目的変数とする。
+説明変数多様なデータ元から収集した公的データを利用することにする。
+データの収集は和歌山県が担当し、滋賀大学に提供される形式をとっており、
+今回のデータの収集においては、統計解析の再現性を重視したため、
+出典を詳しく明記する。
+
+
+
+データのやり取りにおいては、
+所定の書式(DataFormat.csv”)を用意し、
+データの扱いには入力ミスなどが起こらないように、
+十分に注意を払った。
+また、滋賀大と和歌山県の間、double checkを行い、
+入念に厳選した公的データのみを用いることにした。
+
+
+
+\tb{
+情報および変更履歴：
+“DataFormat.csv” latest version 2021年2月10日
+“DataFormat.csv” latest version 2021年3月11日受領
+＜追記修正箇所等＞
+V列
+}
+
+\tb{熊本県の欠損値について、国の示す推定方法により数値を記載 -
+熊本県女性の健康寿命の推定値
+FI列、FJ列、FK列、FL列 　収集元データの年度修正（新しいデータに置き換え）
+}
+
+\tb{野菜摂取量\_2016(20歳以上平均値(g/日)
+食塩摂取量\_2016(20歳以上平均値(g/日)
+BMI平均値\_2016(男性20〜69歳)(女性40〜69歳)(単位Kg/u)
+歩数\_2016(20歳以上平均値(歩/日)
+DH列、DI列、DJ列、DK列のデータ収集元URLを修正
+}
+
+\tb{悪性新生物(子宮)\_年齢調整死亡率2015
+心疾患\_年齢調整死亡率2015
+肺炎\_年齢調整死亡率2015
+急性心筋梗塞\_年齢調整死亡率2015
+%（✕「患者調査」から→〇「人口動態統計特殊報告」）
+EF列、EG列、EH列、EI列、EJ列
+}
+
+\tb{バリアフリー化の総数であったものをバリアフリー化率に置き換え
+一定のバリアフリー化率\_2018
+高度のバリアフリー化率\_2018
+バリアフリー\_手すりがある2018
+バリアフリー\_廊下などが車いすで通行可能な幅2018
+バリアフリー\_段差のない屋内2018
+参考事項：バリアフリー化率の出典元を発見
+}
+
+
+\chapter{本研究に使用するデータと変数名}
+
+
+９４個体
+
+168個の変数がある。
+
+解析の都合上、英語の変数名に変換をした。
+
+
+
+
+
+
+
+% latex table generated in R 3.5.3 by xtable 1.8-4 package
+% Sun Mar 21 18:45:26 2021
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrll}
+  \hline
+ & id & var name Jpn & var name Eng \\ 
+  \hline
+1 &   1 & key & key \\ 
+  2 &   2 & pref.id & pref.id \\ 
+  3 &   3 & sex & sex \\ 
+  4 &   4 & pref.E & pref.E \\ 
+  5 &   5 & pref.A & pref.A \\ 
+  6 &   6 & pref.J & pref.J \\ 
+  7 &   7 & 人口 & pop \\ 
+  8 &   8 & 受療率 入院 悪性新生物 2017 & Treatment rate Hospitalization Malignant neoplasm 2017 \\ 
+  9 &   9 & 受療率 入院 心疾患 2017 & Medical treatment rate hospitalization heart dz 2017 \\ 
+  10 &  10 & 受療率 入院 脳血管疾患 2017 & Treatment rate Hospitalization Cerebrovascular dz 2017 \\ 
+  11 &  11 & 受療率 外来 悪性新生物 2017 & Treatment rate Outpatient Malignant neoplasm 2017 \\ 
+  12 &  12 & 受療率 外来 心疾患 2017 & Treatment rate outpatient heart dz 2017 \\ 
+  13 &  13 & 受療率 外来 脳血管疾患 2017 & Treatment rate Outpatient Cerebrovascular dz 2017 \\ 
+  14 &  14 & 病院数 2019 & Num of hospitals 2019 \\ 
+  15 &  15 & 診療所数 2019 & Num of clinics 2019 \\ 
+  16 &  16 & がん治療認定医数 2020 & Num of certified cancer doctors 2020 \\ 
+  17 &  17 & 循環器専門医数 2020 & Num of cardiologists 2020 \\ 
+  18 &  18 & 内視鏡専門医数 2020 & Num of endoscopists 2020 \\ 
+  19 &  19 & 75歳未満調整死亡率 悪性新生物 2018 & Mortality Malignant Neoplasm 2018 Under 75 \\ 
+  20 &  20 & 書籍購入代金 2019 & Book purchase price 2019 \\ 
+  21 &  21 & 平均寿命 2015 & LE 2015 \\ 
+  22 &  22 & 健康寿命 2016 & HLE 2016 \\ 
+  23 &  23 & 75歳未満調整死亡率 悪政新生物 2019 & Under 75 Adjusted Mortality Evil Neoplasms 2019 \\ 
+  24 &  24 & 年齢調整死亡率 心疾患 2015 & mortality heart dz 2015 \\ 
+  25 &  25 & 年齢調整死亡率 脳血管疾患 2015 & mortality cerebrovascular dz 2015 \\ 
+  26 &  26 & 60歳以上人口 2015 & pop over 60 2015 \\ 
+  27 &  27 & 学習率 2016 & Learn rate 2016 \\ 
+  28 &  28 & 読書率 2016 & Read rate 2016 \\ 
+  29 &  29 & 人口・世帯 年少人口割合2020 & pop Young pop Ratio 2020 \\ 
+  30 &  30 & 人口・世帯 老年人口割合2020 & pop oldElderly pop Ratio 2020 \\ 
+  31 &  31 & 人口・世帯 生産年齢人口割合2020 & pop Working Age pop Ratio 2020 \\ 
+  32 &  32 & 人口・世帯 粗死亡率2020 & pop Rough Mortality 2020 \\ 
+  33 &  33 & 人口・世帯 共働き世帯割合2020 & pop Double income household ratio 2020 \\ 
+  34 &  34 & 自然環境 年平均気温 & Natural environment annual avg temperature \\ 
+  35 &  35 & 自然環境 年平均相対湿度 & Natural environment annual avg relative humidity \\ 
+  36 &  36 & 自然環境 降水量（年間） & Natural environment annual rain \\ 
+  37 &  37 & 自然環境 雪日数（年間） & Natural environment annual Num of snow days \\ 
+  38 &  38 & 経済基盤 県民所得 & Economic pref income \\ 
+  39 &  39 & 行政基盤 財政力指数 & Admin base Financial strength index \\ 
+  40 &  40 & 行政基盤 収支比率 & Admin base balance ratio \\ 
+  41 &  41 & 行政基盤 生活保護費割合（県財政） & Admin infrastructure living protection cost ratio (prefectural finance) \\ 
+  42 &  42 & 行政基盤 教育費割合（県財政） & Admin infrastructure Edu cost ratio (prefectural finance) \\ 
+  43 &  43 & 教育 最終学歴が大学・大学院卒の者の割合 & Edu Ptc of university graduate students with a final academic background \\ 
+  44 &  44 & 労働 １次産業就業者比率 & Labor primary industry emp ratio \\ 
+  45 &  45 & 労働 ２次産業就業者比率 & Labor secondary industry emp ratio \\ 
+  46 &  46 & 労働 ３次産業就業者比率 & Labor tertiary industry emp ratio \\ 
+  47 &  47 & 労働 完全失業率 & Labor Unemp rate \\ 
+  48 &  48 & 文化・スポーツ 図書館数（人口100万人当たり） & Num of libraries \\ 
+  49 &  49 & 健康・医療 一般診療所数(可住地面積100km当たり) & Num of general clinics \\ 
+  50 &  50 & 文化・スポーツ スポーツの行動者率 & Sports Participant Rate \\ 
+  51 &  51 & 文化・スポーツ 旅行・行楽行動者率 & Travel Rate \\ 
+  52 &  52 & 居住 持ち家比率 & Residence owner ratio \\ 
+  53 &  53 & 居住 一戸建住宅比率 & Residence house ratio \\ 
+  54 &  54 & 居住 上水道給水人口比率 & Residence water supply pop ratio \\ 
+  55 &  55 & 居住 下水道普及比率 & Residence sewerage ratio \\ 
+  56 &  56 & 文化・スポーツ ボランティア活動行動者率 & Volunteer Activity Participant Rate \\ 
+  57 &  57 & 居住 都市公園面積（人口１人当たり） & Residential city park area (per pop) \\ 
+  58 &  58 & 居住 都市公園数(可住地面積100km当たり) & Residence Num of city parks \\ 
+  59 &  59 & 健康・医療 一般病院数(可住地面積100km当たり) & HM Num of general hospitals \\ 
+  60 &  60 & 居住 主要道路舗装率 & Residence road pavement rate \\ 
+  61 &  61 & 居住 市町村舗装率 & Residence simachi pavement rate \\ 
+  62 &  62 & 健康・医療 一般歯科診療所数（人口10万人当たり） & HM Num of general dental clinics per 100k pop \\ 
+  63 &  63 & 健康・医療 医療施設に従事する医師数（人口10万人当たり） & HM Num of doctors engaged in medical facilities per 100k pop \\ 
+  64 &  64 & 健康・医療 保健師数（人口10万人当たり） & HM Num of public health nurses per 100k pop \\ 
+  65 &  65 & 安全 交通事故発生件数（人口10万人当たり） & Safety Num of traffic accidents per 100k pop \\ 
+  66 &  66 & 家計 実収入（一世帯当たり１か月） & Household actual income \\ 
+  67 &  67 & 家計 消費支出（一世帯当たり１か月） & Household consumption expenditure \\ 
+  68 &  68 & 家計 教育費割合（対消費支出） & Household Edu cost ratio \\ 
+  69 &  69 & 家計 教養娯楽費割合（対消費支出） & Household Liberal Arts and Entertainment Expenditure Ratio \\ 
+  70 &  70 & 家計 貯蓄現在高 & Household Savings \\ 
+  71 &  71 & 家計 スマートフォン所有数量（千世帯当たり） & Household Smartphone ownership quantity \\ 
+  72 &  72 & 家計 パソコン所有数量（千世帯当たり） & Household PC ownership quantity \\ 
+  73 &  73 & 家計 自動車所有数量（千世帯当たり） & Household Car ownership quantity \\ 
+  74 &  74 & 家計 タブレット端末所有数量（千世帯当たり） & Household Tablet terminal Ownership quantity \\ 
+  75 &  75 & 人口・世帯 高齢単身者世帯の割合 & pop Household Ratio of elderly single person households \\ 
+  76 &  76 & スポーツ総行動率 & Sports Activity rate \\ 
+  77 &  77 & スポーツ総行動率-器具を使ったトレーニング & Sports Activity Rate Training with Equipment \\ 
+  78 &  78 & スポーツ行動率−ウォーキング & Sports Activity rate walking \\ 
+  79 &  79 & 旅行・行楽−旅行・行楽・観光総行動率 & Travel Traveling Tourism Activity Rate \\ 
+  80 &  80 & 旅行・行楽−旅行率 & Travel Rate \\ 
+  81 &  81 & 旅行・行楽−行楽率 & Traveling rate \\ 
+  82 &  82 & 旅行・行楽−観光率 & Tourism Rate \\ 
+  83 &  83 & ボランティア総行動率−総数 & Volunteer Activity Rate total \\ 
+  84 &  84 & ボランティア総行動率−まちづくり活動 & Volunteer town development \\ 
+  85 &  85 & ボランティア総行動率−国際協力活動 & Volunteer International Cooperation \\ 
+  86 &  86 & ボランティア総行動率−健康や医療サービスに関係した活動 & Volunteer health and medical \\ 
+  87 &  87 & ボランティア総行動率−高齢者を対象とした活動 & Volunteer for the Elderly \\ 
+  88 &  88 & ボランティア総行動率−障害者を対象とした活動 & Volunteer for Persons with Disabilities \\ 
+  89 &  89 & ボランティア総行動率−子供を対象とした活動 & Volunteer for Children \\ 
+  90 &  90 & 趣味・娯楽−趣味娯楽総行動率 & Hobbies Total \\ 
+  91 &  91 & 趣味・娯楽−園芸・庭いじり・ガーデニング & Hobbies Gardening \\ 
+  92 &  92 & 趣味・娯楽−スポーツ観覧 & Hobbies Sports View \\ 
+  93 &  93 & 趣味・娯楽−読書 & Hobbies Read \\ 
+  94 &  94 & 自己啓発・訓練−学習・自己啓発・訓練率 & Self development rate \\ 
+  95 &  95 & 自己啓発・訓練−芸術・文化 & Self development art culture \\ 
+  96 &  96 & 自己啓発・訓練−英語 & Self development Eng \\ 
+97 &  97 & 自己啓発・訓練−英語以外の外国語 & self development languages other than English\\
+    98 &  98 & 自己啓発・訓練−パソコンなどの情報処理 & Self development PC etc \\ 
+  99 &  99 & ボランティア活動−安全な生活のための活動 & Volunteer for Life Safe \\ 
+  100 & 100 & ボランティア活動−自然や環境の活動 & Volunteer environmental activities \\ 
+  101 & 101 & ボランティア活動−災害活動 & Volunteer disaster activities \\ 
+  102 & 102 & 高血圧疾患 入院2014年 & Hypertension Hospitalization 2014 \\ 
+  103 & 103 & 高血圧疾患 外来2014年 & Hypertension Outpatient 2014 \\ 
+  104 & 104 & 糖尿病 入院2014年 & Diabetes hospitalization 2014 \\ 
+  105 & 105 & 糖尿病 外来2014年 & Diabetes Outpatient 2014 \\ 
+  106 & 106 & 脳血管疾患 年齢調整死亡率2015 & Cerebrovascular mortality 2015 \\ 
+  107 & 107 & 悪性新生物(胃) 年齢調整死亡率2015 & Malignant neoplasm (stomach) mortality rate 2015 \\ 
+  108 & 108 & 悪性新生物(大腸) 年齢調整死亡率2015 & Malignant neoplasm (intestine) mortality rate 2015 \\ 
+  109 & 109 & 悪性新生物(肝及び肝内胆管) 年齢調整死亡率2015 & Malignant neoplasm (liver) mortality rate 2015 \\ 
+  110 & 110 & 悪性新生物(気管、気管支及び肺) 年齢調整死亡率2015 & Malignant neoplasm (lungs) mortality 2015 \\ 
+  111 & 111 & 悪性新生物(乳房) 年齢調整死亡率2015 & Malignant neoplasm (breast) mortality rate 2015 \\ 
+  112 & 112 & 悪性新生物(子宮) 年齢調整死亡率2015 & Malignant neoplasm (uterus) mortality rate 2015 \\ 
+  113 & 113 & 心疾患 年齢調整死亡率2015 & Heart dz mortality 2015 \\ 
+  114 & 114 & 肺炎 年齢調整死亡率2015 & Pneumonia mortality 2015 \\ 
+  115 & 115 & 急性心筋梗塞 年齢調整死亡率2015 & Acute myocardial infarction mortality 2015 \\ 
+  116 & 116 & 血圧を下げる薬の使用 回答・はい(40〜64歳)2014 & Use blood pressure binary 2014 \\ 
+  117 & 117 & インシュリン注射、血糖を下げる薬の使用 回答・はい(40〜74歳)2014 & Use Insulin binary 2014 \\ 
+  118 & 118 & コレステロールを下げる薬の使用 回答・はい(40〜74歳)2014 & Use Cholesterol binary 2014 \\ 
+  119 & 119 & 就寝前の2時間以内に夕食 回答・はい(40〜74歳)2014 & Eat within 2 hours before sleep binary 2014 \\ 
+  120 & 120 & 日常生活において歩行等の身体活動(1日1時間以上実施) 回答・はい(40〜74歳)2014 & Physical activity walking binary 2014 \\ 
+  121 & 121 & 軽く汗をかく運動週2回 回答・はい(40〜74歳)2014 & Sweat exercise twice a week binary 2014 \\ 
+  122 & 122 & 喫煙率(計100本以上,6ヵ月以上\&直近1ヵ月) 回答・はい(40〜74歳)2014 & Smoking over 100 binary 2014 \\ 
+  123 & 123 & 20歳に比べて10kg体重増加.回答 はい(40〜74歳)2014 & Gain 10kg Wt compared to 20yr binary 2014 \\ 
+  124 & 124 & 歩く速度が速い(同年齢と比較).回答 はい(40〜74歳)2014 & Fast Walking compared to the same age binary 2014 \\ 
+  125 & 125 & 飲酒日1日当たり2合以上飲む割合(頻度) 回答・はい(40〜74歳)2014 & Drinking 2 or more per day binary 2014 \\ 
+  126 & 126 & 毎日酒を飲む割合(頻度) 回答・はい(40〜74歳)2014 & Drinking everyday binary 2014 \\ 
+  127 & 127 & 睡眠休養が十分とれている.回答 はい(40〜74歳)2014 & Enough sleep binary 2014 \\ 
+  128 & 128 & 朝食を抜くことが週3回ある.回答 はい(40〜74歳)2014 & Skip breakfast three times a week binary 2014 \\ 
+  129 & 129 & 夕食後に間食することが週3回ある.回答 はい(40〜74歳)2014 & Snacks three times a week after dinner binary 2014 \\ 
+  130 & 130 & 肉類 2014 & Meat 2014 \\ 
+  131 & 131 & 魚介類 2014 & Seafood 2014 \\ 
+  132 & 132 & 牛乳 2014 & Milk 2014 \\ 
+  133 & 133 & 乳製品 2014 & Dairy 2014 \\ 
+  134 & 134 & 卵 2014 & Egg 2014 \\ 
+  135 & 135 & 大豆 2014 & Soybean 2014 \\ 
+  136 & 136 & 一定のバリアフリー化率手すりの設置 2013 & Usual barrier free handrails 2013 \\ 
+  137 & 137 & 一定のバリアフリー化率段差のない屋内 2013 & Usual barrier free no steps 2013 \\ 
+  138 & 138 & 高度のバリアフリー化率手すりの設置 2013 & High barrier free handrails 2013 \\ 
+  139 & 139 & 高度のバリアフリー化率段差のない屋内 2013 & High barrier free no steps 2013 \\ 
+  140 & 140 & 高度のバリアフリー廊下等が車いすで通行可能な幅 2013 & High barrier free wheelchairs pass Width \\ 
+  141 & 141 & 総実労働時間 2016 & Total working hours 2016 \\ 
+  142 & 142 & 現金給与総額 2016 & Total salary 2016 \\ 
+  143 & 143 & 生鮮肉(世帯数消費支出) 2014 & Fish meat consumption 2014 \\ 
+  144 & 144 & 生鮮肉(世帯数消費支出) 2015 & Fish meat consumption 2015 \\ 
+  145 & 145 & 生鮮肉(世帯数消費支出) 2016 & Fish meat consumption 2016 \\ 
+  146 & 146 & 生鮮肉平均 世帯数消費支出(2014〜2016） & Fish meat consumption avg 2014 2016 \\ 
+  147 & 147 & 菓子類(世帯数消費支出) 2014 & Confectionery consumption 2014 \\ 
+  148 & 148 & 菓子類(世帯数消費支出) 2015 & Confectionery consumption 2015 \\ 
+  149 & 149 & 菓子類(世帯数消費支出) 2016 & Confectionery consumption 2016 \\ 
+  150 & 150 & 菓子類平均 世帯数消費支出(2014〜2016） & Confectionery consumption avg 2014 2016 \\ 
+  151 & 151 & 果物(世帯数消費支出) 2014 & Fruits consumption 2014 \\ 
+  152 & 152 & 果物(世帯数消費支出) 2015 & Fruits consumption 2015 \\ 
+  153 & 153 & 果物(世帯数消費支出) 2016 & Fruits consumption 2016 \\ 
+  154 & 154 & 果物平均 世帯数消費支出(2014〜2016） & Fruit consumption avg 2014 2016 \\ 
+  155 & 155 & 全国学力・学習状況(公立学校数)(中学校) 2015 & Academic ability middle school 2015 \\ 
+  156 & 156 & 全国学力・学習状況(公立学校数)(小学生) 2015 & Academic ability elementary school 2015 \\ 
+  157 & 157 & う蝕外来総数 2014 & Total Num of caries 2014 \\ 
+  158 & 158 & 歯周疾患(歯肉炎)外来総数 2014 & Total Num of periodontal 2014 \\ 
+  159 & 159 & 骨の密度障害 2014 & Bone density disorder 2014 \\ 
+  160 & 160 & 骨折 2014 & Fracture 2014 \\ 
+  161 & 161 & 歯の補てつ 2014 & Tooth supplement 2014 \\ 
+  162 & 162 & アルツハイマー等(脳血管疾患) 2014 & Alzheimer dz 2014 \\ 
+  163 & 163 & ジニ係数総世帯 2014 & Gini coeff 2014 \\ 
+  164 & 164 & 収入ジニ係数勤労世帯 2014 & Income Gini Coeff Working Household 2014 \\ 
+  165 & 165 & 野菜摂取量 2012(20歳以上平均値(g/日) & Vegetable intake 2012 \\ 
+  166 & 166 & 食塩摂取量 2012(20歳以上平均値(g/日) & Salt intake 2012 \\ 
+  167 & 167 & BMI平均値 2012(男性20〜69歳)(女性40〜69歳)(単位Kg/m) & BMI 2012 \\ 
+  168 & 168 & 歩数 2012(20歳以上平均値(歩/日) & Num Steps 2012 per day \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+\chapter{寿命データの説明}
+
+\section{3.1 平均寿命\_2015と健康寿命}
+
+
+平均寿命については
+出典：平成27年都道府県別生命表の概況 取得元：以下のリンク
+
+https://www.mhlw.go.jp/toukei/saikin/hw/life/tdfk15/index.html
+
+詳細説明： ・「都道府県別にみた平均寿命の推移」をダウンロード ・男性の平均寿命は「表5-1　平均寿命の推移（男）」より「平成27年」のものを、女性の平均寿命は「表5-2　平均寿命の推移（女）」より「平成27年」のものを取得
+
+
+健康寿命については、
+
+3.2 変数名：健康寿命 2016
+出典：厚生労働科学研究　健康寿命のページ(http://toukei.umin.jp/kenkoujyumyou/)
+
+「都道府県別健康寿命（2010～2016年）」をダウンロード ・男性の健康寿命はシート「付表1-1」より「I列」の2016年の推定値を、女性の健康寿命はシート「付表1-2」より「日常生活に制限のない期間の平均」を取得。
+
+・国民生活基礎調査は熊本地震により2016年の熊本県の健康情報を調査していないが、熊本県の2016年健康寿命のデータに熊本県の3年次の平均を下式による、2016年の仮定に基づく推定値を用いて算定した 　(熊本県の2016年の仮定に基づく推定値)＝(熊本県の2013年の推定値)×(全国の2016年の推定値)/(全国の2013年の推定値)
+
+
+
+
+\section{3.3 順位}
+
+
+
+以下、
+
+WakayamaHtml\_mid\_report.html
+
+/Users/jclee/Dropbox/00000健康和歌山県/0 wakayamaPkg/R/mid\_report\_tex.R
+
+参考
+
+
+
+
+
+\section{3.5 男女区別のないデータ d\_common}
+
+\section{3.5.1 d\_common data 変数名}
+
+
+\section{3.6 男女区別のあるデータ d\_mf,d\_m,d\_f}
+
+\subsection{3.6.1 d\_mf}
+
+
+
+\subsection{3.6.2 男性データd\_m}
+
+
+\subsection{3.6.3 女性データd\_f}
+
+
+
+\section{3.7 以下分析対象データd\_common, d\_m, d\_f}
+
+
+
+
+\chapter{4 dataの変数属性を確認}
+
+\section{4.1 d\_common}
+
+\section{4.2 d\_m}
+
+\section{4.3 d\_f}
+
+
+
+\chapter{5 寿命(目的変数)の都道府県の順位確認}
+
+
+
+
+\subsection{5.1 男性の平均寿命と健康寿命の差}
+
+\subsection{5.2 女性の平均寿命と健康寿命の差}
+
+
+\subsection{5.3 男性の平均寿命}
+
+
+\subsection{5.4 男性の健康寿命}
+
+
+\subsection{5.5 女性の平均寿命}
+
+
+
+\subsection{5.6 女性の健康寿命}
+
+
+
+
+
+
+
+\chapter{6 d\_common dataの説明変数の順位確認及び正規性検定}
+
+
+
+\subsection{6.1 d\_common dataの和歌山県の順位確認}
+
+\subsection{6.2 d\_common dataの連続データ分布確認1}
+
+\subsection{6.3 d\_common dataの連続データ分布確認2}
+
+\subsection{6.4 d\_common dataの連続データの正規性検定}
+
+\subsection{6.5 d\_common data連続データの正規性を満たさない変数}
+
+
+\chapter{7 d\_common data 和歌山,青森,滋賀,長野の説明変数の様子}
+
+
+
+
+
+\chapter{8 出典整理}
+
+\section{8.1 出典元}
+
+
+\section{8.2 出典リンク先の詳細}
+
+
+
+\section{8.3 リンク先の修正箇所}
+
+
+
+
+
+\chapter{9 説明変数の標準化と計量化(scoring)}
+
+
+\chapter{10 ヘルスケア産業の創出や健康経営の推進に係る要因分析??}
+
+
+
+
+%------------------------------------------------------------
+\chapter{和歌山県の健康・平均寿命に関する公表結果}
+%------------------------------------------------------------
+
+
+
+
+\section{和歌山県の平均寿命}
+平均寿命とは0歳の平均余命を意味する。
+厚生労働省\footnote{
+	厚労省都道府県別生命表
+	\url{http://www.mhlw.go.jp/toukei/saikin/hw/seimei/list54-57-02.html}}により2010年度の平均寿命では,
+男性の場合, 長野県が 80.88歳で1位を示し, その次が和歌山県(80.58歳)であった. 47都道府県の内, 平均寿命80歳以上の県は,
+上位から長野, 滋賀,  福井, 熊本,  神奈川,   京都,   奈良,   大分の順位であった.
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.49\linewidth]{fig/rankmale.pdf}
+		%\includegraphics[ width=0.49\linewidth]{fig/rankfemale.pdf}
+		%     \put(-0.1,0.9){和歌山県 男性, 2位}
+		\caption{都道府県別平均寿命順位推移(2010年〜2015年, 男)}
+	\end{center}
+\end{figure}
+
+% \begin{figure}[h!]
+%\begin{center}
+%    %\includegraphics[ width=0.5\linewidth]{fig/fig1.png}
+%     \put(-0.9,0.5){和歌山県 男性, 2位}
+%\caption{都道府県別平均寿命(2010年, 男)}\label{fig1 }
+%\end{center}
+%\end{figure}
+
+同年度の女性の場合, 全ての県が85歳を超えている結果となった.
+\tb{男性と同じく長野県が1位を示し, 和歌山県の女性の平均寿命は12位を示している.}
+
+上位から長野, 島根, 沖縄, 熊本, 新潟, 広島, 福井, 岡山, 大分, 富山, 石川, 滋賀の順位であった.
+男女ともに, 青森県の平均寿命は全国で最下位を示している.
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/rankfemale.pdf}
+		%     \put(-0.1,0.9){和歌山県 男性, 2位}
+		\caption{都道府県別平均寿命順位推移(2010年〜2015年, 女)}\end{center}
+\end{figure}
+
+
+
+
+
+
+和歌山県の平均寿命は都道府県順位の推移をみると,
+60年代から持続的に上がってきたことがわがる.
+
+これは, 和歌山県が長寿県になったのは単なる横断(cross-sectional)データから見られる一時的現象ではなく, 縦断(longitudinal)データからも立証されたことを意味する.
+
+
+\subsection{和歌山県の健康寿命結果}
+介護度による健康寿命は前述した「要介護の2以上」を不健康状態に定義し, それに基づいて計算される. 介護度に基づいた健康寿命は「平均自立期間」とも呼ばれる.\footnote{厚生労働科学研究健康寿命のページ(\url{http://toukei.umin.jp/kenkoujyumyou/}).
+	「健康寿命の指標化に関する研究」
+}
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/fig5.png}
+%		\put(-0.92,0.6){$\leftarrow$和歌山県 男性 2位}
+%		\put(-0.90,0.25){$\leftarrow$和歌山県 女性 3位}
+		\caption{都道府県別健康寿命(平均自立期間, 2013年)}\label{fig1}
+	\end{center}
+\end{figure}
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/fig7.png}
+%		\put(-0.9,0.5){$\leftarrow$和歌山県 男性 1位}
+%		\put(-0.75,0.25){$\leftarrow$和歌山県 女性 9位}
+		\caption{都道府県別健康寿命(平均自立期間, 2014年)}\label{fig1}
+	\end{center}
+\end{figure}
+次の図にこの方式に基づいた2013年と2014年の全国都道府県の健康寿命の結果を示す.
+
+いずれも和歌山県の男性は両年度それぞれ2位と1位, 女性は3位と9位を示しており, 和歌山県が量的な指標(平均寿命)のみならず, 質の高い健康な県であることを示している.
+
+後述するアンケート方式の健康寿命の算出方法は,
+都道府県別の分析のみ可能だが,
+要介護度方式は市町ごとまで分析できるのがもう一つの利点である.
+次の図に県内19市町の健康寿命の分布を示す. 男性の場合は草津市, 女性の場合は日野町の健康寿命がもっとも長かった.
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/fig8.png}
+		% \put(-0.9,0.65){$\leftarrow$草津市}
+		% \put(-0.9,0.3){$\leftarrow$日野町}
+		\caption{和歌山県市町別健康寿命(2014年)}\label{fig1}
+	\end{center}
+\end{figure}
+
+
+
+%------------------------------------------------------------
+\section{和歌山県の健康寿命(アンケート方式)}
+%------------------------------------------------------------
+アンケートによる健康寿命は,
+国民生活基礎調査でのアンケート項目により算出する.
+国民生活基礎調査のアンケート項目とは,
+
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item  例) あなたは, 現在, 傷病で病院や診療所に通ってますか.
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 1. 通っている~~~~~~2. 通っていない
+	      \end{itemize}
+\end{itemize}
+との質問に「通っている」と答えた人を不健康である
+と定義する.
+この方法は自己申告という主観的な回答である
+ことから, 県民性に強く影響を受けるとともに
+, 例えば, 和歌山県の場合, 県民約1,300人を対象とした調査の結果なので, この程度の人数では算出された値の信頼度が低いという欠点がある.
+%\begin{tikzpicture}
+%    %\includegraphics[ width=0.5\linewidth]{fig/fig9.png}
+%\draw[step=0.1\linewidth,gray,very thin](-1,0) grid (0,0);
+%\end{tikzpicture}
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/fig9.png}
+		% \put(-0.3,0.6){$\leftarrow$男 31位}
+		% \put(-0.2,0.25){$\leftarrow$女 39位}
+		\caption{都道府県別アンケート方式健康寿命(2013年)}\label{fig1}
+	\end{center}
+\end{figure}
+
+アンケート方式の和歌山県の健康寿命は男性31位, 女性39位を示しており, 要介護方式の結果とはやや相反している結果となった.
+こうした両方式の違いがなぜ生じたのかはまだ不明であるが, 上述したように, アンケートに当たって, サンプリング方法の問題,
+サンプルの数などの疑問に加え, 県民性による偏りなどが考えられる.
+%------------------------------------------------------------
+\section{和歌山県の健康-国際研究資料にもとづいて}
+
+
+
+%%https://www.nikkei.com/article/DGXLRSP451461\_Y7A710C1000000/
+%%http://release.nikkei.co.jp/attach_file/0451461_01.pdf
+%%https://www.nikkei.com/article/DGXLASDG19H77_Q7A720C1CR0000/
+%\begin{figure}[h!]
+%	\begin{center}
+%		%\includegraphics[ width=0.5\linewidth]{fig/fig10.png}
+%		%     \put(-0.3,0.65){$\leftarrow$草津市}
+%		%     \put(-0.3,0.3){$\leftarrow$日野町}
+%		\caption{平均寿命の延伸(2005〜2015年)}\label{fig10}
+%	\end{center}
+%\end{figure}
+%
+%英医学誌ランセットに掲載された野村ら(2017)の研究でも, 和歌山県が健康県であることが示された.
+%この研究では, 1990 年〜 2015 年における日本の健康指標の変化, 及び 都道府県別の健康指標の改善状況について包括的な分析を行った. その結果, 男女合わせた日本人の平均寿命が
+%同時期に延伸された傾向が確認されている他, 特に, 和歌山県の平均寿命が2015年度において都道府県の中でも最も長い, 長寿県となっていることが明らかになった(図\ref{fig10}).
+%
+%
+%1990年の79.0歳から2015年の83.2歳まで4.2歳上昇した結果であった
+
+
+
+%健康寿命も1990年に最も長い長野県(71.5歳)と最も短い高知県(69.2歳)の差は2.3歳だったが, 2015年には最も長い和歌山県(75.3歳)と最も短い青森県(72.6歳)の差は2.7歳で, 0.4歳拡大した.
+
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/fig11.png}
+		% \put(-0.9,0.6){$\leftarrow$和歌山県 男性, 1位}
+		% \put(-0.9,0.25){$\leftarrow$和歌山県 女性, 1位}
+		\caption{都道府県別の健康寿命(2015年)}\label{fig11}
+	\end{center}
+\end{figure}
+
+図\ref{fig11}は同研究のデータに基づき, 衛生科学センターより再編・加工し都道府県別の健康寿命を示した図である. 図から分かるように, 和歌山県は健康寿命においても, 全国１位を示しており, 寿命が長いだけではなく, 質の高い長生きしている現状がデータから見られた.
+
+野村ら(2017)の研究で強調している内容は健康問題における地域格差問題であり, 各地域の疾病構造, 健康の位置づけに基づいて適切な「健康変換」をおこなう必要があると主張している. しかし, 健康格差の原因究明までにはまだ至らなかった. 従って, 和歌山県が健康な県である理由を示すことは, 全国の健康格差を縮めることに寄与すると考えられる.
+
+%この研究の結果は和歌山県の現在の位置づけが健康格差の首位に位置づけら健康の地域
+%同研究では, 健康寿命和歌山県の健康に関する報告は
+%次は, 「世界の疾病負荷研究(Global Burden of Diseases, Injuries, and Risk Factor Study)」 の一環として,
+%行った野村ら(Lancet, 2017)の最新研究の内容の一部を取り上げる.
+%
+
+\section{健康寿命３指標比較}
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/3idxF.pdf}
+		%     \put(-0.9,0.6){$\leftarrow$和歌山県 男性, 1位}
+		%     \put(-0.9,0.25){$\leftarrow$和歌山県 女性, 1位}
+		\caption{健康寿命３指標相関(女性)}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/3idxM.pdf}
+		%     \put(-0.9,0.6){$\leftarrow$和歌山県 男性, 1位}
+		%     \put(-0.9,0.25){$\leftarrow$和歌山県 女性, 1位}
+		\caption{健康寿命３指標相関(男性)}
+	\end{center}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/HLcorrF.pdf}
+		%     \put(-0.9,0.6){$\leftarrow$和歌山県 男性, 1位}
+		%     \put(-0.9,0.25){$\leftarrow$和歌山県 女性, 1位}
+		\caption{健康寿命３指標相関(女性)}
+	\end{center}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/HLcorrM.pdf}
+		%     \put(-0.9,0.6){$\leftarrow$和歌山県 男性, 1位}
+		%     \put(-0.9,0.25){$\leftarrow$和歌山県 女性, 1位}
+		\caption{健康寿命３指標相関(男性)}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/ttestF.pdf}
+		%     \put(-0.9,0.6){$\leftarrow$和歌山県 男性, 1位}
+		%     \put(-0.9,0.25){$\leftarrow$和歌山県 女性, 1位}
+		\caption{介護度式とアンケート式間健康寿命の平均差比較(女性)}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/ttestM.pdf}
+		%     \put(-0.9,0.6){$\leftarrow$和歌山県 男性, 1位}
+		%     \put(-0.9,0.25){$\leftarrow$和歌山県 女性, 1位}
+		\caption{介護度式とアンケート式間健康寿命の平均差比較(男性)}
+	\end{center}
+\end{figure}
+
+
+
+
+%------------------------------------------------------------
+\chapter{健康寿命と関連のある要因探索}
+%------------------------------------------------------------
+
+和歌山県民の健康寿命の延伸を図ることに当たって, 科学的根拠に基づいた効果的な取り組みを進める必要がある. そのため, まず, 健康寿命に影響を与える要因を探索することが第一歩となる.
+本章では, 都道府県別の健康寿命と健康および社会要因と関連のするデータを利用し健康寿命との相関分析と単回帰分析を行った.
+%その結果から男女別に効果的な施策を提案することを目的とした.
+
+\section{相関分析に用いる変数}
+都道府県別の健康寿命データは2013年の都道府県別の「平均自立期間」\footnote{「平均自立期間」は「要介護2以上」を「不健康」として定義し手算出する. 「厚生労働科学研究費補助金による健康寿命における将来予測と生活習慣病対策の費用対効果に関する研究班報告書」}を採用した. 「平均自立期間」との相関分析のため対になる変数においては, 通常, 健康と直接に関係があると見られる「健康変数」と間接的に影響を与えうる「社会変数」を選び都道府県別に相関分析を行うことにする.
+
+健康変数はさらに, 健康の指標を直接に示す変数と健康向上にむけての生活習慣と関連がある健康行動変数の２種類に分けた. 詳細は下記の通りである.
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 健康指標変数(health index)
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 	肥満度(BMI)
+		      \item 	野菜摂取量
+		      \item 	食塩摂取量
+	      \end{itemize}
+
+	\item 健康行動変数(health behavior)
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 	平均歩数
+		      \item 	喫煙率
+		      \item 	1人当たりアルコール消費量
+	      \end{itemize}
+\end{itemize}
+
+社会変数も健康変数と同じく二つに分けて, ある社会の健全性を測る社会指標変数と個人レベルで行っている社会行動変数の２種類で構成した. 社会変数の詳細は下記の通りである.
+
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 社会指標変数(social index)
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 	GINI係数
+		      \item 	住みやすさ　%http://toyokeizai.net/articles/-/177578?page=2
+	      \end{itemize}
+	\item 社会行動変数(social behavior)
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 	ボランティア参加率
+		      \item 	余暇でスポーツをしている割合
+		      \item 	趣味・娯楽を持っている割合
+		      \item 	学習・自己啓発をしている割合
+	      \end{itemize}
+\end{itemize}
+
+\subsection{データの出典}
+都道府県別の上記のデータは
+総務省の「2011年社会生活基本調査」によりボランティアをしている割合, 余
+
+
+
+%————————————————————
+\chapter{組織体制}
+%————————————————————
+\subsection{健康推進連絡協議(1987〜, 民間)}
+%————————————————————
+和歌山県の「健康推進連絡協議会」は1987年度に, 母子保健推進員と食生活改善推進員が合体し, 地域において歯科保健も含めたさまざまな分野の健康活動を行っている.
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+
+	\item  ボランティア組織
+	\item  市町に地域での健康づくり活動
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 2016年度総人数 3,612人
+	      \end{itemize}
+	\item  毎年養成研修会を実施
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 2016年, 養成講座受講実績, 407人
+	      \end{itemize}
+\end{itemize}
+
+%————————————————————
+\subsection{健康づくり県民会議(1994〜2010)}
+%————————————————————
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item ５分野(栄養, 運動, 休養, 健診, 生きがい)で構成
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item それぞれ10名, 計50名からなる組織
+	      \end{itemize}
+	\item 活動内容 : 県民運動としての健康づくり
+	\item 成果 : 「健康づくりガイドブック」を県内全戸配布
+\end{itemize}
+2010年以降, 「健康づくり県民会議」は, 予算削減に伴って, 活動は停止状態となっている.
+
+%————————————————————
+\subsection{健康づくり支援室(2001〜2009)}
+%————————————————————
+1999年度, 国において「健康日本21」が策定された.\footnote{「健康日本21」とは
+	%1999年度策定された
+	「国民の健康の増進の目標」を定めたのも. 2012年に全部改正(厚生労働省告示430号)し現在は「健康日本(第2次)」.}
+これを受けて和歌山県は,
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 2000年度には, 県の健康増進計画である「健康いきいき21健康滋賀推進プラン」が策定
+	\item 2001年〜2009年度の間「健康づくり支援室」を運営
+\end{itemize}
+など国の健康政策に協力的かつ迅速に対応した.
+
+健康増進計画策定に当たって, 「健康づくり支援室」の主な活動と成果は
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 「健康づくり支援資料集」を作成
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 人口動態統計, 医療費情報, 計画目標11分野関連情報等, 健康関連の情報をオールインワンでまとめたもの
+	      \end{itemize}
+	\item 保健所, 市町等関連組織に配布
+	\item この資料集を活用しながら, 県, 市町が科学的根拠に基づいた保健活動の推進, 客観的評価に基づいたP-D-C-Aサイクルの実施
+\end{itemize}
+である.
+
+健康づくり支援室が作成していた「健康づくり支援資料集」は, 2017年現在, その組織はなくなったものの,
+内容をバージョンアップさせながら毎年作成されている.
+
+\subsection{衛生科学センター(2005〜)}
+
+2005年度からは, 衛生科学センターが健康情報分析機関として位置づけられ, 支援資料集に加えて,
+「死因統計解析」を発行.
+
+「死因統計解析」には
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item ベイズ推計補正をかけた標準化死亡比
+	      \begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+		      \item 市町別・死因別・男女別
+	      \end{itemize}
+	\item 年齢調整死亡率
+\end{itemize}
+の統計解析に基づいた, より客観的な情報が記載されている.
+
+\subsection{健康寿命対策室(2015〜)}
+2015年度, 新たに「健康寿命対策室」が設置され, 一時停滞気味であった健康づくり施策が再び活発化した. 	「健康寿命対策室」は2017年度には, 「健康寿命推進課」として発展している.
+
+%————————————————————
+\section{健康データの持続収集と情報発信}
+%————————————————————
+和歌山県では, 1986年から56年おきに, 約1万人規模で, アンケートによる健康・栄養マップ調査が実施されており(直近は2015年), 客観的評価による健康づくり施策が行われていた.
+
+%「健康づくり支援室」が作成していた「健康づくり支援資料集」は現在(2017年), その組織はなくなったものの,
+%衛生科学センターに受け継がれ, 内容をバージョンアップさせながら毎年作成が続いている.
+衛生科学センターのHPに「死因統計解析」と「健康づくり支援資料集」を掲載しており, 2015年実績で, 死因解析が５万回以上, 資料集が17万回以上のアクセスがあった.
+\begin{figure}[h!]
+	\begin{center}
+		%\includegraphics[ width=0.5\linewidth]{fig/fig12.png}
+		%     \put(-0.7,0.5){和歌山県 女性, 12位}
+		\caption{健康づくり支援資料集}\label{fig1}
+	\end{center}
+\end{figure}
+
+
+
+
+%------------------------
+\section{外部要因−社会・地理・環境の側面}
+%------------------------
+
+そのほか, 保健活動とは少し違う角度として, 和歌山県の各都市が便利で歩きやすい(コンパクトシティーである), スポーツなど健康的な娯楽がし易い, 災害が少ない, 気候が温暖, 平均収入が多くて持ち家率が高い(可処分所得が高い), 経済格差が少ない(ジニ係数が低い)などの環境要因も強く寄与しているのではないかと考えられる.
+
+
+%------------------------
+\section{リーダーの健康政策に関しての認識}
+%------------------------
+意思決定者の健康についての認識も事業の加速化に重要な部分である.
+和歌山県では, 1993年度, 国松善次氏が健康福祉部長(1998年--2006年まで県知事)に就任した頃から,
+健康づくり事業の重要性を認識し, 積極的に取り組むことになり, 様々な組織に対して支援を行った.
+その間, 健康づくりには人や予算が十分に配分され, 和歌山県の現状に至る行政施策が推進されたとみられる.
+
+%------------------------
+\section{結論}
+%------------------------
+結局, 和歌山県では健康づくりのために特別な事業を行ったわけではなく,
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 組織 :  健康推進連絡協議会等活発な地域活動を支える組織があった.
+	\item データの収集と情報公開 : 健康栄養マップ調査, 健康づくり支援資料集や死亡統計解析を作成することで, 県, 保健所, 市町が, 客観的データに基づいた健康づくり施策ができた.
+	\item 市町への支援 : 保健所が市町の取り組みをうまく支援できた.
+	\item 健康づくりに関心を持つ施策決定者の存在 : 健康づくりにきわめて熱心な施策決定者がいたことで, 組織に 人や予算がついた.
+\end{itemize}
+により, 健康づくりの基礎インフラが他県より進んでいたとも言える.
+
+即ち, 健康づくりにおいて重要なのは, マクロ的視点で様々な角度から長期的な計画を立て,
+\begin{itemize} \setlength{\itemsep}{-0.5mm} \setlength{\parskip}{-0.5mm}
+	\item 「科学的根拠に基づいて」
+	\item 「ヘルスプロモーションの理念に沿って地域活動を活性化」
+	\item 「県, 保健所, 市町がそれぞれの役割に応じてPDCAサイクルを着実に実行」
+\end{itemize}
+のように, 正確な情報・持続性・協力体制を維持するのが重要だと考えられる.

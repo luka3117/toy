@@ -1,0 +1,85 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex 2020.6.11)  21 NOV 2020 02:32
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/manimlib/files
+/Tex/851ee651f3553b73.tex
+
+(/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/manimlib/files/
+Tex/851ee651f3553b73.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex
+/standalone/standalone.cls
+Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
+dalone
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local
+/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
+(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count167
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count168
+\c@sapage=\count169
+(/usr/local/texlive/2020/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2018/03/26 v1.3a Default configuration file for 'standalon
+e' class
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count170
+\c@section=\count171
+\c@subsection=\count172
+\c@subsubsection=\count173
+\c@paragraph=\count174
+\c@subparagraph=\count175
+\c@figure=\count176
+\c@table=\count177
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/preview/preview.sty
+Package: preview 2017/04/24 12.2 (AUCTeX/preview-latex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/luatex85/luatex85.sty
+Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen135
+)
+\pr@snippet=\count178
+\pr@box=\box45
+\pr@output=\toks17
+))
+
+! LaTeX Error: File `bxcjkkotype.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.7 \usepackage
+               {CJKutf8}^^M 
+Here is how much of TeX's memory you used:
+ 864 strings out of 480609
+ 13746 string characters out of 5903656
+ 249286 words of memory out of 5000000
+ 16804 multiletter control sequences out of 15000+600000
+ 532338 words of font info for 24 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,0n,60p,308b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+No pages of output.

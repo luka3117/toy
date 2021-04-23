@@ -1,0 +1,6 @@
+d_common %>% dplyr::select_if(is.numeric) %>% sapply(rank) %>%
+  tbl_df() %>%dplyr::filter(key==30) %>% t() %>% as.data.frame() %>%.$V1 %>% 
+  plot()
+  
+iris$Sepal.Length %>% plot()
+iris %>% plot()

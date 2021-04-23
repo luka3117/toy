@@ -1,0 +1,54 @@
+%https://qiita.com/zr_tex8r/items/cdaac1500718eb9fa330
+% \documentclass{standalone}
+\documentclass[preview]{standalone}
+% \documentclass[a5paper]{article}
+\usepackage[whole]{bxcjkjatype}
+\usepackage{CJKutf8}
+
+\newcommand*{\Ja}[1]{%
+  \begin{CJK}{UTF8}{ipxg}#1\end{CJK}}
+
+\newcommand*{\Ko}[1]{%
+  \begin{CJK}{UTF8}{} \CJKfamily{mj}
+#1\end{CJK}}
+
+
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+%\usepackage[UTF8]{ctex}
+\linespread{1}
+
+\usepackage{calligra}
+
+\begin{document}
+
+\centering \begin{tabular}{rrrrrl}
+          \hline
+         & Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species \\
+          \hline
+        1 & 5.10 & 3.50 & 1.40 & 0.20 & setosa \\
+          2 & 4.90 & 3.00 & 1.40 & 0.20 & setosa \\
+          3 & 4.70 & 3.20 & 1.30 & 0.20 & setosa \\
+          4 & 4.60 & 3.10 & 1.50 & 0.20 & setosa \\
+            &  &  & \vdots  &  & setosa \\
+          6 & 5.40 & 3.90 & 1.70 & 0.40 & setosa \\
+           \hline
+        \end{tabular}
+
+\end{document}

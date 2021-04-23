@@ -1,0 +1,2 @@
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/ManimJcCompProj/tsst日本語1 backUP 2020年12月5日/BirthDay/HappyBirth2/480p15/partial_movie_files/AllCongre/00000.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/ManimJcCompProj/tsst日本語1 backUP 2020年12月5日/BirthDay/HappyBirth2/480p15/partial_movie_files/AllCongre/00001.mp4'

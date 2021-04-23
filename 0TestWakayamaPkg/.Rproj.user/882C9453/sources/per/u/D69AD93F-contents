@@ -1,0 +1,124 @@
+
+df<-iris %>% select(1)
+
+name <- function(x) {
+  x<-x[[1]]
+  
+  density(x) %>% broom::tidy() 
+  
+}
+
+df[[1]]
+
+name(df)
+
+df %>% tbl_df() %>% .[[1]] %>% density() %>% broom::tidy()
+
+name1<- function(df) {
+  tt<-df %>% .[[1]] %>% density() %>% broom::tidy()
+  
+  return(tt)
+}
+
+
+df %>% name1
+
+aa<-
+  
+aa<-
+  
+  
+
+
+aa %>% select(name, dens)
+
+aa$name
+
+aa$dens
+
+
+
+
+name1<- function(df) {
+  tt<-df %>% .[[1]] %>% density() %>% broom::tidy()
+  
+  return(tt)
+}
+
+
+iris[-5] %>% pivot_longer(cols = everything()) %>% nest(value) %>% 
+  mutate(dens=map(data, name1)) %>% select(name,dens) %>% unnest()
+
+
+
+
+
+  iris[-5] %>% pivot_longer(cols = everything()) %>% nest_by(name)
+
+%>% nest_by(name)
+
+aa %>% mutate(mean=map(data, name1))
+
+
+
+%>% .[1] %>% density()
+%>% .[[1]] %>% density() %>% broom::tidy()
+
+
+aa<-
+   
+
+  
+    name <- function(x) {
+  density(x) %>% broom::tidy() 
+
+  }
+
+aa<-iris[-5] %>% colnames() %>% enframe()
+
+
+
+
+
+iris[aa$value[1]] %>% purrr::as_vector() %>% name()
+
+%>% class
+
+
+
+
+
+
+name(iris$Sepal.Length)
+name(iris$Sepal.Length)
+name(iris$Sepal.Length)
+
+iris[[1]] %>% name()
+iris[[2]] %>% name()
+  
+
+
+name(iris$Sepal.Length)
+
+purrr::map(iris[-5], name )
+
+
+
+plot(aa$x , aa$y)
+
+
+aa %>% broom::tidy()
+  
+  
+  density <- density(diamonds$carat)
+
+# diamonds$carat
+
+
+  
+fig <- 
+  plot_ly(x = ~density$x, y = ~density$y, type = 'scatter', mode = 'lines', fill = 'tozeroy')
+fig <- fig %>% layout(xaxis = list(title = 'Carat'),
+                      yaxis = list(title = 'Density'))
+
+fig

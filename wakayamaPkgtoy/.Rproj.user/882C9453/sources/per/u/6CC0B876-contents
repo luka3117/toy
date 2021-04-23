@@ -1,0 +1,66 @@
+aa<-d_m %>% select(pref.J, pref.E, LE_2015,HLE_2016 )
+
+
+aa %>%arrange(-aa$LE_2015) %>% 
+  
+aa %>%arrange(-aa$LE_2015) %>%
+
+  
+  aa %>% plot_ly() %>% add_segments(x = ~HLE_2016, y=~pref.E, xend = ~LE_2015, 
+                                  yend = ~pref.E
+                                  )
+
+plot_ly(data = d_m, x=~LE_2015, y=~HLE_2016)
+plot_ly(data = d_m, x=~LE_2015, y=~pref.J) %>% 
+  add_segments(
+    x = ~c, y = ~model,
+    xend = ~h
+    , yend = ~model
+  ) 
+
+d_m$LE_2015
+
+d_m$HLE_2016
+
+d_m$pref.J
+
+
+
+aa<-mpg %>%
+  group_by(model) %>%
+  summarise(c = mean(cty), h = mean(hwy)) %>%
+  mutate(model = forcats::fct_reorder(model, c)) 
+
+
+
+
+plot_ly(data = aa,  y=~h)
+
+aa%>%
+  plot_ly() %>%
+  add_segments(
+    x = ~c, y = ~model,
+    xend = ~h
+    , yend = ~model
+  ) 
+
+
+%>%
+  add_markers(
+    x = ~c, y = ~model, 
+    color = I("blue"), 
+    name = "mpg city"
+  ) %>%
+  add_markers(
+    x = ~h, y = ~model, 
+    color = I("red"),
+    name  = "mpg highway"
+  ) %>%
+  layout(xaxis = list(title = "Miles per gallon"))
+
+
+
+
+
+
+

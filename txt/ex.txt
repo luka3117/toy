@@ -1,0 +1,123 @@
+Script started on Tue Mar 24 00:33:45 2020
+[?1034hbash-3.2$ ls 
+aa.txt			ex.txt			text1.txt
+ccc.txt			product normal site.txt	令和2年3月20日.txt
+djklsfj.txt		read.txt
+bash-3.2$ cd ..
+bash-3.2$ ls
+IEEEtran	Untitled.html	py		txt
+Untitled.R	misc		tex		zzz.bib
+bash-3.2$ cd py 
+bash-3.2$ ls
+aa.py		aaa.py		dsklfjsdl.py	skdjfls.py
+bash-3.2$ cd ..
+bash-3.2$ ls
+IEEEtran	Untitled.html	py		txt
+Untitled.R	misc		tex		zzz.bib
+bash-3.2$ cs ..[K[K[K[K[Kcs [K[K[K[H[2Jbash-3.2$ csd [K[K[K[Kpqd
+bash: pqd: command not found
+bash-3.2$ pqd
+bash: pqd: command not found
+bash-3.2$ pwd
+/Users/jclee/toy
+bash-3.2$ ls
+IEEEtran	Untitled.html	py		txt
+Untitled.R	misc		tex		zzz.bib
+bash-3.2$ cd mia
+bash: cd: mia: No such file or directory
+bash-3.2$ cds mi
+bash: cds: command not found
+bash-3.2$ cs mia
+bash: cs: command not found
+bash-3.2$ cd misc/
+bash-3.2$ [H[2Jbash-3.2$ [H[2Jbash-3.2$ ls
+1.tex			eng.blg			fig
+2eng.aux		eng.dvi			jpnex.aux
+2eng.pdf		eng.log			jpnex.div.pdf
+bare_conf_compsoc.tex	eng.out			jpnex.pdf
+eng.aux			eng.pdf			jpnex.tex
+eng.bbl			eng.tex
+bash-3.2$ asr[K[K[Kcar [K[K[K[Kcat ja[K[Kjpnex.t[Kauut[Kx[K[Kx
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\bibstyle{plain}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\citation{climate,god1,uscensus}
+\citation{oecd}
+\citation{jpcensus,estat}
+\citation{bigdata,bigdata1,bigdata3,bigdata4,visual,visual1}
+\citation{resas}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}The general population situation of Shiga}{2}{section.2}\protected@file@percent }
+\newlabel{sec:pop}{{II}{2}{The general population situation of Shiga}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Population decline}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Population movement}{2}{subsection.2.2}\protected@file@percent }
+\newlabel{move}{{\unhbox \voidb@x \hbox {II-B}}{2}{Population movement}{subsection.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces RESAS trend lines of population (blue), births (yellow), deaths (purple), immigration (green) and emigration (red) in Shiga prefecture.  {\it  Data source}: Report on Internal Migration in Japan, Population Estimates, Ministry of Internal Affairs and Communications; Regional Population Projections for Japan: 2010-2040, National Institute of Population and Social Security Research; Vital Statistics in Japan, Ministry of Health, Labour and Welfare. \relax }}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig1}{{1}{2}{RESAS trend lines of population (blue), births (yellow), deaths (purple), immigration (green) and emigration (red) in Shiga prefecture. \\{\it Data source}: Report on Internal Migration in Japan, Population Estimates, Ministry of Internal Affairs and Communications; Regional Population Projections for Japan: 2010-2040, National Institute of Population and Social Security Research; Vital Statistics in Japan, Ministry of Health, Labour and Welfare. \relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces RESAS path plot of Natural increase ($x$-axis) vs. Migratory increase ($y$-axis) in Shiga. Natural increase equals births minus deaths. Migratory increase equals immigration minus emigration.  {\it  Data source}: Vital Statistics in Japan, Ministry of Health, Labour and Welfare; Report on Internal Migration in Japan, Ministry of Internal Affairs and Communications. \relax }}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig2}{{2}{2}{RESAS path plot of Natural increase ($x$-axis) vs. Migratory increase ($y$-axis) in Shiga. Natural increase equals births minus deaths. Migratory increase equals immigration minus emigration. \\{\it Data source}: Vital Statistics in Japan, Ministry of Health, Labour and Welfare; Report on Internal Migration in Japan, Ministry of Internal Affairs and Communications. \relax }{figure.caption.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Cities in Shiga having migratory increase during last three decades (avg. per period) \relax }}{2}{table.caption.3}\protected@file@percent }
+\newlabel{popshiga}{{I}{2}{Cities in Shiga having migratory increase during last three decades (avg. per period) \relax }{table.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Prefectures associated to population movement of Shiga prefecture in 2015 (immigrant:emigrant)   {\it  Data source}: Reproduced based on Report on Internal Migration in Japan, Ministry of Internal Affairs and Communications\relax }}{3}{figure.caption.4}\protected@file@percent }
+\newlabel{fig29}{{3}{3}{Prefectures associated to population movement of Shiga prefecture in 2015 (immigrant:emigrant) \\ {\it Data source}: Reproduced based on Report on Internal Migration in Japan, Ministry of Internal Affairs and Communications\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Linear regression for Proportion of 20s against Year (Otsu city, Shiga). \relax }}{3}{figure.caption.5}\protected@file@percent }
+\newlabel{fig31}{{4}{3}{Linear regression for Proportion of 20s against Year (Otsu city, Shiga). \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Population change of the age of 20s}{3}{subsection.2.3}\protected@file@percent }
+\newlabel{reg}{{\unhbox \voidb@x \hbox {II-C}}{3}{Population change of the age of 20s}{subsection.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Tourism in Shiga}{3}{section.3}\protected@file@percent }
+\newlabel{sec:tour}{{III}{3}{Tourism in Shiga}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Clustering 47 prefectures}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{clus}{{\unhbox \voidb@x \hbox {III-A}}{3}{Clustering 47 prefectures}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Searching destination}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Accessibility to Kyoto}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces RESAS Industrial structure tile plot.  {\it  Data source}: Economic Census for Business Frame, Ministry of Internal Affairs and Communications; Economic Census for Business Activity, Ministry of Economy, Trade and Industry. \relax }}{4}{figure.caption.6}\protected@file@percent }
+\newlabel{industry}{{5}{4}{RESAS Industrial structure tile plot. \\{\it Data source}: Economic Census for Business Frame, Ministry of Internal Affairs and Communications; Economic Census for Business Activity, Ministry of Economy, Trade and Industry. \relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Otsu city (Shiga prefecture)}}}{4}{subfigure.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Shisui town (Chiba prefecture)}}}{4}{subfigure.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Number of arrivals and amount of consumption (2014, avg. per each cluster)\relax }}{4}{table.caption.7}\protected@file@percent }
+\newlabel{consume}{{II}{4}{Number of arrivals and amount of consumption (2014, avg. per each cluster)\relax }{table.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces RESAS destination searching (weekends, personal vehicles). Frequently visited places of Gifu in 2015.  {\it  Data source}: NAVITIME JAPAN Co. \relax }}{4}{figure.caption.8}\protected@file@percent }
+\newlabel{gifu1}{{6}{4}{RESAS destination searching (weekends, personal vehicles). Frequently visited places of Gifu in 2015. \\{\it Data source}: NAVITIME JAPAN Co. \relax }{figure.caption.8}{}}
+\bibdata{zzz}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Multidimensional scaling (MDS) with variables of geographical distance and tourism resources of 47 prefectures. Prefectures which are not included in Table \ref  {percent} were masked.  {\it  Data source}: Geospatial Information Authority of Japan(www.gsi.go.jp/KOKUJYOHO/kenchokan.html).\relax }}{5}{figure.caption.12}\protected@file@percent }
+\newlabel{multi}{{7}{5}{Multidimensional scaling (MDS) with variables of geographical distance and tourism resources of 47 prefectures. Prefectures which are not included in Table \ref {percent} were masked. \\{\it Data source}: Geospatial Information Authority of Japan(www.gsi.go.jp/KOKUJYOHO/kenchokan.html).\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MDS of distance matrix}}}{5}{subfigure.7.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {MDS of tourism resources}}}{5}{subfigure.7.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Variables related to tourism\relax }}{5}{table.caption.9}\protected@file@percent }
+\newlabel{data}{{III}{5}{Variables related to tourism\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Discussion}{5}{section.4}\protected@file@percent }
+\newlabel{sec:discuss}{{IV}{5}{Discussion}{section.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Number of tourists and amount of consumption in 2014\relax }}{6}{table.caption.10}\protected@file@percent }
+\newlabel{kanko}{{IV}{6}{Number of tourists and amount of consumption in 2014\relax }{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Destinations of Gifu and Yamanashi ranked in top 5\relax }}{6}{table.caption.11}\protected@file@percent }
+\newlabel{dest}{{V}{6}{Destinations of Gifu and Yamanashi ranked in top 5\relax }{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Total number of foreign arrivals in Kyoto prefecture and adjacent prefecture, 2015\relax }}{6}{table.caption.13}\protected@file@percent }
+\newlabel{percent}{{VI}{6}{Total number of foreign arrivals in Kyoto prefecture and adjacent prefecture, 2015\relax }{table.caption.13}{}}
+bash-3.2$ exit
+exit
+
+Script done on Tue Mar 24 00:34:52 2020
+jdsklkjfklds
+dsjklfjs
+jsdkljf
+
+1
+2
+3

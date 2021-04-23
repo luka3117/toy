@@ -1,0 +1,13 @@
+diamonds %>% 
+  plot_ly(
+    hoverinfo = "text", 
+    
+          text=
+            ~paste("aa", clarity)
+            
+          
+          ) %>% 
+  add_histogram(x=~cut,color=~diamonds$clarity) 
+
+
+plot_ly(hover)

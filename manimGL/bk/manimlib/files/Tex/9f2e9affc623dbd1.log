@@ -1,0 +1,89 @@
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2019.3.5)  10 OCT 2020 05:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/manimlib/file
+s/Tex/9f2e9affc623dbd1.tex
+
+(/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/manimlib/files
+/Tex/9f2e9affc623dbd1.tex
+pLaTeX2e <2018-12-01u02> (based on LaTeX2e <2018-12-01>)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/standalone/standalone.cls
+Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
+dalone
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local
+/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count83
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count84
+\c@sapage=\count85
+(/usr/local/texlive/2018/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2018/03/26 v1.3a Default configuration file for 'standalon
+e' class
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 54.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 54.
+)
+\c@part=\count86
+\c@section=\count87
+\c@subsection=\count88
+\c@subsubsection=\count89
+\c@paragraph=\count90
+\c@subparagraph=\count91
+\c@figure=\count92
+\c@table=\count93
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen118
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/preview/preview.sty
+Package: preview 2017/04/24 11.91 (AUCTeX/preview-latex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/luatex85/luatex85.sty
+Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen119
+)
+\pr@snippet=\count94
+\pr@box=\box43
+\pr@output=\toks17
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/bxcjkjatype/bxcjkjatype.sty
+Package: bxcjkjatype 2016/10/15 v0.3
+
+! Package bxcjkjatype Error: The engine in use is not supported.
+
+See the bxcjkjatype package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57     Package loading is aborted.}
+                                      
+Here is how much of TeX's memory you used:
+ 834 strings out of 493215
+ 13770 string characters out of 6144073
+ 79651 words of memory out of 5000000
+ 4867 multiletter control sequences out of 15000+600000
+ 6281 words of font info for 32 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 34i,0n,56p,309b,44s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+No pages of output.

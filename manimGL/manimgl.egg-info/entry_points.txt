@@ -1,0 +1,4 @@
+[console_scripts]
+manim-render = manimlib.__main__:main
+manimgl = manimlib.__main__:main
+

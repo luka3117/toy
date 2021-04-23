@@ -1,0 +1,2 @@
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/0manim-master1/tutorial/3_text_like_arrays/480p15/partial_movie_files/TextColor/00000.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/0manim-master1/tutorial/3_text_like_arrays/480p15/partial_movie_files/TextColor/00001.mp4'

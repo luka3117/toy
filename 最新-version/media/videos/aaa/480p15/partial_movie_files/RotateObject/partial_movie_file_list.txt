@@ -1,0 +1,6 @@
+file 'file:/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/a on going ManimMASTER_JC_2020:10:03/z latest manim/manim/media/videos/aaa/480p15/partial_movie_files/RotateObject/00000.mp4'
+file 'file:/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/a on going ManimMASTER_JC_2020:10:03/z latest manim/manim/media/videos/aaa/480p15/partial_movie_files/RotateObject/00001.mp4'
+file 'file:/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/a on going ManimMASTER_JC_2020:10:03/z latest manim/manim/media/videos/aaa/480p15/partial_movie_files/RotateObject/00002.mp4'
+file 'file:/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/a on going ManimMASTER_JC_2020:10:03/z latest manim/manim/media/videos/aaa/480p15/partial_movie_files/RotateObject/00003.mp4'
+file 'file:/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/a on going ManimMASTER_JC_2020:10:03/z latest manim/manim/media/videos/aaa/480p15/partial_movie_files/RotateObject/00004.mp4'
+file 'file:/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/a on going ManimMASTER_JC_2020:10:03/z latest manim/manim/media/videos/aaa/480p15/partial_movie_files/RotateObject/00005.mp4'

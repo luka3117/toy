@@ -1,0 +1,19 @@
+iris[-5] %>% pivot_longer(cols = everything()) %>% 
+  ggplot(aes(x = name, y = value, group=name, color=name))+geom_point()
+
+
+
+t<-iris[-5] %>% pivot_longer(cols = everything()) 
+
+library(plotly)
+
+t$
+plot_ly(data = t, y=~name, x=~value)
+
+
+plot_ly(data = t,  x=~value, frame = ~name)
+
+
+?plot_ly
+
+

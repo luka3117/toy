@@ -1,0 +1,67 @@
+system("open .")
+
+
+
+
+Wakayama::d %>% dim()
+
+Wakayama::JpnEng %>% tbl_df() %>% xtable::xtable()
+
+
+Wakayama::d_common %>% colnames() %>% cat
+
+Wakayama::d_f %>% colnames() %>% enframe() %>% 
+  left_join(Wakayama::JpnEng,c("value"="var_name_Eng")) %>% 
+  select(4)%>% xtable::xtable()
+
+
+
+Wakayama::d_common %>% colnames() %>% enframe() %>% 
+  left_join(Wakayama::JpnEng,c("value"="var_name_Eng")) %>% 
+  select(4)%>% xtable::xtable()
+
+
+  
+
+suppressMessages(library(plotly))
+
+t<-Wakayama::d_m %>% select(pref.J,HLE_2016,LE_2015) %>%
+  mutate(pref.J=forcats::fct_reorder(pref.J, LE_2015))
+t$pref.J
+##  [1] 北海道 青森   岩手   宮城   秋田   山形   福島   茨城   栃木   群馬  
+## [11] 埼玉   千葉   東京   神奈川 新潟   富山   石川   福井   山梨   長野  
+## [21] 岐阜   静岡   愛知   三重   滋賀   京都   大阪   兵庫   奈良   和歌山
+## [31] 鳥取   島根   岡山   広島   山口   徳島   香川   愛媛   高知   福岡  
+## [41] 佐賀   長崎   熊本   大分   宮崎   鹿児島 沖縄  
+## 47 Levels: 青森 秋田 岩手 和歌山 鹿児島 栃木 福島 愛媛 鳥取 大阪 高知 ... 滋賀
+t %>%
+  plot_ly() %>%
+  add_segments(
+    x=~HLE_2016,y=~pref.J ,
+    xend=~LE_2015,yend=~pref.J ,
+    # x = ~c, y = ~model,
+    # xend = ~h, yend = ~model,
+    color = I("gray"), showlegend = FALSE
+  ) %>%
+  add_markers(
+    # x = ~c, y = ~model,
+    x=~HLE_2016,y=~pref.J ,
+    color = I("blue"),
+    name = "健康寿命"
+  ) %>%
+  add_markers(
+    # x = ~h, y = ~model,
+    x=~LE_2015,y=~pref.J ,
+    color = I("red"),
+    name  = "平均寿命"
+  ) %>%
+  layout(
+    xaxis = list(
+      range=c(60,83),
+      title="男性の平均寿命と健康寿命の差"
+    )
+  )
+
+
+
+

@@ -1,0 +1,23 @@
+import csv
+import random
+#
+# list=
+
+list_data=[]
+
+with open("aa.csv", "r") as f:
+    reader=csv.reader(f)
+
+    for i in reader:
+        list_data.append(i)
+
+print(list_data)
+
+num=random.randint(0, len(list_data)-1)
+
+
+print(list_data[num][1])
+
+# conti="y"
+#
+# while(conti=="y"):

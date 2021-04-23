@@ -1,0 +1,83 @@
+\documentclass[a4j,11pt,mc, twocolumn]{jreport}
+%\documentclass[a4j,11pt,mc]{jreport}
+%\documentclass[a4j,11pt,mc]{jreport}
+\usepackage{style/dsreport}
+%\usepackage[dvipdfmx]{graphicx}
+%\usepackage{time}
+%\usepackage{kotex, url, color}
+
+\usepackage{longtable}
+
+%---------------------------------------------------------------------------
+% Header
+%---------------------------------------------------------------------------
+\setlength{\textwidth}{165mm}
+\pagestyle{fancy}
+\rhead{\leftmark}
+\lhead{\rightmark}
+\renewcommand{\chaptermark}[1]{\markboth{第\ \thechapter\ 章~#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection #1}{}}
+\setlength{\textwidth}{200mm}
+
+\newcommand{\tr}[1]{\textcolor{red}{\bf#1}}  %% red text
+\newcommand{\bb}[1]{\textcolor{blue}{\bf#1}}  %% red text
+\newgeometry{left=25mm, top=30mm, textheight=247mm, textwidth=165mm}
+
+\setlength{\unitlength}{0.5\linewidth}
+
+
+
+%\newcommand{\tr}[1]{\textcolor{red}{\textbf{#1}}}  %% red text
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}  %% red text
+\newcommand{\tm}[1]{\textcolor{magenta}{#1}}  %% red text
+\newcommand{\tc}[1]{\textcolor{cyan}{#1}}  %% red text
+
+
+
+%
+%%--- water mark --------
+%\usepackage[printwatermark]{xwatermark}
+%%\newwatermark[allpages,color=red!10,angle=45,scale=4.5,xpos=0,ypos=0]{DRAFT}
+%\newwatermark[pages=1-2, color=cyan, angle=45, scale=2, xpos=0, ypos=0]{To do page\\ \the\month 月\the\day 日}
+%%--- water mark  End -----
+%
+%
+
+
+
+
+%---------------------------------------------------------------------------
+\begin{document}
+%---------------------------------------------------------------------------
+\shigads{1}{
+和歌山県における健康寿命の延伸\\
+～「健康長寿日本一わかやま」を目指して～
+}
+{和歌山県データ利活用推進センター\\\texttt{https://www.pref.wakayama.lg.jp/prefg/020100/data/center.html}}
+{滋賀大学データサイエンス教育研究センター\\ \texttt{www.ds.shiga-u.ac.jp/}}
+%\the\hour 時 \the\day
+%\maketitle
+%\begin{abstract}
+%本書は....
+%%\keywords{test,test}
+%\end{abstract}
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%---------------------------------------------------------------------------
+% Main
+%---------------------------------------------------------------------------
+\input{sub/wakayama1.tex}
+%---------------------------------------------------------------------------
+%  References
+%---------------------------------------------------------------------------
+\newpage
+\makeatletter
+\renewcommand{\@biblabel}[1]{[#1]}
+\makeatother
+
+\bibliographystyle{style/misl}
+\bibliography{bib_test}
+\end{document}

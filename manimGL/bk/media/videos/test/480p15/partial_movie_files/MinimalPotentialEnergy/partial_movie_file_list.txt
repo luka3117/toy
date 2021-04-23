@@ -1,0 +1,6 @@
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/test/480p15/partial_movie_files/MinimalPotentialEnergy/00000.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/test/480p15/partial_movie_files/MinimalPotentialEnergy/00001.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/test/480p15/partial_movie_files/MinimalPotentialEnergy/00002.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/test/480p15/partial_movie_files/MinimalPotentialEnergy/00003.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/test/480p15/partial_movie_files/MinimalPotentialEnergy/00004.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/test/480p15/partial_movie_files/MinimalPotentialEnergy/00005.mp4'

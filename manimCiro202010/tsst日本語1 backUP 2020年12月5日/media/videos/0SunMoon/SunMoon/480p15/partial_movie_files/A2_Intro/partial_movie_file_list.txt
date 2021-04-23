@@ -1,0 +1,4 @@
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/480p15/partial_movie_files/A2_Intro/00000.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/480p15/partial_movie_files/A2_Intro/00001.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/480p15/partial_movie_files/A2_Intro/00002.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0SunMoon/SunMoon/480p15/partial_movie_files/A2_Intro/00003.mp4'

@@ -1,0 +1,28 @@
+{
+    "dialog-state": {
+        "query": "set",
+        "path": "~/Dropbox/00000健康和歌山県/0 wakayamaPkg",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [
+            "*.r",
+            "*.R",
+            "*.rnw",
+            "*.Rnw",
+            "*.rmd",
+            "*.Rmd",
+            "*.rmarkdown",
+            "*.Rmarkdown",
+            "*.rhtml",
+            "*.Rhtml",
+            "*.h",
+            "*.hpp",
+            "*.c",
+            "*.cpp"
+        ],
+        "excludeFilePatterns": [],
+        "resultsCount": 20,
+        "errorCount": 0,
+        "replaceErrors": ""
+    }
+}

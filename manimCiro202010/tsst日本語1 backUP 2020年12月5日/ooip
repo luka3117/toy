@@ -1,0 +1,7 @@
+from big_ol_pile_of_manim_imports import *
+
+class a(Scene):
+    def construct(self):
+        dot=Dot()
+
+        self.add(dot)

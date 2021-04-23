@@ -1,0 +1,512 @@
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% colnames() %>% head()
+# d %>% colnames() %>% tbl_df() %>%
+#   write_csv("var_name_Jpn.csv")
+d
+d %>% dim()
+system("open .")
+system("open .")
+read_csv("var_name_Eng.csv")
+read_csv("var_name_Eng.csv") %>% .[,1]
+colnames(d)<-
+read_csv("var_name_Eng.csv") %>% .[,1]
+d
+read_csv("var_name_Eng.csv") %>% c()
+d<-read_csv("data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+# d<-read_csv("data/DataFormat.csv", skip=1)
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% colnames() %>% head()
+# d %>% colnames() %>% tbl_df() %>%
+#   write_csv("var_name_Jpn.csv")
+d
+colnames(d)<-
+read_csv("var_name_Eng.csv") %>% c()
+d
+read_csv("var_name_Eng.csv") %>% c()
+read_csv("var_name_Eng.csv")
+d
+getwd()
+d<-read_csv("data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+# d<-read_csv("data/DataFormat.csv", skip=1)
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% colnames() %>% head()
+# d %>% colnames() %>% tbl_df() %>%
+#   write_csv("var_name_Jpn.csv")
+d
+read.csv("var_name_Eng.csv")
+read.csv("var_name_Eng.csv") %>%c()
+colnames(d)<-read.csv("var_name_Eng.csv") %>%c()
+d
+read.csv("var_name_Eng.csv") %>%c()
+read.csv("var_name_Eng.csv") %>%c()
+read.csv("var_name_Eng.csv") %>%c()
+d %>% dim()
+d<-read_csv("data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+# d<-read_csv("data/DataFormat.csv", skip=1)
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% colnames() %>% head()
+# d %>% colnames() %>% tbl_df() %>%
+#   write_csv("var_name_Jpn.csv")
+d
+colnames(d)<-
+read.csv("var_name_Eng.csv") %>%c()
+d
+read.csv("var_name_Eng.csv") %>%c()
+var<-read.csv("var_name_Eng.csv") %>%c()
+var
+var$var_name_Eng
+d<-read_csv("data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+# d<-read_csv("data/DataFormat.csv", skip=1)
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% colnames() %>% head()
+# d %>% colnames() %>% tbl_df() %>%
+#   write_csv("var_name_Jpn.csv")
+var<-read.csv("var_name_Eng.csv")
+d
+colnames(d)<-var$var_name_Eng
+d
+d %>% select(contains(dz))
+d %>% select(contains("dz"))
+d %>% select(contains("dz, neo"))
+d %>% select(contains("dz", "neo"))
+d %>% select(contains("dz"))
+read_csv(file = "var_name_Jpn.csv")
+read_csv(file = "var_name_Jpn.csv")
+read_csv(file = "var_name_Jpn.csv") %>% bind_cols(., read_csv(file = "var_name_Eng.csv"))
+JpnEng<-read_csv(file = "var_name_Jpn.csv") %>% bind_cols(., read_csv(file = "var_name_Eng.csv"))
+JpnEng
+write_csv(JpnEng, "JpnEng.csv")
+summary(d)
+d$sex
+d$Treatment_rate_outpatient_heart_dz_2017
+library(DataExplorer)
+install.packages("DataExplorer")
+install.packages("DataExplorer")
+library(DataExplorer)
+DataExplorer::create_report(d)
+sapply(d, is.numeric)
+d %>% select(Treatment_rate_Hospitalization_Malignant_neoplasm_2017:pop_Double_income_household_ratio_2020)
+suppressMessages(library(tidyverse))
+d %>% select(Treatment_rate_Hospitalization_Malignant_neoplasm_2017:pop_Double_income_household_ratio_2020)
+d %>% select(Treatment_rate_Hospitalization_Malignant_neoplasm_2017:pop_Double_income_household_ratio_2020) %>%
+DataExplorer::create_report()
+sapply(d, is.numeric)
+d[,sapply(d, is.numeric)]
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+#  "DataFormat.csv" data from Wakayama received from R2 11. 2
+#  latest version 2021年2月10日
+# ----------------- data import
+getwd()
+d<-read_csv("data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+# d<-read_csv("data/DataFormat.csv", skip=1)
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% colnames() %>% head()
+# d %>% colnames() %>% tbl_df() %>%
+#   write_csv("var_name_Jpn.csv")
+var<-read.csv("var_name_Eng.csv")
+# ----------------- data varname change
+d
+colnames(d)<-var$var_name_Eng
+d %>% select(contains("dz"))
+# -----------------　data Jpn and Eng table
+# 連番
+JpnEng <-
+read_csv(file = "var_name_Jpn.csv") %>% bind_cols(., read_csv(file = "var_name_Eng.csv")) %>%
+mutate(id = row_number()) %>%
+select(id, everything())
+# write_csv(JpnEng, "JpnEng.csv")
+# ----------------- descriptve stat
+# install.packages("DataExplorer")
+library(DataExplorer)
+# d %>% select(Treatment_rate_Hospitalization_Malignant_neoplasm_2017:pop_Double_income_household_ratio_2020) %>%
+# DataExplorer::create_report()
+# -----------------　男女区別のないデータ d_common
+# [1] 47 98
+d_common<-d[, sapply(d[48,], is.na)]
+d_common<-d_common[1:47, ]
+d_common%>% DT::datatable()
+d_common %>% dim()
+# -----------------　男女区別のあるデータ d_mf
+# [1] 94 70
+name <- function(x) {
+!is.na(x)
+}
+d_mf<-d[, sapply(d[48,], name)]
+d_mf %>% DT::datatable()
+d_mf %>% dim()
+summary(d_mf)
+ls()
+d_mf %>% select(sex)
+d_mf %>% filter(sex="M")
+d_mf %>% filter(sex=="M")
+d_m<-d_mf %>% filter(sex=="M")
+d_f<-d_mf %>% filter(sex=="F")
+d_m
+d_m
+d_m
+d_f
+getwd()
+d<-read_csv("../data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+# d<-d[-95,]
+# d %>% dim()
+# d<-d %>% rename(key=X1)
+# d %>% colnames() %>% head()
+# var<-read.csv("var_name_Eng.csv")
+d
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+d
+d
+d
+getwd()
+d
+d
+d
+d<-d[-95,]
+d
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% colnames() %>% head()
+# d %>% colnames() %>% head()
+var<-read.csv("var_name_Eng.csv")
+# d %>% colnames() %>% head()
+var<-read.csv("../var_name_Eng.csv")
+d
+system("open .")
+system("open .")
+getwd()
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+# par(family = "HiraKakuProN-W3")
+room <- read.csv("./slide/room.csv", fileEncoding = "cp932")
+read.csv("death.csv")
+death <- read.csv("death.csv", fileEncoding = "cp932")
+room <- read.csv("/room.csv", fileEncoding = "cp932")
+room <- read.csv("room.csv", fileEncoding = "cp932")
+population_h26 <- read.csv("population_h26.csv", fileEncoding = "cp932")
+Salary <- read.csv("Salary.csv", fileEncoding = "cp932")
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+getwd()
+d<-read_csv("../data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% DT::datatable()
+var<-read.csv("../var_name_Eng.csv")
+colnames(d)<-var$var_name_Eng
+d %>% DT::datatable()
+d_common<-d[, sapply(d[48,], is.na)]
+d_common<-d_common[1:47, ]
+d_common%>% DT::datatable()
+d %>% select(1:6) %>% .[1:47,] %>% bind_cols(d_common)
+# d_common %>% dim()
+name <- function(x) {
+!is.na(x)
+}
+d_mf<-d[, sapply(d[48,], name)]
+d_mf %>% DT::datatable()
+d_mf %>% dim()
+d_m<-d_mf %>% filter(sex=="M")
+d_f<-d_mf %>% filter(sex=="F")
+# summary(d_mf)
+d_common %>% colnames() %>%tbl_df() %>%  DT::datatable()
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+getwd()
+d<-read_csv("../data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% DT::datatable()
+var<-read.csv("../var_name_Eng.csv")
+colnames(d)<-var$var_name_Eng
+# d %>% DT::datatable()
+d_common<-d[, sapply(d[48,], is.na)]
+d_common<-d_common[1:47, ]
+# d_common%>% DT::datatable()
+d_common<-d %>% select(1:6) %>% .[1:47,] %>% bind_cols(d_common)
+d_common %>% DT::datatable()
+d_common %>% dim()
+d_common %>% colnames() %>%
+write_csv()
+d_common %>% colnames() %>% tbl_df() %>%
+write_csv()
+d_common %>% colnames() %>% tbl_df() %>%
+write_csv("d_common_var_name.csv")
+system("open .")
+system("open .")
+# data import
+library(readxl)
+library(RColorBrewer)
+d<-read_excel("./data1.xlsx",1); d<-d[-95,] #男女データ
+d<-read_excel("/Users/jlee/Dropbox/00000健康和歌山県/0 wakayamaPkg/R/19 健康寿命(要介護)　報告書/data1.xlsx",1); d<-d[-95,] #男女データ
+d<-read_excel("/Users/jlee/Dropbox/00000健康和歌山県/0 wakayamaPkg/R/19 健康寿命(要介護)　報告書/data1.xlsx",1); d<-d[-95,] #男女データ
+HLE<-d[, c("pref.J","sex", "HLE.CSS.13", "LE.75","LE.85","LE.90","LE.95","LE.00","LE.05","LE.10","LE.15")]
+pref<-d$pref.J[1:47]
+HLE<-split(HLE, HLE$sex)
+m<-HLE$`1`
+# data import
+library(readxl)
+library(RColorBrewer)
+d<-read_excel("/Users/jlee/Dropbox/00000健康和歌山県/0 wakayamaPkg/R/19 健康寿命(要介護)　報告書/data1.xlsx",1); d<-d[-95,] #男女データ
+HLE<-d[, c("pref.J","sex", "HLE.CSS.13", "LE.75","LE.85","LE.90","LE.95","LE.00","LE.05","LE.10","LE.15")]
+pref<-d$pref.J[1:47]
+HLE<-split(HLE, HLE$sex)
+m<-HLE$`1`
+f<-HLE$`0`
+f
+jc.m("HLE.CSS.13")
+jc.m <- function(year){
+tt<-eval(parse(text=paste0("m","$",year)))
+names(tt)<-m$pref.J
+tt<-tt[order(tt)]
+return(tt)}
+jc.m("HLE.CSS.13")
+year<-HLE.CSS.13
+year<-"HLE.CSS.13"
+tt<-eval(parse(text=paste0("m","$",year)))
+tt
+names(tt)<-m$pref.J
+tt
+tt<-tt[order(tt)]
+library(Wakayama)
+Wakayama::pref
+m$pref.J
+library(Wakayama)
+Wakayama::pref
+Wakayama::pref$pref.J
+tt
+library(Wakayama)
+year<-"HLE.CSS.13"
+tt<-eval(parse(text=paste0("m","$",year)))
+tt
+library(Wakayama)
+year<-"HLE.CSS.13"
+tt<-eval(parse(text=paste0("m","$",year)))
+names(tt)<-Wakayama::pref$pref.J
+tt
+library(Wakayama)
+year<-"HLE.CSS.13"
+tt<-eval(parse(text=paste0("m","$",year)))
+names(tt)<-Wakayama::pref$pref.J
+tt<-tt[order(tt)]
+tt
+d_f$HLE_2016
+jc.dotplot <- function(x) {
+# x is HLE or LE in c()　vector
+names(x)<-Wakayama::pref$pref.J
+x<-x[order(x)]
+}
+dotchart(
+main = "健康寿命(2013年, 男性)",
+jc.m(d_f$HLE_2016),
+cex = 0.7,
+lcolor = "gray90",
+pch = 19,
+col = aa,
+pt.cex = 1.5
+)
+jc.dotplot <- function(x) {
+# x is HLE or LE in c()　vector
+names(x)<-Wakayama::pref$pref.J
+x<-x[order(x)]
+}
+dotchart(
+main = "健康寿命(2013年, 男性)",
+jc.dotplot(d_f$HLE_2016),
+cex = 0.7,
+lcolor = "gray90",
+pch = 19,
+col = aa,
+pt.cex = 1.5
+)
+jc.dotplot <- function(x) {
+# x is HLE or LE in c()　vector
+names(x)<-Wakayama::pref$pref.J
+x<-x[order(x)]
+}
+colfunc <- colorRampPalette(c("gray90","black"))
+dotchart(
+main = "健康寿命(2013年, 男性)",
+jc.dotplot(d_f$HLE_2016),
+cex = 0.7,
+lcolor = "gray90",
+pch = 19,
+col = colfunc(47),
+pt.cex = 1.5
+)
+abline(v = 79, lty = 2)
+colfunc <- colorRampPalette(c("gray90","black"))
+dotchart(
+main = "健康寿命(2013年, 男性)",
+jc.dotplot(d_f$HLE_2016),
+cex = 0.7,
+lcolor = "gray90",
+pch = 19,
+col = colfunc(47),
+pt.cex = 1.5
+)
+abline(v = 79, lty = 2)
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+getwd()
+d<-read_csv("../data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% DT::datatable()
+var<-read.csv("../var_name_Eng.csv")
+colnames(d)<-var$var_name_Eng
+# d %>% DT::datatable()
+d_common<-d[, sapply(d[48,], is.na)]
+d_common<-d_common[1:47, ]
+# d_common%>% DT::datatable()
+d_common<-d %>% select(1:6) %>% .[1:47,] %>% bind_cols(d_common)
+d_common %>% DT::datatable()
+d_common %>% dim()
+d_common %>% colnames() %>%tbl_df() %>%  DT::datatable()
+name <- function(x) {
+!is.na(x)
+}
+d_mf<-d[, sapply(d[48,], name)]
+d_mf %>% DT::datatable()
+d_mf %>% dim()
+d_m<-d_mf %>% filter(sex=="M")
+d_f<-d_mf %>% filter(sex=="F")
+# summary(d_mf)
+d_m %>% DT::datatable()
+d_f %>% DT::datatable()
+jc.dotplot <- function(x) {
+# x is HLE or LE in c()　vector
+names(x)<-Wakayama::pref$pref.J
+x<-x[order(x)]
+}
+colfunc <- colorRampPalette(c("gray90","black"))
+dotchart(
+main = "健康寿命(2013年, 男性)",
+jc.dotplot(d_f$HLE_2016),
+cex = 0.7,
+lcolor = "gray90",
+pch = 19,
+col = colfunc(47),
+pt.cex = 1.5
+)
+abline(v = 79, lty = 2)
+jc.dotplot <- function(x) {
+# x is HLE or LE in c()　vector
+names(x)<-Wakayama::pref$pref.J
+x<-x[order(x)]
+}
+colfunc <- colorRampPalette(c("gray90","black"))
+par(family= "HiraKakuProN-W3")
+dotchart(
+main = "平均寿命(2015年, 男性)",
+jc.dotplot(d_m$LE_2015),
+cex = 0.7,
+lcolor = "gray90",
+pch = 19,
+col = colfunc(47),
+pt.cex = 1.5
+)
+abline(v = 79, lty = 2)
+system("open .")
+library(Wakayama)
+library(Wakayama)
+Wakayama::pref
+d_m$LE_2015
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+getwd()
+d<-read_csv("../..//data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% DT::datatable()
+var<-read.csv("../..//var_name_Eng.csv")
+colnames(d)<-var$var_name_Eng
+# d %>% DT::datatable()
+d_common<-d[, sapply(d[48,], is.na)]
+d_common<-d_common[1:47, ]
+# d_common%>% DT::datatable()
+d_common<-d %>% select(1:6) %>% .[1:47,] %>% bind_cols(d_common)
+d_common %>% DT::datatable()
+d_common %>% dim()
+d_common %>% colnames() %>%tbl_df() %>%  DT::datatable()
+name <- function(x) {
+!is.na(x)
+}
+d_mf<-d[, sapply(d[48,], name)]
+d_mf %>% DT::datatable()
+d_mf %>% dim()
+d_m<-d_mf %>% filter(sex=="M")
+d_f<-d_mf %>% filter(sex=="F")
+# summary(d_mf)
+d_m %>% DT::datatable()
+d_f %>% DT::datatable()
+d_m$LE_2015
+suppressMessages(library(tidyverse))
+d_m$LE_2015 %>% bind_cols()
+Wakayama::pref$pref.J
+d_m$LE_2015
+Wakayama::pref$pref.J
+d_m$LE_2015 %>% bind_cols()
+Wakayama::pref$pref.J
+d_m$LE_2015 %>%
+# tbl_df() %>%
+bind_cols() %>%
+Wakayama::pref$pref.J
+d_m$LE_2015 %>%
+# tbl_df() %>%
+bind_cols(Wakayama::pref$pref.J)
+d_m$LE_2015 %>%
+# tbl_df() %>%
+bind_cols(Wakayama::pref$pref.J) %>%
+mutate(rank(1))

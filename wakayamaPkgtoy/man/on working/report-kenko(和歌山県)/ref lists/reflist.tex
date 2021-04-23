@@ -1,0 +1,47 @@
+% ----------------------------------------------------------------------
+%\documentclass[jou,  draft]{apa6} %tow column format
+\documentclass[doc]{apa6} %one column format
+%\documentclass[man]{apa6} % book type format
+%\usepackage[utf8]{inputenc}
+%\usepackage{natbib}
+%\usepackage[comma]{natbib}
+%\usepackage[american]{babel}
+\usepackage{kotex,  url,  amssymb, amsmath}
+%\usepackage{url,  amssymb, amsmath}
+
+\usepackage{graphicx,  color}
+
+
+%\usepackage{csquotes,  kotex,  url}
+%\usepackage[style=apa, sortcites=true, sorting=nyt, backend=biber]{biblatex}
+%\DeclareLanguageMapping{american}{american-apa}
+%\addbibresource{zzz.bib}
+%\bibliographystyle{achicago} %agsm,  dcu,  kluwer
+
+\newcommand{\tr}[1]{\textcolor{red}{\textbf{#1}}}  %% red text
+\newcommand{\tb}[1]{\textcolor{blue}{\textbf{#1}}}  %% red text
+\renewcommand{\refname}{\textbf{Reference}}
+
+\title{健康寿命参考文献リスト}
+
+\author{Jongchan LEE}
+
+\affiliation{
+The Center for Data Science Edutation and Research,  Shiga University\\
+1-1-1 Banba,  Hikone,  Shiga 552-8522,  Japan}
+%\affiliation{SUNY Oneonta}
+
+%\leftheader{Beitzel}
+
+%\abstract{}
+
+\keywords{\tb{\today},  authorship attribution,  multi-language comparison,  stylometiric,  machine learning}
+
+%------------------------------------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\nocite{*}
+%\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{ieeetr} %agsm,  dcu,  kluwer
+\bibliography{zzz1}
+\end{document}

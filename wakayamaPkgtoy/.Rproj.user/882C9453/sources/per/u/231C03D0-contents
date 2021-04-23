@@ -1,0 +1,6 @@
+system("open .")
+
+
+getwd()
+
+"data/DataFormat-32021年3月11日受領/DataFormat.csv"

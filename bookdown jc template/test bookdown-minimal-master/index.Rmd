@@ -1,0 +1,71 @@
+---
+title: "A Book"
+author: "Frida Gomam"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: default
+  bookdown::pdf_book: default
+  html_document:
+   number_section: true
+   toc: true
+   code_folding: hide
+---
+
+
+
+
+#  データ情報：
+- "DataFormat.csv" latest version 2021年2月10日
+
+```{r, warning=FALSE}
+
+# devtools::install_github(repo = "luka3117/JcPackage/OsakaUniv2020")
+
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+```
+
+
+
+
+
+
+#  data import and pre-processing
+
+- row data data 次元
+- 94行と 168変数
+- **168変数の中、一部の変数は男女の区別がないため、県単位のデータ(47行のデータ)として扱う**
+
+-
+
+
+
+```{r, warning=FALSE, message=FALSE}
+getwd()
+# d<-read_csv("../..//data/DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+d<-read_csv("DataFormat.csv", skip=1, locale = readr::locale(encoding = "CP932"))
+
+d<-d[-95,]
+d %>% dim()
+d<-d %>% rename(key=X1)
+d %>% DT::datatable()
+```
+
+
+
+
+# Hello World
+
+Hi.
+
+Bye.
+
+If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/
+
+

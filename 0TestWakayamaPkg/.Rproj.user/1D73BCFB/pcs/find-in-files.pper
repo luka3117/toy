@@ -1,0 +1,11 @@
+{
+    "dialog-state" : {
+        "caseSensitive" : false,
+        "filePatterns" : [
+            "*.R"
+        ],
+        "path" : "~/Dropbox/00000 SMBC/prof Sato SMBC(令和元年6月3日(月))/2019_12_20_ analysis5",
+        "query" : "%<>%",
+        "regex" : false
+    }
+}

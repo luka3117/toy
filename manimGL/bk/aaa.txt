@@ -1,0 +1,16 @@
+ 1405  open .
+ 1406  cd 第７章　確率\ 分布
+ 1407  open -a TeXShop ds07\(R02\).tex
+ 1408  /Users/jlee/Desktop/z/manim.command ; exit;
+ 1409  # python -m manim JcSampleCode.py JcBinomialDist -ps
+ 1410  python -m manim JcSampleCode.py JcBinomialDist -ps
+ 1411  python -m manim JcSampleCode.py JcBinomialDist1 -ps
+ 1412  python -m manim jcbinom.py -os
+ 1413  python -m manim jcbinom.py -ps
+ 1414  python -m manim jcbinom.py -pl
+ 1415  python -m manim JCindependence.py -ps
+ 1416  python -m manim JCindependence.py SkepticalOfDistributions -ps
+ 1417  python -m manim JCindependence.py ExampleConditional -ps
+ 1418  python -m manim JCindependence.py ShowFullDistribution -ps
+ 1419  python -m manim JCindependence.py ShowFullDistribution -pl
+ 1420  history

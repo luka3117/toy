@@ -1,0 +1,15 @@
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+iris %>% write_csv("aa.csv")
+system("open .")
+
+
+
+library(ex)
+
+ex::aa

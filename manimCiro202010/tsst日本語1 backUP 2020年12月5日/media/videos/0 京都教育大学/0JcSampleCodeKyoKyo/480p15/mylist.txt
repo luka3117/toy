@@ -1,0 +1,6 @@
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都教育大学/0JcSampleCodeKyoKyo/480p15/KyoEduScene1.mp4'
+
+
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都教育大学/0JcSampleCodeKyoKyo/480p15/ContentsE.mp4'
+
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都教育大学/0JcSampleCodeKyoKyo/480p15/ContentsE1.mp4'

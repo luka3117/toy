@@ -1,0 +1,40 @@
+
+
+# 使用package
+suppressMessages(library(readxl))
+suppressMessages(library(dplyr))
+suppressMessages(library(data.table))
+suppressMessages(library(kableExtra))
+suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+suppressMessages(library(plotly))
+
+iris %>%
+ggplot(aes(x = Sepal.Length, y = Sepal.Width))+
+theme_bw(base_family = "HiraKakuProN-W3") +
+# geom_point(aes(col=Species))+
+geom_point(col="red")+
+geom_smooth(method = "gam", se = F)+
+geom_point(data = aa, aes(x=aa, y=aa))+
+geom_smooth(method = "gam", se = F)
+
+
+
+
+iris %>%
+  ggplot(aes(x = Sepal.Length))+
+  theme_bw(base_family = "HiraKakuProN-W3") +
+  # geom_point(aes(col=Species))+
+  geom_freqpoly(stat = "density")
+
+
+mtcars %>%
+  ggplot(aes(x = vs, group=cyl, col=cyl))+
+  theme_bw(base_family = "HiraKakuProN-W3") +
+  # geom_point(aes(col=Species))+
+  geom_freqpoly(stat = "density")
+  # geom_histogram(stat = "density")
+  # geom_histogram()
+
++
+  facet_wrap(~cyl)

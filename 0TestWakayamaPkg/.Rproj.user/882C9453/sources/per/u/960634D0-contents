@@ -1,0 +1,14 @@
+plot_ly(economics, x = ~date, color = I("black")) %>%
+  add_lines(y = ~uempmed) %>%
+  add_lines(y = ~psavert, color = I("red"))
+
+plot_ly(economics, x = ~date, color = I("black")) 
+
+%>% 
+  add_lines(y = ~uempmed) 
+
+
+
+%>% 
+plot_ly(economics, x = ~date, color = I("black")) %>%
+  add_lines(y = ~psavert, color = I("red"))

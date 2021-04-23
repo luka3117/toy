@@ -1,0 +1,26 @@
+
+
+
+# iris %>% 
+  
+  
+  plotly::plot_ly(type="scatter") %>% 
+  plotly::add_trace(x=iris$Sepal.Length, y=iris$Petal.Length) %>%
+  plotly::add_trace(x=iris$Sepal.Width, y=iris$Petal.Length, 
+                    color=I("red") hovertext) %>% 
+  plotly::layout(xaxis=list())
+
+# iris %>% 
+  
+  iris %>% rowid_to_column() %>%
+  plotly::plot_ly(type="scatter") %>% 
+  plotly::add_trace(x=iris$Sepal.Length, y=iris$Petal.Length,
+                    frame=~rowid) %>%
+  plotly::add_lines(x=iris$Sepal.Length, y=iris$Petal.Length, 
+                    frame=~rowid) 
+    
+  
+  # %>%
+  # plotly::add_trace(x=iris$Sepal.Width, y=iris$Petal.Length, 
+  #                   color=I("red") hovertext) %>% 
+  # plotly::layout(xaxis=list())

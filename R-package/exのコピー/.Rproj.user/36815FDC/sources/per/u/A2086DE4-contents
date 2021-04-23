@@ -1,0 +1,25 @@
+
+read_csv()
+
+
+read.table()
+
+Wakayama::ShigaData %>% class()
+
+
+Wakayama::DataFormat
+
+Wakayama
+Wakayama
+Wakayama
+Wakayama
+
+ex::ddd
+
+
+iris %>% write.table("ddd.tsv")
+system("open .")
+
+
+
+

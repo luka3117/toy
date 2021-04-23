@@ -1,0 +1,8 @@
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00000.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00001.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00002.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00003.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00004.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00005.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00006.mp4'
+file '/Users/jlee/Dropbox/dplyr-tutorial-master/MANIM/tsst日本語1/media/videos/0 京都/Ch2KyoKyo/480p15/partial_movie_files/SceneCh2/00007.mp4'

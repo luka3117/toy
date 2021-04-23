@@ -1,0 +1,8 @@
+from big_ol_pile_of_manim_imports import *
+
+class Test(Scene):
+    def construct(self):
+        circle=Circle()
+        # circle.surround(Square())
+
+        self.add(circle)

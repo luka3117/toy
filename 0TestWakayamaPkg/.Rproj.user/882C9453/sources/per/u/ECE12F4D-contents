@@ -1,0 +1,49 @@
+df2 <- tribble(
+  ~g, ~x, ~y,
+  1,  1,  2,
+  2,  4,  6,
+  2,  5,  7,
+  3, 10,  NA
+)
+df2 %>% nest(data = c(x, y))
+#> # A tibble: 3 x 2
+#>       g data            
+#>   <dbl> <list>          
+#> 1     1 <tibble [1 x 2]>
+#> 2     2 <tibble [2 x 2]>
+
+
+
+tt<-iris[-5] %>%   pivot_longer(
+  cols = everything()
+  # ,
+  # names_to ="var_name" ,
+  # values_to ="value"
+) %>% nest_by(name) 
+
+
+tt %>% mutate(aa=purrr::map(data, name))
+
+unnest(tt)
+
+tt$data[[1]] %>% as_vector()%>% density()
+
+%>% mutate(purrr::map(data, name))
+
+
+
+# df1 is a nested data frame
+(df1 <- tibble(
+  g = c(1, 2, 3),
+  data = list(
+    tibble(x = 1, y = 2),
+    tibble(x = 4:5, y = 6:7),
+    tibble(x = 10)
+  )
+))
+#> # A tibble: 3 x 2
+#>       g data            
+#>   <dbl> <list>          
+#> 1     1 <tibble [1 x 2]>
+#> 2     2 <tibble [2 x 2]>
+#> 3     3 <tibble [1 x 1]>

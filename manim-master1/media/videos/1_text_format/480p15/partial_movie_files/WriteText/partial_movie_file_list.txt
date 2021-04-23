@@ -1,0 +1,2 @@
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/0manim-master1/media/videos/1_text_format/480p15/partial_movie_files/WriteText/00000.mp4'
+file '/Users/jclee/Dropbox/dplyr-tutorial-master/MANIM/0manim-master1/media/videos/1_text_format/480p15/partial_movie_files/WriteText/00001.mp4'

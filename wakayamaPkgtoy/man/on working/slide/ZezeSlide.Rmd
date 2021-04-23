@@ -1,0 +1,486 @@
+---
+title: "データの要約と可視化\n(Data Summary \n and Visualization)"
+subtitle: "膳所高等学校「１年理数科滋賀大学データサイエンス入門講座」"
+author: "李鍾賛(jc lee, 滋賀大助教、数理統計学博士)"
+date: "最終更新: `r format(Sys.time(), '%Y/%m/%d')`"
+# output:
+#   # word_document:
+#   html_document:
+#    number_section: true
+#    toc: true
+#    code_folding: hide
+#    toc_float:
+#      smooth_scroll: false
+#      collapsed: false
+  # fig_width: 18
+  # fig_height: 12
+
+output:
+  ioslides_presentation:
+  widescreen: true
+  number_section: true
+  toc: true
+  transition: faster
+  # css: 'scrollable_slides.css'
+
+# runtime: shiny
+# https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html
+
+# The following single character keyboard shortcuts enable alternate display modes:
+# 
+# 'f': enable fullscreen mode
+# 
+# 'w': toggle widescreen mode
+# 
+# 'o': enable overview mode
+# 
+# 'h': enable code highlight mode
+# 
+# 'p': show presenter notes
+---
+
+
+## 講義資料
+
+<!-- ![unchanged image](QR_964656.png) -->
+```{r, out.width = '50%'}
+knitr::include_graphics('QR_964656.png')
+
+```
+
+```{r,warning=FALSE, echo=FALSE}
+# 使用package
+# suppressMessages(library(readxl))
+# suppressMessages(library(dplyr))
+# suppressMessages(library(data.table))
+# suppressMessages(library(kableExtra))
+# suppressMessages(library(curl))
+suppressMessages(library(tidyverse))
+library(gapminder) # to access gapminder dataset
+suppressMessages(library(plotly)) # for plotly charts, pipe % operator
+library(dplyr) # for any data manipulation operations; we used
+# suppressMessages(library(tidyverse))
+```
+
+
+# 準備：Rの紹介(Quick tutorial of R)
+
+##  Rとは電卓のようなもの 
+
+- Use symbol `< -` は代入を意味
+
+```{r}
+x <- 2
+x
+x + x
+```
+
+- $exp(2)=e^{-2}$
+```{r}
+exp(-2)
+log(10)
+```
+
+
+## data とは個体と変数として構成
+  - observation and variable
+  - 行と列
+
+```{r}
+iris %>% head(2)
+iris %>% tail(2)
+```
+
+## Rの`$`記号 
+
+- `$` は特定の変数（列）を選択  
+
+```{r}
+iris$Sepal.Length
+```
+
+
+# gapminder data
+
+## gapminder data 概要
+
+- 平均寿命(life expectancy)、一人当たりGDP(GDP per capita)、国別の人口(population by country)等に関するデータ
+
+- gapminder has **1704** rows and **6** variables
+
+## gapminder 変数一覧
+
+  - country: factor with 142 levels
+  - continent: factor with 5 levels
+  - year: ranges from 1952 to 2007 in increments of 5 years
+  - lifeExp : life expectancy at birth, in years
+  - pop: population
+  - gdpPercap: GDP per capita (US$, inflation-adjusted)
+
+
+## Quick glance of gapminder dataset
+
+- using `str()` and ` %>% `
+
+
+```{r}
+gapminder %>% str()
+```
+
+##  gapminder summary
+
+- 次元（行と列の数）
+```{r}
+gapminder %>% dim()
+```
+
+
+- 頻度表
+```{r}
+gapminder$year %>% table()
+```
+
+
+
+##  gapminder summary1
+```{r}
+gapminder %>% summary()
+```
+
+## gapminderのplot
+
+- 2002年のデータに範囲を絞り、x軸は対数変換を施す
+
+```{r}
+gapminder2002 <- gapminder %>% filter(year == 2002) 
+
+plot(log(gapminder2002$gdpPercap), gapminder2002$lifeExp)
+
+```
+
+
+# mtcars data
+
+## mtcars data 概要:
+
+-  Motor Trend Car Road Tests
+- [motortrend](https://www.motortrend.com)とは 
+
+- The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
+
+- 1974年のモータートレンドUSマガジンの記事から
+32台の自動車（1973〜74モデル）を対象に、燃料消費量、設計、性能など10項目を計測したデータ
+
+## mtcars 次元と変数の概要:
+
+  - 32 observations and  11 variables
+  
+  - mpg:	Miles/gallon
+  - cyl:	Number of cylinders(シリンダーの数)
+  - disp:	Displacement(排気量) 
+  - hp:	Gross horsepower(馬力)
+  - drat:	Rear axle ratio
+  - wt:	Weight (1000 lbs) (重量: 1000ポンド)
+  - qsec:	1/4 mile time
+  - vs:	Engine (0 = V字型, 1 = ストレート) エンジン
+  - am:	Transmission (0 = automatic, 1 = manual) 
+  - gear:	Number of forward gears(前進ギアの数)
+  - carb:	Number of carburetors(キャブレターの数)
+
+## mtcars の構造:`str()`
+```{r}
+str(mtcars)
+```
+
+## Create bar chart :`cyl` vs `n`
+
+```{r, warning=FALSE, echo=FALSE}
+mtcars %>% 
+  mutate(cyl = as.factor(cyl)) %>%  # convert cyl to categorical variable
+  count(cyl) %>%  ## count to get the frequency table (from dplyr package)
+  plot_ly(x=~cyl,  
+          y=~n, 
+          color=~cyl,
+          text = ~n,
+          hoverinfo = "text") %>%  # apply plotly on the frequency data
+  add_bars(width=0.3) %>%  # use the width argument to adjust the width of the bars
+  layout(title="Bar Chart using mtcars data",
+         xaxis = list(title="Cylinder数"),
+         yaxis = list(title = "Count n"))
+```
+
+
+
+
+## Grouped Bar chart(`am` vs `cyl` vs `n`)
+  - Using the mtcars dataset
+  - Using two categorical variables (Car Cylinder type and Transmission type)
+
+```{r, warning=FALSE, fig.width=5, echo=FALSE}
+
+## Side by Side or Grouped Bar Chart
+mtcars %>% 
+  mutate(cyl = as.factor(cyl), 
+         am = as.factor(am)) %>% # Data type conversion
+  count(cyl, am) %>%  ## count to get the frequency table (from dplyr package)
+  plot_ly(x=~cyl, 
+          y=~n, 
+          color=~am,
+          text = ~n,
+          hoverinfo = "text") %>% 
+  add_bars() %>% 
+  layout(title="Plotly Grouped Bar Chart",
+         xaxis = list(title="No. of Cylinders"),
+         yaxis = list(title = "Count"),
+         barmode="group")
+```
+
+## Stacked Bar chart
+```{r, warning=FALSE, echo=FALSE}
+## Stacked Bar chart
+mtcars %>% 
+  mutate(cyl = as.factor(cyl), 
+         am = as.factor(am)) %>% 
+  count(cyl, am) %>% ## count to get the frequency table (from dplyr package)
+  plot_ly(x=~cyl, 
+          y=~n, 
+          color=~am,
+          text = ~paste("No. of cyl=", cyl, "<br>", "Count=", n, "<br>", "Transmission=", am), 
+          hoverinfo = "text") %>% 
+  add_bars() %>% 
+  layout(title="Plotly Stacked Bar Chart",
+         xaxis = list(title="No. of Cylinders"),
+         yaxis = list(title = "Count"),
+         barmode="stack")
+
+
+```
+
+# diamonds data 
+
+## diamonds dataset :
+
+
+[diamond](https://ralphjacobs.co.za/why-choose-moissanite/)
+
+[diamond](https://www.wedding-memo.com/ring/003.html)
+
+
+## 価格のヒストグラム
+
+```{r}
+library(ggplot2) # for diamonds dataset
+diamonds %>% plot_ly() %>% 
+  add_histogram(x=~price)
+```
+
+
+##  Histogram with `cut`
+```{r}
+# Histogram with categorical variable
+diamonds %>% plot_ly() %>% 
+  add_histogram(x=~cut) 
+```
+
+
+## Histogram with `cut` and `clarity`
+```{r}
+diamonds %>% plot_ly() %>% 
+  add_histogram(x=~cut, color=~clarity)
+```
+
+## Create Heatmap
+```{r}
+## Create a heatmap
+diamonds %>% plot_ly() %>% 
+  add_heatmap(x=~cut, y=~color, z=~price)
+```
+
+<!-- ## Animated Charts -->
+<!--   - Animated Scatter Chart with year timeline -->
+
+<!-- ```{r, echo=FALSE} -->
+
+<!-- library(dplyr) # for data manipulation -->
+<!-- library(plotly) # for plotly charts -->
+<!-- library(purrr) # for cumulative dataset -->
+<!-- library(crosstalk) # for plot linking -->
+<!-- library(gapminder) # for gapminder dataset -->
+
+
+<!-- gapminder %>%  -->
+<!--   plot_ly(x=~gdpPercap, y=~lifeExp) %>%  -->
+<!--   add_markers(frame=~year, ids=~country, showlegend = FALSE) %>%  -->
+<!--   layout(title="Animated Scatter Plotly Chart", -->
+<!--          xaxis=list(title="GDP Per Capita", type="log"), -->
+<!--          yaxis=list(title= "Life Expectancy")) -->
+
+
+<!-- ``` -->
+
+
+
+# storms data
+
+## Animated bar chart
+
+[storm](https://twitter.com/USATODAY/status/606188977985605633/photo/1)
+
+
+```{r, echo=FALSE}
+storms %>% 
+  count(year, status) %>%
+  plot_ly(y=~status, x =~n, color=~status) %>% 
+  add_bars(frame=~year) %>%
+  layout(barmode="stack")
+```
+
+
+
+## Line chart
+```{r, echo=FALSE}
+# library(plotly)
+
+# Line chart of storms by year
+storms %>% 
+  count(year, status) %>% 
+  plot_ly(x=~year, y=~n) %>% 
+  add_lines(color=~status)
+```
+
+
+## 累積頻度 アニメーション line plot
+```{r, echo=FALSE}
+storms %>% count(year) %>% split(.$year) %>% accumulate(~bind_rows(.x, .y)) %>% 
+  set_names(1975:2015) %>% # optional
+  bind_rows(.id="年") %>%
+  plot_ly(x=~year, y=~n) %>% 
+  add_lines(frame=~年)
+```
+
+
+## 累積頻度 アニメーション line plot by category
+
+```{r,warning=FALSE, echo=FALSE}
+storms %>% count(year, category) %>% split(.$year) %>% accumulate(~bind_rows(.x, .y)) %>% 
+  set_names(1975:2015) %>% # optional
+  bind_rows(.id="frame") %>%
+  plot_ly(x=~year, y=~n) %>% 
+  add_lines(frame=~frame, color=~category, ids=~category)
+
+```
+
+
+## 累積頻度 アニメーション line plot by status
+
+```{r, echo=FALSE}
+storms %>% 
+  count(year, status) %>% 
+  split(.$year) %>% 
+  accumulate(~bind_rows(.x, .y)) %>% 
+  set_names(1975:2015) %>% # optional
+  bind_rows(.id="frame") %>%
+  plot_ly(x=~year, y=~n) %>% 
+  add_lines(frame=~frame, color=~status, ids=~status)
+
+```
+
+# よりお洒落なplot - gapminder revisited
+
+
+<!-- ```{r, eval=FALSE  } -->
+<!-- gapminder %>% -->
+<!--   filter(year == 2002) %>%  # filter data for the year 2002 -->
+<!--   plot_ly() %>% -->
+<!--   add_markers(x =  ~ gdpPercap, y =  ~ lifeExp) %>% -->
+<!--   ## Add title to the plot, and axis. Apply log transformation to the x axis -->
+<!--   layout( -->
+<!--     title = "Plotly Scatter Plot", -->
+<!--     xaxis = list(title = "GDP Per Capita (log scale)", type = "log"), -->
+<!--     yaxis = list(title = "Life Expectancy") -->
+<!--   )  -->
+
+<!-- ``` -->
+
+## 
+```{r, warning=FALSE, echo=FALSE}
+## Scatter plot for a specific year 2002
+gapminder %>%
+  filter(year == 2002) %>%  # filter data for the year 2002
+  plot_ly() %>%
+  add_markers(x =  ~ gdpPercap, y =  ~ lifeExp) %>%
+  ## Add title to the plot, and axis. Apply log transformation to the x axis
+  layout(
+    title = "Plotly Scatter Plot",
+    xaxis = list(title = "GDP Per Capita (log scale)", type = "log"),
+    yaxis = list(title = "Life Expectancy")
+  ) %>%
+  hide_legend()
+```
+
+## 年度ごとに変化するアニメーション
+
+- 年度変数を frame に指定（`frame=~year`）
+-  Frame is transitioned over the years to bring a smooth animation effect
+```{r,echo=FALSE, warning=FALSE}
+gapminder %>%
+  plot_ly() %>%
+  # add frame argument for animation and map to the variable needed on the timeline
+  add_markers(x=~gdpPercap, y=~lifeExp,
+              frame=~year,
+              text=~paste("Country:", country),
+              hoverinfo= "text") %>%
+  layout(title="Animated Plotly Scatter Plot",
+         xaxis=list(title="GDP Per Capita (log scale)(一人当たりGDP)", type="log"),
+         yaxis=list(title= "Life Expectancy(平均寿命)")) %>%
+  hide_legend()
+```
+
+
+## Animated bubble chart with year timeline
+
+[You've never seen data presented like this](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?referrer=playlist-the_best_hans_rosling_talks_yo#t-213748)
+
+
+  - Size of the bubble : the population(人口)
+  - Color of the bubble : the continent(大陸)
+  - Add text/ Add Pause button
+  
+## 
+  
+```{r, warning=FALSE, echo=FALSE}
+gapminder %>% 
+  plot_ly(x=~gdpPercap, y=~lifeExp) %>% 
+  add_markers(frame=~year, 
+              ids=~country,
+              size = ~pop,
+              color=~continent,
+              text = ~country,
+              hoverinfo = "text", 
+              marker=list(sizemode="diameter")) %>% 
+  layout(title="Animated Scatter Plotly Chart",xaxis=list(title="GDP Per Capita", type="log"),
+         yaxis=list(title= "Life Expectancy")) %>% 
+  animation_button(label = "Click me!",
+                   x=1,
+                   y=1,
+                   xanchor="right",
+                   yanchor="bottom") %>% 
+  animation_opts(frame = 700, 
+                 transition = 350, 
+                 easing="linear", 
+                 redraw = FALSE) %>% 
+  animation_slider(hide=F, 
+                   currentvalue=list(prefix=NULL,
+                                     font = list(color="GREY", size=30)))
+```
+
+
+
+
+
+
+https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?referrer=playlist-the_best_hans_rosling_talks_yo#t-213748
+
+
+
+

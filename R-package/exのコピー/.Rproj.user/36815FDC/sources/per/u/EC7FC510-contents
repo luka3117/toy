@@ -1,0 +1,8 @@
+
+luka3117/WakayamaHealthPkg
+Unwatch 
+
+
+
+install.packages("devtools")
+devtools::install_github(repo = "luka3117/WakayamaHealthPkg")

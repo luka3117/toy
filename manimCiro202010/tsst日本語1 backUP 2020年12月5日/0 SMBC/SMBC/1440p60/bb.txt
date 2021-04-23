@@ -1,0 +1,28 @@
+Data aa;
+Set sashelp.class;
+Run;
+
+
+data mydata;
+input x1 x2 x3;
+cards;
+
+..
+
+;run;
+
+Proc freq data=aa;
+Table x*y/nocol norow noperecent;
+Run;
+
+Proc tabulate data=aa;
+Var 
+table
+
+
+Run;
+
+
+
+
+
